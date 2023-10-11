@@ -1,0 +1,5 @@
+C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.exe
+C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.dll
+C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.deps.json
+C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.runtimeconfig.json
+C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.pdb

@@ -1,0 +1,94 @@
+﻿<Window x:Class="RoleplayApp.CharacterCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoleplayApp"
+        mc:Ignorable="d"
+        Title="CharacterCreationWindow" Height="600" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel
+        Grid.Row="0"
+        Grid.Column="0"
+        Grid.RowSpan="3"
+        Grid.ColumnSpan="3">
+
+            <TextBlock
+                Text="Skriv navn:"
+                FontSize="25"
+                HorizontalAlignment="Center"
+                Margin="0,30,0,0"/>
+            <TextBox
+                Name="WriteName"
+                FontSize="20"/>
+            
+            <TextBlock
+                Text="Beskrivelse:"
+                FontSize="25"
+                HorizontalAlignment="Center"
+                Margin="0,30,0,0"/>
+            <TextBox
+                Name="WriteDesc"
+                FontSize="20"/>
+
+            <TextBlock
+                Text="Alder:"
+                FontSize="25"
+                HorizontalAlignment="Center"
+                Margin="0,30,0,0"/>
+            <TextBox
+                Name="WriteAge"
+                FontSize="20"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,30,0,0">
+                <Button
+                Height="35"
+                Width="100"
+                Content="Mand"
+                FontSize="20"
+                Background="SkyBlue"/>
+
+                <Button
+               Height="35"
+               Width="100"
+               Content="Kvinde"
+               FontSize="20"
+               Background="Pink"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button
+            Name="Done"
+            Content="DONE"
+            Height="50"
+            Grid.Column="1"
+            Grid.Row="2"
+            VerticalAlignment="Bottom" Click="Done_Click"/>
+
+
+        <Button
+        x:Name="GoBack"
+        Height="25"
+        Width="50"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Content="Back"
+        FontSize="15"
+        FontWeight="Bold"
+        Background="#dc3131" Click="GoBack_Click"/>
+    </Grid>
+</Window>

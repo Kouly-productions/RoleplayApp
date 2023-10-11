@@ -1,0 +1,57 @@
+﻿<Window x:Class="RoleplayApp.Character"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoleplayApp"
+        mc:Ignorable="d"
+        Background="DarkGray"
+        Title="Character" Height="600" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button
+        x:Name="GoBack"
+        Height="25"
+        VerticalAlignment="Top"
+        Content="Back"
+        FontSize="15"
+        FontWeight="Bold"
+        Background="#dc3131" Click="GoBack_Click" Margin="0,0,93,0"/>
+
+        <Button
+        x:Name="CreateCharacter"
+        Grid.Column="3"
+        Grid.Row="2"
+        Height="50"
+        Width="100"
+        VerticalAlignment="Bottom"
+        HorizontalAlignment="Center"
+        Content="Create"
+        FontSize="20"
+        FontWeight="Bold"
+        Background="SkyBlue" Click="CreateCharacter_Click"/>
+
+        <StackPanel
+            x:Name="CharacterPanel"
+            Orientation="Horizontal"
+            Margin="0,25,0,0"
+            Grid.ColumnSpan="7"/>
+
+
+    </Grid>
+</Window>
