@@ -29,3 +29,5 @@ C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Role
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.csproj.CopyComplete
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\CharacterCreationWindow.g.cs
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\CharacterCreationWindow.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.baml
