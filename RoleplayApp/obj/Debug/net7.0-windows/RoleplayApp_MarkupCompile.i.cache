@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\App.xaml
-5-762446661
+6-929155958
 
-102088202231
+11-917560468
 199-1226515132
-Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;MainWindow.xaml;VoteWindow.xaml;
+Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;MainWindow.xaml;ShowCharacterScreen.xaml;VoteWindow.xaml;
 
 True
 

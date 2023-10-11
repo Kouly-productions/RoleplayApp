@@ -83,6 +83,8 @@ namespace RoleplayApp
                             textBlock.Width = 100;
                             textBlock.Margin = new Thickness(5);
 
+                            border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
+
                             border.Child = textBlock;
 
                             CharacterPanel.Children.Add(border);
@@ -102,6 +104,17 @@ namespace RoleplayApp
             {
                 MessageBox.Show("filen findes ikke");
             }
+        }
+
+        private void ShowCharacterInfo(CharacterProp character)
+        {
+            MessageBox.Show($"Name: {character.Name}\nAge: {character.Age}\nDescription: {character.Description}");
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterPanel.Children.Clear();
+            GetCharacters();
         }
     }
 }
