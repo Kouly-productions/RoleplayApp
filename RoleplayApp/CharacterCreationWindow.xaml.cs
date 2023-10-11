@@ -31,6 +31,7 @@ namespace RoleplayApp
         {
             InitializeComponent();
 
+
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "characters.json");
         }
@@ -56,7 +57,6 @@ namespace RoleplayApp
             try
             {
                 File.WriteAllText(jsonPath, json);
-                Character.GetCharacters();
             }
             catch (Exception ex)
             {
