@@ -26,6 +26,8 @@ namespace RoleplayApp
         string jsonPath;
         string destinationFilePath;
 
+        private Character parentCharacterWindow;
+
         List<CharacterProp> characters = new List<CharacterProp>();
 
         ProcessStartInfo startInfo = new ProcessStartInfo
@@ -35,13 +37,14 @@ namespace RoleplayApp
         };
 
 
-        public CharacterCreationWindow()
+        public CharacterCreationWindow(Character parentCharacterWindow)
         {
             InitializeComponent();
 
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            this.parentCharacterWindow = parentCharacterWindow;
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
@@ -67,6 +70,7 @@ namespace RoleplayApp
             {
                 File.WriteAllText(jsonPath, json);
                 MessageBox.Show("Succes!");
+                parentCharacterWindow.UpdateCharacterList();
                 this.Close();
             }
             catch (Exception ex)

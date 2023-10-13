@@ -45,23 +45,10 @@
         FontSize="20"
         FontWeight="Bold"
         Background="SkyBlue" Click="CreateCharacter_Click"/>
-       
-        <Button
-       x:Name="Update"
-       Grid.Column="3"
-       Grid.Row="2"
-       Height="50"
-       Width="100"
-       VerticalAlignment="Center"
-       HorizontalAlignment="Center"
-       Content="Update"
-       FontSize="20"
-       FontWeight="Bold"
-       Margin="0,40,0,0"
-       Background="Gray" Click="Update_Click"/>
 
         <WrapPanel
             x:Name="CharacterPanel"
+            Grid.RowSpan="3"
             Orientation="Horizontal"
             Margin="0,25,0,0"
             Grid.ColumnSpan="7"

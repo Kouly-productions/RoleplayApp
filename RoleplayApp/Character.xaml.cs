@@ -54,7 +54,7 @@ namespace RoleplayApp
 
         private void CreateCharacter_Click(object sender, RoutedEventArgs e)
         {
-            CharacterCreationWindow characterCreationWindow = new CharacterCreationWindow();
+            CharacterCreationWindow characterCreationWindow = new CharacterCreationWindow(this);
             characterCreationWindow.Show();
         }
 
@@ -106,9 +106,15 @@ namespace RoleplayApp
             }
         }
 
+        public void UpdateCharacterList()
+        {
+            CharacterPanel.Children.Clear();
+            GetCharacters();
+        }
+
         private void ShowCharacterInfo(CharacterProp character)
         {
-            ShowCharacterStats showCharacterStats = new ShowCharacterStats(character);
+            ShowCharacterStats showCharacterStats = new ShowCharacterStats(character, this);
             showCharacterStats.Show();
         }
 

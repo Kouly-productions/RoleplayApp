@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Shapes;
 
 namespace RoleplayApp
@@ -19,9 +20,14 @@ namespace RoleplayApp
     /// </summary>
     public partial class ShowCharacterStats : Window
     {
-        public ShowCharacterStats(CharacterProp character)
+        private CharacterProp character;
+        private Character parentCharacterWindow;
+
+        public ShowCharacterStats(CharacterProp character, Character parentWindow)
         {
             InitializeComponent();
+            this.character = character;
+            this.parentCharacterWindow = parentWindow;
             showCharacterInfo(character);
         }
 
@@ -51,6 +57,30 @@ namespace RoleplayApp
             {
                 BitmapImage image = new BitmapImage(new Uri (imagePath, UriKind.Absolute));
                 CharImage.Source = image;
+            }
+        }
+
+        private void deleteChar_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
+            string jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            string jsonData = System.IO.File.ReadAllText(jsonPath);
+
+            List<CharacterProp> characterList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
+
+            CharacterProp characterToRemove = characterList.FirstOrDefault(c => c.Name == this.character.Name);
+
+            if (characterToRemove != null)
+            {
+                characterList.Remove(characterToRemove);
+
+                string updatedJsonData = Newtonsoft.Json.JsonConvert.SerializeObject(characterList, Newtonsoft.Json.Formatting.Indented);
+
+                System.IO.File.WriteAllText(jsonPath, updatedJsonData);
+
+                parentCharacterWindow.UpdateCharacterList();
+
+                this.Close();
             }
         }
     }
