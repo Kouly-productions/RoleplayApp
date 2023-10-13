@@ -13,6 +13,14 @@ namespace RoleplayApp
         Female
     }
 
+    public enum Type
+    {
+        Human,
+        Animatronic,
+        Dragon,
+        Unknown
+    }
+
     public class Inventory
     {
         public string ItemName { get; set; }
@@ -30,7 +38,9 @@ namespace RoleplayApp
         public string Name { get; set; }
         public string Description { get; set; }
         public Gender Gender { get; set; }
+        public Type Type { get; set; }
         public int Age { get; set; }
+        public string ImagePath { get; set; }
         public List<Inventory> Inventories { get; set; }
     }
 }

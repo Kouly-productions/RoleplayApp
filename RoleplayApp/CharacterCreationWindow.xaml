@@ -79,6 +79,15 @@
             Grid.Row="2"
             VerticalAlignment="Bottom" Click="Done_Click"/>
 
+        <Button
+            Name="AddImage"
+            Content="Tilføj billede"
+            FontSize="20"
+            Height="50"
+            VerticalAlignment="Top"
+            Grid.Column="1"
+            Grid.Row="2" Click="AddImage_Click"/>
+
 
         <Button
         x:Name="GoBack"

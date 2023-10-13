@@ -108,7 +108,8 @@ namespace RoleplayApp
 
         private void ShowCharacterInfo(CharacterProp character)
         {
-            MessageBox.Show($"Name: {character.Name}\nAge: {character.Age}\nDescription: {character.Description}");
+            ShowCharacterStats showCharacterStats = new ShowCharacterStats(character);
+            showCharacterStats.Show();
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)

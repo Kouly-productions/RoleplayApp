@@ -60,11 +60,12 @@
        Margin="0,40,0,0"
        Background="Gray" Click="Update_Click"/>
 
-        <StackPanel
+        <WrapPanel
             x:Name="CharacterPanel"
             Orientation="Horizontal"
             Margin="0,25,0,0"
-            Grid.ColumnSpan="7"/>
+            Grid.ColumnSpan="7"
+            />
 
 
     </Grid>

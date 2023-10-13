@@ -31,3 +31,5 @@ C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Char
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\CharacterCreationWindow.baml
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.g.cs
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterStats.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterStats.baml

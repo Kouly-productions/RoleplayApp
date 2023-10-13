@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace RoleplayApp
 {
-    /// <summary>
-    /// Interaction logic for ShowCharacterScreen.xaml
-    /// </summary>
     public partial class ShowCharacterScreen : Window
     {
         public ShowCharacterScreen()
