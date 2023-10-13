@@ -9,16 +9,16 @@ namespace RoleplayApp
 {
     public enum Gender
     {
-        Male,
-        Female
+        Mand,
+        Kvinde
     }
 
     public enum Type
     {
-        Human,
-        Animatronic,
-        Dragon,
-        Unknown
+        Menneske,
+        Robot,
+        Drage,
+        Ukendt
     }
 
     public class Inventory

@@ -56,18 +56,20 @@
                         HorizontalAlignment="Center"
                         Margin="0,30,0,0">
                 <Button
+                Name="genderMale"
                 Height="35"
                 Width="100"
                 Content="Mand"
                 FontSize="20"
-                Background="SkyBlue"/>
+                Background="SkyBlue" Click="genderMale_Click"/>
 
                 <Button
+               Name="genderFemale"
                Height="35"
                Width="100"
                Content="Kvinde"
                FontSize="20"
-               Background="Pink"/>
+               Background="Pink" Click="genderFemale_Click"/>
             </StackPanel>
         </StackPanel>
 
@@ -83,13 +85,27 @@
             Name="AddImage"
             Content="Tilføj billede"
             FontSize="20"
-            Height="50"
-            VerticalAlignment="Top"
+            Height="30"
+            VerticalAlignment="Center"
             Grid.Column="1"
             Grid.Row="2" Click="AddImage_Click"/>
 
+            <ComboBox
+                Name="Type"
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Width="200" 
+                Height="21" SelectionChanged="Type_SelectionChanged">
+            <ComboBoxItem Content="Menneske"/>
+            <ComboBoxItem Content="Robot"/>
+            <ComboBoxItem Content="Drage"/>
+            <ComboBoxItem Content="Ukendt"/>
+        </ComboBox>
 
-        <Button
+
+            <Button
         x:Name="GoBack"
         Height="25"
         Width="50"

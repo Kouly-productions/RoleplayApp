@@ -41,6 +41,8 @@ namespace RoleplayApp
             charName.Text = "Navn: " + character.Name;
             charAge.Text = "Alder: " + character.Age.ToString() + "år";
             charDescription.Text = character.Description;
+            charGender.Text = "Køn: " + character.Gender.ToString();
+            charType.Text = "Type: " + character.Type.ToString();
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {

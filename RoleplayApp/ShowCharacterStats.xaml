@@ -71,7 +71,7 @@
                 <TextBlock
                     x:Name="charDescription"
                     Text="Character description here."
-                    Height="150"
+                    Height="170"
                     HorizontalAlignment="Center"
                     FontSize="20"
                     TextWrapping="Wrap" 

@@ -26,7 +26,11 @@ namespace RoleplayApp
         string jsonPath;
         string destinationFilePath;
 
+        CharacterProp character = new CharacterProp();
+
         private Character parentCharacterWindow;
+
+        private CharacterProp charInfo = new CharacterProp();
 
         List<CharacterProp> characters = new List<CharacterProp>();
 
@@ -54,6 +58,8 @@ namespace RoleplayApp
             newCharacter.Description = WriteDesc.Text;
             newCharacter.Age = int.Parse(WriteAge.Text);
             newCharacter.ImagePath = destinationFilePath;
+            newCharacter.Gender = character.Gender;
+            newCharacter.Type = character.Type;
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
@@ -99,9 +105,29 @@ namespace RoleplayApp
                 destinationFilePath = System.IO.Path.Combine(destinationDirectory, System.IO.Path.GetFileName(selectedFilePath));
                 File.Copy(selectedFilePath, destinationFilePath, true);
 
-                CharacterProp character = new CharacterProp();
                 character.ImagePath = destinationFilePath;
                 BitmapImage image = new BitmapImage(new Uri(destinationFilePath, UriKind.Absolute));
+            }
+        }
+
+        private void genderMale_Click(object sender, RoutedEventArgs e)
+        {
+            character.Gender = Gender.Mand;
+        }
+
+        private void genderFemale_Click(object sender, RoutedEventArgs e)
+        {
+            character.Gender = Gender.Kvinde;
+        }
+
+        private void Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            if(comboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string selectedContent = (string)selectedItem.Content;
+                Type selectedType = (Type)Enum.Parse(typeof(Type), selectedContent);
+                character.Type = selectedType;
             }
         }
     }
