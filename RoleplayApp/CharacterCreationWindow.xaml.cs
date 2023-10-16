@@ -55,11 +55,18 @@ namespace RoleplayApp
         {
             CharacterProp newCharacter = new CharacterProp();
             newCharacter.Name = WriteName.Text;
-            newCharacter.Description = WriteDesc.Text;
+            newCharacter.Health = int.Parse(WriteHealth.Text);
+            newCharacter.Deffence = int.Parse(WriteDefence.Text);
+            newCharacter.Agility = int.Parse(WriteAgility.Text);
+            newCharacter.Strength = int.Parse(WriteStrength.Text);
+            newCharacter.Intelect = int.Parse(WriteIntelect.Text);
+            newCharacter.Charisma = int.Parse(WriteCharisma.Text);
+            newCharacter.Level = int.Parse(WriteLevel.Text);
             newCharacter.Age = int.Parse(WriteAge.Text);
             newCharacter.ImagePath = destinationFilePath;
             newCharacter.Gender = character.Gender;
             newCharacter.Type = character.Type;
+            newCharacter.Country = WriteCountry.Text;
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);

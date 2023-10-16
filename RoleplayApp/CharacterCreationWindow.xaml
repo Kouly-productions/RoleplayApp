@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
-        Title="CharacterCreationWindow" Height="600" Width="450">
+        Background="DarkGray"
+        Title="CharacterCreationWindow" Height="600" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,15 +20,101 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel
-        Grid.Row="0"
-        Grid.Column="0"
-        Grid.RowSpan="3"
-        Grid.ColumnSpan="3">
+        <Border
+            Grid.RowSpan="3"
+            BorderThickness="3"
+            BorderBrush="DimGray"
+            Width="270"
+            Height="543"
+            VerticalAlignment="Bottom">
+            
+            <StackPanel
+            VerticalAlignment="Top">
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,30,0,5"
+                    Text="Hvor mange liv? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteHealth"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,20,0,5"
+                    Text="Hvor meget defence? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteDefence"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,20,0,5"
+                    Text="Hvor meget Agility? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteAgility"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,20,0,5"
+                    Text="Hvor meget Styrke? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteStrength"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,20,0,5"
+                    Text="Hvor meget Intelect? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteIntelect"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,20,0,5"
+                    Text="Hvor meget Karisma? (Skriv kun tal)"
+                    TextAlignment="Center"/>
+                <TextBox
+                    Name="WriteCharisma"
+                    FontSize="20"
+                    Width="100"/>
+                <TextBlock
+                    FontSize="12"
+                    Margin="0,5,0,0"
+                    Text="0 - 2 = Ikke godt"
+                    TextAlignment="Center"/>
+                <TextBlock
+                    FontSize="12"
+                    Text="2 - 4 = Okay"
+                    TextAlignment="Center"/>
+                <TextBlock
+                    FontSize="12"
+                    Text="4 - 7 = Godt"
+                    TextAlignment="Center"/>
+                    <TextBlock
+                    FontSize="12"
+                    Text="7 - 12 = Virkelig godt"
+                    TextAlignment="Center"/>
+            </StackPanel>
+        </Border>
 
-            <TextBlock
-                Text="Skriv navn:"
-                FontSize="25"
+        <Border
+            Grid.Column="1"
+            Grid.RowSpan="3"
+            Width="270"
+            Height="500"
+            BorderThickness="3"
+            BorderBrush="DimGray">
+            <StackPanel>
+                <TextBlock
+                Text="Skriv navn"
+                FontSize="16"
                 HorizontalAlignment="Center"
                 Margin="0,30,0,0"/>
             <TextBox
@@ -35,26 +122,27 @@
                 FontSize="20"/>
             
             <TextBlock
-                Text="Beskrivelse:"
-                FontSize="25"
+                Text="Level (Skriv kun tal)"
+                FontSize="16"
                 HorizontalAlignment="Center"
-                Margin="0,30,0,0"/>
+                Margin="0,10,0,0"/>
             <TextBox
-                Name="WriteDesc"
+                Name="WriteLevel"
                 FontSize="20"/>
 
             <TextBlock
-                Text="Alder:"
-                FontSize="25"
+                Text="Alder (Skriv kun tal)"
+                FontSize="16"
                 HorizontalAlignment="Center"
-                Margin="0,30,0,0"/>
+                Margin="0,10,0,0"/>
             <TextBox
                 Name="WriteAge"
-                FontSize="20"/>
+                FontSize="20"
+                Width="100"/>
 
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        Margin="0,30,0,0">
+                        Margin="0,10,0,0">
                 <Button
                 Name="genderMale"
                 Height="35"
@@ -70,13 +158,51 @@
                Content="Kvinde"
                FontSize="20"
                Background="Pink" Click="genderFemale_Click"/>
+
+                
             </StackPanel>
-        </StackPanel>
+                
+                <TextBlock
+                    FontSize="16"
+                    Margin="0,10,0,5"
+                    Text="Tryk og vælg race"
+                    TextAlignment="Center"/>
+
+                <ComboBox
+                Name="Type"
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Width="200" 
+                Height="21" 
+                Margin="0,10,0,0"
+                    SelectionChanged="Type_SelectionChanged">
+                    <ComboBoxItem Content="Menneske"/>
+                    <ComboBoxItem Content="Robot"/>
+                    <ComboBoxItem Content="Drage"/>
+                    <ComboBoxItem Content="Ukendt"/>
+                </ComboBox>
+
+                <TextBlock
+                Text="Skriv landet personen kommer fra"
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Margin="0,10,0,0"/>
+                <TextBox
+                Name="WriteCountry"
+                FontSize="20"
+                Width="100"/>
+
+
+            </StackPanel>
+    </Border>
 
         <Button
             Name="Done"
             Content="DONE"
-            Height="50"
+            Height="40"
+            Width="200"
             Grid.Column="1"
             Grid.Row="2"
             VerticalAlignment="Bottom" Click="Done_Click"/>
@@ -86,26 +212,13 @@
             Content="Tilføj billede"
             FontSize="20"
             Height="30"
+            Width="200"
             VerticalAlignment="Center"
             Grid.Column="1"
             Grid.Row="2" Click="AddImage_Click"/>
 
-            <ComboBox
-                Name="Type"
-                Grid.Row="2"
-                Grid.ColumnSpan="3"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Width="200" 
-                Height="21" SelectionChanged="Type_SelectionChanged">
-            <ComboBoxItem Content="Menneske"/>
-            <ComboBoxItem Content="Robot"/>
-            <ComboBoxItem Content="Drage"/>
-            <ComboBoxItem Content="Ukendt"/>
-        </ComboBox>
 
-
-            <Button
+        <Button
         x:Name="GoBack"
         Height="25"
         Width="50"

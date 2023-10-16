@@ -36,7 +36,17 @@ namespace RoleplayApp
         }
 
         public string Name { get; set; }
-        public string Description { get; set; }
+        public int Level { get; set; }
+        public int Health { get; set; }
+        public int Deffence { get; set; }
+        public int Agility { get; set; }
+        public int Strength { get; set; }
+        public int Intelect {  get; set; }
+        public int Charisma { get; set; }
+        public string Country { get; set; }
+        public string Weapon {  get; set; }
+
+        public int Money { get; set; }
         public Gender Gender { get; set; }
         public Type Type { get; set; }
         public int Age { get; set; }

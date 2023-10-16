@@ -38,11 +38,18 @@ namespace RoleplayApp
 
         public void showCharacterInfo(CharacterProp character)
         {
-            charName.Text = "Navn: " + character.Name;
-            charAge.Text = "Alder: " + character.Age.ToString() + "år";
-            charDescription.Text = character.Description;
-            charGender.Text = "Køn: " + character.Gender.ToString();
-            charType.Text = "Type: " + character.Type.ToString();
+            charName.Text = character.Name;
+            charLevel.Text = "Level:" + character.Level.ToString();
+            charAge.Text = character.Age.ToString();
+            charGender.Text = character.Gender.ToString();
+            charType.Text = character.Type.ToString();
+            charHealth.Text = character.Health.ToString();
+            charDefence.Text = character.Deffence.ToString();
+            charAgility.Text = character.Agility.ToString();
+            charStrength.Text = character.Strength.ToString();
+            charInttelect.Text = character.Intelect.ToString();
+            charCharisma.Text = character.Charisma.ToString();
+            charCountry.Text = character.Country;
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {
