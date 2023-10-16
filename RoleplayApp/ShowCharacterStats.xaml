@@ -230,17 +230,26 @@
                 Height="210"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top">
-
+                    <StackPanel>
+                        <TextBlock
+                    Name="charWeapon"
+                    Text="100"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    Margin="0,10,0,0"/>
+                        <TextBlock
+                    Name="charMoney"
+                    Text="1 milliard"
+                    FontSize="13"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    Margin="0,12,0,0"/>
+                    </StackPanel>
                 </Border>
                 <StackPanel>
                     <TextBlock
                     Text="Våben"
-                    FontSize="16"
-                    FontWeight="Bold"
-                    TextDecorations="Baseline"
-                    Margin="10,10,0,0"/>
-                    <TextBlock
-                    Text="Rustning"
                     FontSize="16"
                     FontWeight="Bold"
                     TextDecorations="Baseline"

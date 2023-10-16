@@ -198,6 +198,34 @@
             </StackPanel>
     </Border>
 
+        <Border
+            Grid.Column="2"
+            Grid.RowSpan="3"
+            Width="270"
+            Height="540"
+            BorderThickness="3"
+            VerticalAlignment="Bottom"
+            BorderBrush="DimGray">
+            <StackPanel>
+                <TextBlock
+                Text="Skriv våben"
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Margin="0,10,0,0"/>
+                <TextBox
+                Name="WriteWeapon"
+                FontSize="20"/>
+                <TextBlock
+                Text="Skriv penge"
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Margin="0,10,0,0"/>
+                <TextBox
+                Name="WriteMoney"
+                FontSize="20"/>
+            </StackPanel>
+        </Border>
+
         <Button
             Name="Done"
             Content="DONE"

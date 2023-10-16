@@ -45,8 +45,8 @@ namespace RoleplayApp
         public int Charisma { get; set; }
         public string Country { get; set; }
         public string Weapon {  get; set; }
+        public string Money { get; set; }
 
-        public int Money { get; set; }
         public Gender Gender { get; set; }
         public Type Type { get; set; }
         public int Age { get; set; }

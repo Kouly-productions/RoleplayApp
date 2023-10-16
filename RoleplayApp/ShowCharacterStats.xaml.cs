@@ -50,6 +50,8 @@ namespace RoleplayApp
             charInttelect.Text = character.Intelect.ToString();
             charCharisma.Text = character.Charisma.ToString();
             charCountry.Text = character.Country;
+            charWeapon.Text = character.Weapon;
+            charMoney.Text = character.Money;
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {

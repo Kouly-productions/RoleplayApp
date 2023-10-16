@@ -67,6 +67,8 @@ namespace RoleplayApp
             newCharacter.Gender = character.Gender;
             newCharacter.Type = character.Type;
             newCharacter.Country = WriteCountry.Text;
+            newCharacter.Weapon = WriteWeapon.Text;
+            newCharacter.Money = WriteMoney.Text;
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
