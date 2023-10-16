@@ -103,6 +103,7 @@ namespace RoleplayApp
             else
             {
                 MessageBox.Show("filen findes ikke");
+                System.IO.File.WriteAllText(jsonPath, "[]");
             }
         }
 
@@ -116,12 +117,6 @@ namespace RoleplayApp
         {
             ShowCharacterStats showCharacterStats = new ShowCharacterStats(character, this);
             showCharacterStats.Show();
-        }
-
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-            CharacterPanel.Children.Clear();
-            GetCharacters();
         }
     }
 }
