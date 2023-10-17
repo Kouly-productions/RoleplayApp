@@ -54,6 +54,12 @@ namespace RoleplayApp
             charWeapon.Text = character.Weapon;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
+            
+            DefenceMod.Text = CalculateModifier(character.Deffence).ToString();
+            AgilityMod.Text = CalculateModifier(character.Agility).ToString();
+            StyrkeMod.Text = CalculateModifier(character.Strength).ToString();
+            IntelligensMod.Text = CalculateModifier(character.Intelect).ToString();
+            KarismaMod.Text = CalculateModifier(character.Charisma).ToString();
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {
@@ -71,6 +77,11 @@ namespace RoleplayApp
                 BitmapImage image = new BitmapImage(new Uri (imagePath, UriKind.Absolute));
                 CharImage.Source = image;
             }
+        }
+
+        public static int CalculateModifier(int abilityScore)
+        {
+            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void deleteChar_Click(object sender, RoutedEventArgs e)

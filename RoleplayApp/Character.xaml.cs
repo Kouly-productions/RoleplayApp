@@ -116,7 +116,7 @@ namespace RoleplayApp
         private void ShowCharacterInfo(CharacterProp character)
         {
             ShowCharacterStats showCharacterStats = new ShowCharacterStats(character, this);
-            showCharacterStats.Show();
+            showCharacterStats.ShowDialog();
         }
     }
 }

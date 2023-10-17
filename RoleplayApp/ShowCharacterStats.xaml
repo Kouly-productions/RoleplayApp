@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="ShowCharacterStats" Height="600" Width="1000">
+        Title="ShowCharacterStats" Height="620" Width="1000">
 
     <Window.Background>
         <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
@@ -46,16 +46,6 @@
                 <Image
                 Name="CharImage"
                 Stretch="Fill"/>
-                <TextBlock
-                Name="charLevel"
-                Grid.Column="3"
-                Grid.Row="1"
-                Text="level 10"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                FontSize="30"
-                FontWeight="Bold"
-                Foreground="Orange"/>
             </Grid>
         </Border>
 
@@ -101,6 +91,7 @@
             Height="210"
             HorizontalAlignment="Right"
             VerticalAlignment="Top">
+                    <Grid>
                     <StackPanel>
                         <TextBlock
                             Name="charHealth"
@@ -144,8 +135,50 @@
                             FontWeight="Bold"
                             TextAlignment="Center"
                             Margin="0,10,0,0"/>
-
                     </StackPanel>
+                        <StackPanel>
+                            <TextBlock
+                            Name="DefenceMod"
+                            Text="100"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            TextAlignment="Center"
+                            FontFamily="Segoe Script"
+                            Margin="0,55,0,0"/>
+                            <TextBlock
+                            Name="AgilityMod"
+                            Text="100"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            TextAlignment="Center"
+                            FontFamily="Segoe Script"
+                            Margin="0,10,0,0"/>
+                            <TextBlock
+                            Name="StyrkeMod"
+                            Text="100"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            TextAlignment="Center"
+                            FontFamily="Segoe Script"
+                            Margin="0,11,0,0"/>
+                            <TextBlock
+                            Name="IntelligensMod"
+                            Text="100"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            TextAlignment="Center"
+                            FontFamily="Segoe Script"
+                            Margin="0,11,0,0"/>
+                            <TextBlock
+                            Name="KarismaMod"
+                            Text="100"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            TextAlignment="Center"
+                            FontFamily="Segoe Script"
+                            Margin="0,10,0,0"/>
+                        </StackPanel>
+                    </Grid>
                 </Border>
                 <StackPanel>
                     <TextBlock
@@ -532,11 +565,33 @@
         <Button
             Name="done"
             Grid.Row="2"
-            Grid.Column="6"
+            Grid.Column="3"
             VerticalAlignment="Bottom"
             Height="30"
             Content="Done"
             FontSize="20" Click="done_Click"/>
+
+        <Button
+            Name="Edit"
+            Grid.Row="2"
+            Grid.Column="6"
+            VerticalAlignment="Bottom"
+            Height="30"
+            Content="Rediger"
+            Background="DarkGray"
+            FontSize="20"/>
+
+        <TextBlock
+                Name="charLevel"
+                Grid.Column="3"
+                Grid.Row="1"
+                Text="level 10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                FontSize="30"
+                FontWeight="Bold"
+                Foreground="BlueViolet"
+                Margin="0,0,0,75"/>
 
         <Button
             Name="deleteChar"

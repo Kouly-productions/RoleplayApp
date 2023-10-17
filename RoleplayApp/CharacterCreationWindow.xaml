@@ -32,7 +32,7 @@
             VerticalAlignment="Top">
                 <TextBlock
                     FontSize="16"
-                    Margin="0,30,0,5"
+                    Margin="0,0,0,5"
                     Text="Hvor mange liv? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -41,7 +41,7 @@
                     Width="100"/>
                 <TextBlock
                     FontSize="16"
-                    Margin="0,20,0,5"
+                    Margin="0,5,0,5"
                     Text="Hvor meget defence? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -50,7 +50,7 @@
                     Width="100"/>
                 <TextBlock
                     FontSize="16"
-                    Margin="0,20,0,5"
+                    Margin="0,5,0,5"
                     Text="Hvor meget Agility? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -59,7 +59,7 @@
                     Width="100"/>
                 <TextBlock
                     FontSize="16"
-                    Margin="0,20,0,5"
+                    Margin="0,5,0,5"
                     Text="Hvor meget Styrke? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -68,7 +68,7 @@
                     Width="100"/>
                 <TextBlock
                     FontSize="16"
-                    Margin="0,20,0,5"
+                    Margin="0,5,0,5"
                     Text="Hvor meget Intelect? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -77,7 +77,7 @@
                     Width="100"/>
                 <TextBlock
                     FontSize="16"
-                    Margin="0,20,0,5"
+                    Margin="0,5,0,5"
                     Text="Hvor meget Karisma? (Skriv kun tal)"
                     TextAlignment="Center"/>
                 <TextBox
@@ -85,22 +85,39 @@
                     FontSize="20"
                     Width="100"/>
                 <TextBlock
-                    FontSize="12"
-                    Margin="0,5,0,0"
-                    Text="0 - 2 = Ikke godt"
-                    TextAlignment="Center"/>
+    FontSize="12"
+    Margin="0,5,0,0"
+    Text="1 = Dårligst muligt for et menneske"/>
                 <TextBlock
-                    FontSize="12"
-                    Text="2 - 4 = Okay"
-                    TextAlignment="Center"/>
+    FontSize="12"
+    Text="2 - 3 = Frygteligt svag"/>
                 <TextBlock
-                    FontSize="12"
-                    Text="4 - 7 = Godt"
-                    TextAlignment="Center"/>
-                    <TextBlock
-                    FontSize="12"
-                    Text="7 - 12 = Virkelig godt"
-                    TextAlignment="Center"/>
+    FontSize="12"
+    Text="4 - 5 = Under gennemsnit"/>
+                <TextBlock
+    FontSize="12"
+    Text="6 - 7 = Lidt under gennemsnit"/>
+                <TextBlock
+    FontSize="12"
+    Text="8 - 9 = Gennemsnitlig"/>
+                <TextBlock
+    FontSize="12"
+    Text="10 - 11 = Lidt over gennemsnit"/>
+                <TextBlock
+    FontSize="12"
+    Text="12 - 13 = Over gennemsnit"/>
+                <TextBlock
+    FontSize="12"
+    Text="14 - 15 = Meget over gennemsnit"/>
+                <TextBlock
+    FontSize="12"
+    Text="16 - 17 = Enestående"/>
+                <TextBlock
+    FontSize="12"
+    Text="18 = Næsten perfekt for et menneske"/>
+                <TextBlock
+    FontSize="12"
+    Text="19 - 20 = Direkte OP"/>
             </StackPanel>
         </Border>
 
@@ -236,7 +253,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <Border
-                        Height="150"
+                        Height="120"
                         Width="132.5"
                         BorderBrush="DimGray"
                         BorderThickness="2">
@@ -249,7 +266,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <TextBox Text="{Binding Friend}"
-                                     FontSize="20"
+                                     FontSize="14"
                                      TextChanged="TextBox_TextChanged_2"/>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -257,7 +274,7 @@
                         </StackPanel>
                     </Border>
                     <Border
-                        Height="150"
+                        Height="120"
                         Width="132.5"
                         BorderBrush="DimGray"
                         BorderThickness="2">
@@ -270,7 +287,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <TextBox Text="{Binding Enemy}"
-                                     FontSize="20"
+                                     FontSize="14"
                                      TextChanged="TextBox_TextChanged_1"/>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -292,7 +309,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding Skill}"
-                                     FontSize="20"
+                                     FontSize="14"
                                      TextChanged="TextBox_TextChanged"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -309,6 +326,11 @@
             Grid.Row="2"
             VerticalAlignment="Bottom" Click="Done_Click"/>
 
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="2"
+            Width="200"
+            Margin="0,60,0,50">
         <Button
             Name="AddImage"
             Content="Tilføj billede"
@@ -316,8 +338,14 @@
             Height="30"
             Width="200"
             VerticalAlignment="Center"
-            Grid.Column="1"
-            Grid.Row="2" Click="AddImage_Click"/>
+ Click="AddImage_Click"/>
+
+            <TextBlock
+                Name="ImageUploadText"
+                FontSize="14"
+                Foreground="Green"
+                HorizontalAlignment="Center"/>
+        </StackPanel>
 
 
         <Button

@@ -144,6 +144,7 @@ namespace RoleplayApp
 
                 character.ImagePath = destinationFilePath;
                 BitmapImage image = new BitmapImage(new Uri(destinationFilePath, UriKind.Absolute));
+                ImageUploadText.Text = "Billede er uploaded";
             }
         }
 
