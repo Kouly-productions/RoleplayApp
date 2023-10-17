@@ -28,6 +28,7 @@ namespace RoleplayApp
             InitializeComponent();
             this.character = character;
             this.parentCharacterWindow = parentWindow;
+            this.DataContext = character;
             showCharacterInfo(character);
         }
 
@@ -52,6 +53,7 @@ namespace RoleplayApp
             charCountry.Text = character.Country;
             charWeapon.Text = character.Weapon;
             charMoney.Text = character.Money;
+            charDescription.Text = character.Description;
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {

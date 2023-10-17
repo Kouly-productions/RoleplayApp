@@ -14,7 +14,7 @@
             <GradientStop Color="Blue" Offset="1"/>
         </RadialGradientBrush>
     </Window.Background>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -46,7 +46,7 @@
                 <Image
                 Name="CharImage"
                 Stretch="Fill"/>
-        <TextBlock
+                <TextBlock
                 Name="charLevel"
                 Grid.Column="3"
                 Grid.Row="1"
@@ -79,12 +79,12 @@
                 FontSize="25"
                 FontWeight="Bold"/>
         </Border>
-            
+
         <Border
             BorderBrush="Black"
             BorderThickness="2"
             Background="DarkGray"
-            Width="150"
+            Width="180"
             Height="210"
             Grid.Column="0"
             Grid.ColumnSpan="3"
@@ -93,7 +93,7 @@
             VerticalAlignment="Top"
             Margin="0,40,0,0">
             <Grid>
-            <Border
+                <Border
             BorderBrush="DimGray"
             BorderThickness="2"
             Background="DarkGray"
@@ -207,12 +207,12 @@
                 FontSize="20"
                 FontWeight="Bold"/>
         </Border>
-        
+
         <Border
             BorderBrush="Black"
             BorderThickness="2"
             Background="DarkGray"
-            Width="150"
+            Width="180"
             Height="210"
             Grid.Row="1"
             Grid.Column="0"
@@ -234,17 +234,17 @@
                         <TextBlock
                     Name="charWeapon"
                     Text="100"
-                    FontSize="14"
+                    FontSize="12"
                     FontWeight="Bold"
                     HorizontalAlignment="Center"
-                    Margin="0,10,0,0"/>
+                    Margin="0,14,0,0"/>
                         <TextBlock
                     Name="charMoney"
                     Text="1 milliard"
-                    FontSize="13"
+                    FontSize="12"
                     FontWeight="Bold"
                     HorizontalAlignment="Center"
-                    Margin="0,12,0,0"/>
+                    Margin="0,14,0,0"/>
                     </StackPanel>
                 </Border>
                 <StackPanel>
@@ -289,7 +289,7 @@
             BorderBrush="Black"
             BorderThickness="2"
             Background="DarkGray"
-            Width="150"
+            Width="180"
             Height="210"
             Grid.Column="4"
             Grid.ColumnSpan="3"
@@ -298,25 +298,61 @@
             VerticalAlignment="Top"
             Margin="0,40,0,0">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="163*"/>
+                </Grid.RowDefinitions>
                 <Border
                 BorderBrush="DimGray"
                 BorderThickness="2"
                 Background="DarkGray"
-                Width="73.5"
+                Width="89"
                 Height="210"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top">
+                VerticalAlignment="Top" Grid.RowSpan="2">
+                    <StackPanel>
+                        <TextBlock Text="Venner"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Foreground="DodgerBlue"/>
 
+                        <ItemsControl ItemsSource="{Binding Friends}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Friend, StringFormat='+{0}'}"
+                                   FontSize="12"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
                 </Border>
                 <Border
                    BorderBrush="DimGray"
                    BorderThickness="2"
                    Background="DarkGray"
-                   Width="73.5"
+                   Width="89"
                    Height="210"
                    HorizontalAlignment="Right"
-                   VerticalAlignment="Top">
+                   VerticalAlignment="Top" Grid.RowSpan="2">
+                    <StackPanel>
+                        <TextBlock Text="Fjender"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Foreground="red"/>
 
+                        <ItemsControl ItemsSource="{Binding Enemies}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Enemy, StringFormat='-{0}'}"
+                                   FontSize="12"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
                 </Border>
             </Grid>
         </Border>
@@ -345,7 +381,7 @@
             BorderBrush="Black"
             BorderThickness="2"
             Background="DarkGray"
-            Width="150"
+            Width="180"
             Height="210"
             Grid.Row="1"
             Grid.Column="4"
@@ -354,6 +390,16 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             Margin="0,0,0,40">
+            <ItemsControl ItemsSource="{Binding Skills}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Skill, StringFormat='+{0}'}"
+                                   FontSize="12"
+                                   FontWeight="Bold"
+                                   Margin="0,10,0,0"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Border>
 
         <Border
@@ -441,40 +487,45 @@
                 VerticalAlignment="Bottom">
                 </Border>
                 <StackPanel>
-                
-                <TextBlock
+
+                    <TextBlock
                 Text="Alder"
                 FontSize="16"
                 FontWeight="Bold"
                 TextDecorations="Baseline"
                 Margin="10,00,0,0"/>
-                <TextBlock
+                    <TextBlock
                 Text="Køn"
                 FontSize="16"
                 FontWeight="Bold"
                 TextDecorations="Baseline"
                 Margin="10,10,0,0"/>
-                <TextBlock
+                    <TextBlock
                 Text="Race"
                 FontSize="16"
                 FontWeight="Bold"
                 TextDecorations="Baseline"
                 Margin="10,10,0,0"/>
-                <TextBlock
+                    <TextBlock
                 Text="Land"
                 FontSize="16"
                 FontWeight="Bold"
                 TextDecorations="Baseline"
                 Margin="10,10,0,0"/>
-                <TextBlock
-                Name="charDescription"
+                    <TextBlock
                 Text="Beskrivelse"
                 FontSize="16"
                 FontWeight="Bold"
                 TextDecorations="Baseline"
                 HorizontalAlignment="Center"
                 Margin="0,10,0,0"/>
-            </StackPanel>
+                    <TextBlock
+                Name="charDescription"
+                FontSize="12"
+                Height="85"
+                Margin="5,0,5,0"
+                TextWrapping="Wrap"/>
+                </StackPanel>
             </Grid>
         </Border>
 

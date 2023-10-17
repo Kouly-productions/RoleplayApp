@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
+using static RoleplayApp.CharacterProp;
+using System.Collections.ObjectModel;
 
 namespace RoleplayApp
 {
@@ -49,10 +51,32 @@ namespace RoleplayApp
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "characters.json");
             this.parentCharacterWindow = parentCharacterWindow;
+
+            this.DataContext = character;
+        }
+
+        private bool AreAllFieldsFilled()
+        {
+            TextBox[] fields = { WriteName, WriteHealth, WriteDefence, WriteAgility, WriteStrength, WriteIntelect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteWeapon, WriteMoney };
+
+            foreach (TextBox field in fields) 
+            {
+                if (string.IsNullOrEmpty(field.Text))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
         {
+            if (!AreAllFieldsFilled())
+            {
+                MessageBox.Show("Udfyld alle felter, før du fortsætter");
+                return;
+            }
+
             CharacterProp newCharacter = new CharacterProp();
             newCharacter.Name = WriteName.Text;
             newCharacter.Health = int.Parse(WriteHealth.Text);
@@ -69,6 +93,10 @@ namespace RoleplayApp
             newCharacter.Country = WriteCountry.Text;
             newCharacter.Weapon = WriteWeapon.Text;
             newCharacter.Money = WriteMoney.Text;
+            newCharacter.Description = WriteDescription.Text;
+            newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
+            newCharacter.Friends = new ObservableCollection<RelationViewModel>(character.Friends.Select(s => new RelationViewModel { Friend = s.Friend }));
+            newCharacter.Enemies = new ObservableCollection<RelationViewModel>(character.Enemies.Select(s => new RelationViewModel { Enemy = s.Enemy }));
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
@@ -137,6 +165,51 @@ namespace RoleplayApp
                 string selectedContent = (string)selectedItem.Content;
                 Type selectedType = (Type)Enum.Parse(typeof(Type), selectedContent);
                 character.Type = selectedType;
+            }
+        }
+
+        private void AddSkillButton(object sender, RoutedEventArgs e)
+        {
+            character.Skills.Add(new SkillViewModel { Skill = "" });
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            int index = SkillsList.Items.IndexOf(box.DataContext);
+            if (index != -1)
+            {
+                character.Skills[index].Skill = box.Text;
+            }
+        }
+
+        private void AddFriend(object sender, RoutedEventArgs e)
+        {
+            character.Friends.Add(new RelationViewModel { Friend = "" });
+        }
+
+        private void AddEnemy(object sender, RoutedEventArgs e)
+        {
+            character.Enemies.Add(new RelationViewModel { Enemy = "" });
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            int index = EnemiesList.Items.IndexOf(box.DataContext);
+            if (index != -1)
+            {
+                character.Enemies[index].Enemy = box.Text;
+            }
+        }
+
+        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            int index = FriendsList.Items.IndexOf(box.DataContext);
+            if (index != -1)
+            {
+                character.Friends[index].Friend = box.Text;
             }
         }
     }
