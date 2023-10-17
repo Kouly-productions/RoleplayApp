@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\eliko\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\EFDK\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\eliko\\.nuget\\packages"
     ],
     "configProperties": {

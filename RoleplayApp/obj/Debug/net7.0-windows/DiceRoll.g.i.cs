@@ -93,7 +93,7 @@ namespace RoleplayApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RoleplayApp;component/diceroll.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RoleplayApp;V1.0.0.0;component/diceroll.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DiceRoll.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
