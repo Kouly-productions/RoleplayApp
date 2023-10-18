@@ -188,13 +188,13 @@
                     TextDecorations="Baseline"
                     Margin="10,10,0,0"/>
                     <TextBlock
-                    Text="Defence"
+                    Text="Defense"
                     FontSize="16"
                     FontWeight="Bold"
                     TextDecorations="Baseline"
                     Margin="10,10,0,0"/>
                     <TextBlock
-                    Text="Agility"
+                    Text="Agilitet"
                     FontSize="16"
                     FontWeight="Bold"
                     TextDecorations="Baseline"
