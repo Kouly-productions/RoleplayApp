@@ -78,9 +78,8 @@ namespace RoleplayApp
                             border.Margin = new Thickness(5);
 
                             TextBlock textBlock = new TextBlock();
-                            textBlock.FontSize = 20;
-                            textBlock.Height = 30;
-                            textBlock.Width = 150;
+                            textBlock.FontSize = 16;
+                            textBlock.Width = 170;
                             textBlock.Margin = new Thickness(5);
 
                             Run nameRun = new Run();
@@ -94,7 +93,7 @@ namespace RoleplayApp
                             textBlock.Inlines.Add(new Run { Text = "  " });
                             textBlock.Inlines.Add(levelRun);
 
-                            textBlock.TextAlignment = TextAlignment.Right;
+                            textBlock.TextAlignment = TextAlignment.Center;
 
                             border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
 

@@ -27,7 +27,7 @@
             Width="270"
             Height="543"
             VerticalAlignment="Bottom">
-            
+
             <StackPanel
             VerticalAlignment="Top">
                 <TextBlock
