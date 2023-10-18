@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "YO3Ar5Kcv36u29BzxmD+AxQ32sLEuwg9NNjpljZcAN1+7EtMF+Jh5PO44jUBAhFcaffLT9HzPKYDfZWZrTHs8g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\EFDK\\source\\repos\\RoleplayApp\\RoleplayApp\\RoleplayApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\EFDK\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\EFDK\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.11\\microsoft.netcore.app.runtime.win-x64.7.0.11.nupkg.sha512",
+    "C:\\Users\\EFDK\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.11\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.11.nupkg.sha512",
+    "C:\\Users\\EFDK\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.11\\microsoft.aspnetcore.app.runtime.win-x64.7.0.11.nupkg.sha512",
+    "C:\\Users\\EFDK\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.11\\microsoft.netcore.app.crossgen2.win-x64.7.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

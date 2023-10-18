@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\
 RoleplayApp
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\App.xaml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\App.xaml
 71928651579
 
 10-1170373197
-198-759771931
+199-1226515132
 Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;MainWindow.xaml;ShowCharacterScreen.xaml;ShowCharacterStats.xaml;VoteWindow.xaml;
 
-True
+False
 

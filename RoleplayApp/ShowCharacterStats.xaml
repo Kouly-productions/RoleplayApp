@@ -482,31 +482,31 @@
                         <TextBlock
                 Name="charAge"
                 Text="Alder"
-                FontSize="16"
+                FontSize="14"
                 FontWeight="Bold"
                 HorizontalAlignment="Center"
-                Margin="10,00,0,0"/>
+                Margin="0,00,0,0"/>
                         <TextBlock
                 Name="charGender"
                 Text="Køn"
-                FontSize="16"
+                FontSize="14"
                 FontWeight="Bold"
                 HorizontalAlignment="Center"
-                Margin="10,10,0,0"/>
+                Margin="0,12,0,0"/>
                         <TextBlock
                 Name="charType"
                 Text="Race"
-                FontSize="16"
+                FontSize="14"
                 FontWeight="Bold"
                 HorizontalAlignment="Center"
-                Margin="10,10,0,0"/>
+                Margin="0,14,0,0"/>
                         <TextBlock
                 Name="charCountry"
                 Text="Land"
-                FontSize="16"
+                FontSize="14"
                 FontWeight="Bold"
                 HorizontalAlignment="Center"
-                Margin="10,10,0,0"/>
+                Margin="0,14,0,0"/>
                     </StackPanel>
                 </Border>
 

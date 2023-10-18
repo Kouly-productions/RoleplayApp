@@ -78,10 +78,23 @@ namespace RoleplayApp
                             border.Margin = new Thickness(5);
 
                             TextBlock textBlock = new TextBlock();
-                            textBlock.Text = characters.Name;
                             textBlock.FontSize = 20;
-                            textBlock.Width = 100;
+                            textBlock.Height = 30;
+                            textBlock.Width = 150;
                             textBlock.Margin = new Thickness(5);
+
+                            Run nameRun = new Run();
+                            nameRun.Text = characters.Name;
+
+                            Run levelRun = new Run();
+                            levelRun.Text = "Level " + characters.Level.ToString();
+                            levelRun.Foreground = new SolidColorBrush(Colors.BlueViolet);
+
+                            textBlock.Inlines.Add(nameRun);
+                            textBlock.Inlines.Add(new Run { Text = "  " });
+                            textBlock.Inlines.Add(levelRun);
+
+                            textBlock.TextAlignment = TextAlignment.Right;
 
                             border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
 

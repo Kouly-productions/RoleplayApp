@@ -20,3 +20,16 @@ C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\re
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\RoleplayApp.pdb
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\RoleplayApp.genruntimeconfig.cache
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\ref\RoleplayApp.dll
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\bin\Release\net7.0-windows\Newtonsoft.Json.dll
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\RoleplayApp.csproj.AssemblyReference.cache
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Character.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\CharacterCreationWindow.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\ShowCharacterScreen.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\ShowCharacterStats.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\VoteWindow.g.cs
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Character.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\CharacterCreationWindow.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\ShowCharacterScreen.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\ShowCharacterStats.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\VoteWindow.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\RoleplayApp.csproj.CopyComplete

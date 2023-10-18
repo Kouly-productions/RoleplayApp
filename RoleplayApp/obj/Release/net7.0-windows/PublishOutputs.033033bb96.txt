@@ -3,3 +3,4 @@ C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.dll
 C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.deps.json
 C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.runtimeconfig.json
 C:\Users\EFDK\Documents\TestSoftware\RoleplayApp.pdb
+C:\Users\EFDK\Documents\TestSoftware\Newtonsoft.Json.dll

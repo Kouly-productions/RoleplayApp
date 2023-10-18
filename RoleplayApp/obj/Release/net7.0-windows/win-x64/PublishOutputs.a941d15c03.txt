@@ -1,0 +1,7 @@
+C:\Users\EFDK\Desktop\Roleplay\RoleplayApp.pdb
+C:\Users\EFDK\Desktop\Roleplay\D3DCompiler_47_cor3.dll
+C:\Users\EFDK\Desktop\Roleplay\PenImc_cor3.dll
+C:\Users\EFDK\Desktop\Roleplay\PresentationNative_cor3.dll
+C:\Users\EFDK\Desktop\Roleplay\vcruntime140_cor3.dll
+C:\Users\EFDK\Desktop\Roleplay\wpfgfx_cor3.dll
+C:\Users\EFDK\Desktop\Roleplay\RoleplayApp.exe
