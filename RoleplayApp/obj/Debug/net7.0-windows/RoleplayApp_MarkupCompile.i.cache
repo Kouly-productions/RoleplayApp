@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\App.xaml
-62095360876
+71475486207
 
 111013904130
 1992079390922
-Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;MainWindow.xaml;ShowCharacterStats.xaml;VoteWindow.xaml;
+Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
 
-False
+True
 

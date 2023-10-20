@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">>
+    <Color x:Key="BackGroundColorValue">#848486</Color>
+    <SolidColorBrush x:Key="BackGroundColor" Color="{StaticResource BackGroundColorValue}"/>
+
+    <Color x:Key="ForeGroundColorValue">#797979</Color>
+    <SolidColorBrush x:Key="ForeGroundColor" Color="{StaticResource ForeGroundColorValue}"/>
+
+    <Color x:Key="MainColorValue">#626262</Color>
+    <SolidColorBrush x:Key="MainColor" Color="{StaticResource MainColorValue}"/>
+
+    <sys:Double x:Key="BarHeigth">25</sys:Double>
+    <sys:Double x:Key="BarWidth">220</sys:Double>
+</ResourceDictionary>

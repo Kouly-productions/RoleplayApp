@@ -45,21 +45,22 @@ namespace RoleplayApp
             charGender.Text = character.Gender.ToString();
             charType.Text = character.Type.ToString();
             charHealth.Text = character.Health.ToString();
-            charDefence.Text = character.Deffence.ToString();
-            charAgility.Text = character.Agility.ToString();
             charStrength.Text = character.Strength.ToString();
-            charInttelect.Text = character.Intelect.ToString();
+            charDexterity.Text = character.Dexterity.ToString();
+            charConstitution.Text = character.Constitution.ToString();
+            charIntelect.Text = character.Intelect.ToString();
+            charWisdom.Text = character.Wisdom.ToString();
             charCharisma.Text = character.Charisma.ToString();
             charCountry.Text = character.Country;
-            charWeapon.Text = character.Weapon;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
             
-            DefenceMod.Text = CalculateModifier(character.Deffence).ToString();
-            AgilityMod.Text = CalculateModifier(character.Agility).ToString();
-            StyrkeMod.Text = CalculateModifier(character.Strength).ToString();
-            IntelligensMod.Text = CalculateModifier(character.Intelect).ToString();
-            KarismaMod.Text = CalculateModifier(character.Charisma).ToString();
+            StrengthMod.Text = CalculateModifier(character.Strength).ToString();
+            DexterityMod.Text = CalculateModifier(character.Dexterity).ToString();
+            ConstitutionMod.Text = CalculateModifier(character.Constitution).ToString();
+            IntelectMod.Text = CalculateModifier(character.Intelect).ToString();
+            WisdomMod.Text = CalculateModifier(character.Wisdom).ToString();
+            CharismaMod.Text = CalculateModifier(character.Charisma).ToString();
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {
@@ -106,6 +107,7 @@ namespace RoleplayApp
 
                 this.Close();
             }
-        }
+
+        }      
     }
 }

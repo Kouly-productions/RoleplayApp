@@ -41,6 +41,9 @@
     <Page Update="ShowCharacterStats.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="VoteWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

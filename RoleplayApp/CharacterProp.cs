@@ -50,13 +50,13 @@ namespace RoleplayApp
         public string Name { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
-        public int Deffence { get; set; }
-        public int Agility { get; set; }
         public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution { get; set; }
         public int Intelect {  get; set; }
+        public int Wisdom { get; set; }
         public int Charisma { get; set; }
         public string Country { get; set; }
-        public string Weapon {  get; set; }
         public string Money { get; set; }
         public string Description { get; set; }
         public ObservableCollection<SkillViewModel> Skills { get; set; } = new ObservableCollection<SkillViewModel>();

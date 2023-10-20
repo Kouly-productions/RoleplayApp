@@ -237,7 +237,7 @@ namespace RoleplayApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RoleplayApp;V1.0.0.0;component/charactercreationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RoleplayApp;component/charactercreationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CharacterCreationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

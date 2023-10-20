@@ -45,7 +45,6 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\CharacterCreationWindow.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\DiceRoll.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\MainWindow.g.cs
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterStats.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\VoteWindow.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\App.g.cs
@@ -55,7 +54,6 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\CharacterCreationWindow.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\DiceRoll.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\MainWindow.baml
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterScreen.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ShowCharacterStats.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\VoteWindow.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.g.resources
@@ -66,3 +64,4 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.csproj.CopyComplete
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.genruntimeconfig.cache
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ref\RoleplayApp.dll
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Styles.baml
