@@ -1,0 +1,6 @@
+C:\Users\eliko\Desktop\Roleplay\RoleplayApp.exe
+C:\Users\eliko\Desktop\Roleplay\RoleplayApp.dll
+C:\Users\eliko\Desktop\Roleplay\RoleplayApp.deps.json
+C:\Users\eliko\Desktop\Roleplay\RoleplayApp.runtimeconfig.json
+C:\Users\eliko\Desktop\Roleplay\RoleplayApp.pdb
+C:\Users\eliko\Desktop\Roleplay\Newtonsoft.Json.dll
