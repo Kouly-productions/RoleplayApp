@@ -57,7 +57,7 @@ namespace RoleplayApp
 
         private bool AreAllFieldsFilled()
         {
-            TextBox[] fields = { WriteName, WriteHealth, WriteDefence, WriteAgility, WriteStrength, WriteIntelect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteWeapon, WriteMoney };
+            TextBox[] fields = { WriteName, WriteStrength, WriteIntellect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteWeapon, WriteMoney };
 
             foreach (TextBox field in fields) 
             {
@@ -81,7 +81,7 @@ namespace RoleplayApp
             newCharacter.Name = WriteName.Text;
             newCharacter.Health = int.Parse(WriteHealth.Text);
             newCharacter.Strength = int.Parse(WriteStrength.Text);
-            newCharacter.Intelect = int.Parse(WriteIntelect.Text);
+            newCharacter.Intellect = int.Parse(WriteIntellect.Text);
             newCharacter.Charisma = int.Parse(WriteCharisma.Text);
             newCharacter.Level = int.Parse(WriteLevel.Text);
             newCharacter.Age = int.Parse(WriteAge.Text);

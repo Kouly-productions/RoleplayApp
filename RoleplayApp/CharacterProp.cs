@@ -33,7 +33,6 @@ namespace RoleplayApp
     {
         public CharacterProp() 
         {
-            Inventories = new List<Inventory>();
         }
 
         public class SkillViewModel
@@ -53,7 +52,7 @@ namespace RoleplayApp
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
-        public int Intelect {  get; set; }
+        public int Intellect {  get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
         public int Armor { get; set; }
@@ -61,6 +60,25 @@ namespace RoleplayApp
         public string Country { get; set; }
         public string Money { get; set; }
         public string Description { get; set; }
+
+        public int Actrobatic { get; set; }
+        public int AnimalTaiming { get; set; }
+        public int Arcana { get; set; }
+        public int Athletics { get; set; }
+        public int Deception { get; set; }
+        public int History { get; set; }
+        public int Insight { get; set; }
+        public int Intimidation { get; set; }
+        public int Investigation { get; set; }
+        public int Medicine { get; set; }
+        public int Nature { get; set; }
+        public int Perception { get; set; }
+        public int Performance { get; set; }
+        public int Persuasion { get; set; }
+        public int SleightOfHand { get; set; }
+        public int Stealth {  get; set; }
+        public int Survival { get; set; }
+
         public ObservableCollection<SkillViewModel> Skills { get; set; } = new ObservableCollection<SkillViewModel>();
         public ObservableCollection<RelationViewModel> Friends { get; set; } = new ObservableCollection<RelationViewModel>();
         public ObservableCollection<RelationViewModel> Enemies { get; set; } = new ObservableCollection<RelationViewModel>();
@@ -69,6 +87,5 @@ namespace RoleplayApp
         public Type Type { get; set; }
         public int Age { get; set; }
         public string ImagePath { get; set; }
-        public List<Inventory> Inventories { get; set; }
     }
 }

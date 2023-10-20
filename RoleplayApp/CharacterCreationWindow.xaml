@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
-        Background="DarkGray"
-        Title="CharacterCreationWindow" Height="600" Width="1000">
+        Title="CharacterCreationWindow" Height="1000" Width="1900">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Background>
+        <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
+            <GradientStop Color="DarkGray" Offset="0.0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -15,13 +30,956 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
+
+        <!--Name START-->
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="4"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="70"
+                Width="450"
+                CornerRadius="15"
+                Background="{DynamicResource BackGroundColor}"
+                VerticalAlignment="Top">
+            <TextBox Name="WriteName"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="50"/>
+        </Border>
+        <!--Name END-->
+        <!--Level START-->
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="4"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="50"
+                Width="350"
+                CornerRadius="15"
+                Background="#AB91C8"
+                VerticalAlignment="Top"
+                Margin="0,70,0,0">
+            <TextBox Name="WriteLevel"
+                       Foreground="BlueViolet"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"/>
+        </Border>
+        <!--Level END-->
+
+        <!--Modifers START-->
+        <Border Grid.ColumnSpan="2"
+        Grid.RowSpan="3"
+        BorderBrush="Black"
+        BorderThickness="5"
+        Width="170"
+        Height="980">
+            <StackPanel Margin="0,5,0,5">
+
+                <!--Box START-->
+                <Border Height="130"
+                Width="130"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Margin="0,0,0,30"
+                Background="{StaticResource BackGroundColor}"
+                CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+                    Height="85"
+                    Width="110"
+                    Margin="0,10,0,0">
+                        <TextBox  Name="WriteStrength"
+                           TextAlignment="Center"
+                           FontSize="40"
+                           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+                   Height="25"
+                   Background="{StaticResource MainColor}"
+                   CornerRadius="4.167"
+                   Margin="0,-300,0,0"
+                   BorderBrush="Black"
+                   BorderThickness="1">
+                    <TextBlock Text="Styrke"
+                       TextAlignment="Center"
+                       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+                 StrokeThickness="2"
+                 Fill="#626262" />
+                    <TextBlock Name="StrengthMod"
+                       Text="+0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Foreground="Black"
+                       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+                <!--Box START-->
+                <Border Height="130"
+Width="130"
+BorderBrush="Black"
+BorderThickness="2"
+Margin="0,0,0,30"
+Background="{StaticResource BackGroundColor}"
+CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+    Height="85"
+    Width="110"
+    Margin="0,10,0,0">
+                        <TextBox Name="WriteDexterity"
+           TextAlignment="Center"
+           FontSize="40"
+           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+   Height="25"
+   Background="{StaticResource MainColor}"
+   CornerRadius="4.167"
+   Margin="0,-300,0,0"
+   BorderBrush="Black"
+   BorderThickness="1">
+                    <TextBlock Text="Smidighed"
+       TextAlignment="Center"
+       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+ StrokeThickness="2"
+ Fill="#626262" />
+                    <TextBlock Name="DexterityMod"
+                Text="+0"
+       VerticalAlignment="Center"
+       HorizontalAlignment="Center"
+       TextAlignment="Center"
+       Foreground="Black"
+       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+                <!--Box START-->
+                <Border Height="130"
+Width="130"
+BorderBrush="Black"
+BorderThickness="2"
+Margin="0,0,0,30"
+Background="{StaticResource BackGroundColor}"
+CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+    Height="85"
+    Width="110"
+    Margin="0,10,0,0">
+                        <TextBox Name="WriteConstitution"
+           TextAlignment="Center"
+           FontSize="40"
+           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+   Height="25"
+   Background="{StaticResource MainColor}"
+   CornerRadius="4.167"
+   Margin="0,-300,0,0"
+   BorderBrush="Black"
+   BorderThickness="1">
+                    <TextBlock Text="Udholdenhed"
+       TextAlignment="Center"
+       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+ StrokeThickness="2"
+ Fill="#626262" />
+                    <TextBlock Name="ConstitutionMod"
+                Text="+0"
+       VerticalAlignment="Center"
+       HorizontalAlignment="Center"
+       TextAlignment="Center"
+       Foreground="Black"
+       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+                <!--Box START-->
+                <Border Height="130"
+Width="130"
+BorderBrush="Black"
+BorderThickness="2"
+Margin="0,0,0,30"
+Background="{StaticResource BackGroundColor}"
+CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+    Height="85"
+    Width="110"
+    Margin="0,10,0,0">
+                        <TextBox Name="WriteIntellect"
+           TextAlignment="Center"
+           FontSize="40"
+           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+   Height="25"
+   Background="{StaticResource MainColor}"
+   CornerRadius="4.167"
+   Margin="0,-300,0,0"
+   BorderBrush="Black"
+   BorderThickness="1">
+                    <TextBlock Text="Intelligens"
+       TextAlignment="Center"
+       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+ StrokeThickness="2"
+ Fill="#626262" />
+                    <TextBlock Name="IntelectMod"
+                Text="+0"
+       VerticalAlignment="Center"
+       HorizontalAlignment="Center"
+       TextAlignment="Center"
+       Foreground="Black"
+       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+                <!--Box START-->
+                <Border Height="130"
+Width="130"
+BorderBrush="Black"
+BorderThickness="2"
+Margin="0,0,0,30"
+Background="{StaticResource BackGroundColor}"
+CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+    Height="85"
+    Width="110"
+    Margin="0,10,0,0">
+                        <TextBox Name="WriteWisdom"
+           TextAlignment="Center"
+           FontSize="40"
+           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+   Height="25"
+   Background="{StaticResource MainColor}"
+   CornerRadius="4.167"
+   Margin="0,-300,0,0"
+   BorderBrush="Black"
+   BorderThickness="1">
+                    <TextBlock Text="Visdom"
+       TextAlignment="Center"
+       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+ StrokeThickness="2"
+ Fill="#626262" />
+                    <TextBlock Name="WisdomMod"
+                Text="+0"
+       VerticalAlignment="Center"
+       HorizontalAlignment="Center"
+       TextAlignment="Center"
+       Foreground="Black"
+       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+                <!--Box START-->
+                <Border Height="130"
+Width="130"
+BorderBrush="Black"
+BorderThickness="2"
+Margin="0,0,0,30"
+Background="{StaticResource BackGroundColor}"
+CornerRadius="5">
+
+                    <Border Background="{StaticResource ForeGroundColor}"
+    Height="85"
+    Width="110"
+    Margin="0,10,0,0">
+                        <TextBox Name="WriteCharisma"
+           TextAlignment="Center"
+           FontSize="40"
+           VerticalAlignment="Center"/>
+                    </Border>
+                </Border>
+                <Border Width="130"
+   Height="25"
+   Background="{StaticResource MainColor}"
+   CornerRadius="4.167"
+   Margin="0,-300,0,0"
+   BorderBrush="Black"
+   BorderThickness="1">
+                    <TextBlock Text="Karisma"
+       TextAlignment="Center"
+       FontSize="16"/>
+                </Border>
+                <Grid Width="65" Height="30" Margin="0,-65,0,0">
+                    <Ellipse Stroke="Black"
+ StrokeThickness="2"
+ Fill="#626262" />
+                    <TextBlock Name="CharismaMod"
+                Text="+0"
+       VerticalAlignment="Center"
+       HorizontalAlignment="Center"
+       TextAlignment="Center"
+       Foreground="Black"
+       FontSize="20"/>
+                </Grid>
+                <!--Box END-->
+
+
+
+
+            </StackPanel>
+        </Border>
+        <!--Modifers END-->
+
+
+        <!--Saving Throws START-->
+        <Border Grid.Column="1"
+        Grid.ColumnSpan="3"
+        Width="250"
+        Height="260"
+        BorderBrush="Black"
+        BorderThickness="5"
+        CornerRadius="10"
+        Background="{DynamicResource BackGroundColor}"
+        Margin="0,0,90,65">
+            <StackPanel VerticalAlignment="Center">
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Strength"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Smidighed"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Udholdenhed"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Intelligens"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Visdom"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+                <!--Saving Throw Item START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Karisma"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Saving Throw Item END-->
+            </StackPanel>
+        </Border>
+        <!--Saving Throws END-->
+
+        <Border Grid.Column="1"
+        Grid.ColumnSpan="3"
+        Grid.Row="0"
+        Grid.RowSpan="3"
+        Width="250"
+        Height="700"
+        BorderBrush="Black"
+        BorderThickness="5"
+        CornerRadius="10"
+        Background="{DynamicResource BackGroundColor}"
+        Margin="0,270,90,0">
+            <StackPanel Height="710">
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteAcrobatic"
+                                   Text="0"
+                                   FontSize="20"
+                                   Margin="30,0,0,0"
+                                   FontWeight="Bold"/>      
+                        <TextBlock Text="Aktrobatik"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                        
+                    <Button Width="20"
+                            Height="20"
+                            Margin="50,0,0,0">
+                            
+                    </Button>
+                    </StackPanel>
+
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteAnimalTaiming"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Dyretæmning"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteArcana"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Magisk viden"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteAthletics"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Atletik"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteDeception"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Bedrag"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteHistory"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Historie"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteInsight"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Indsigt"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock x:Name="WriteIntimidation"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Intimidation"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteInvestigation"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Undersøgelse"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteMedicine"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Medicin"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteNature"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Nature"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WritePerception"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Opfattelse"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WritePerformance"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Opvisning"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WritePersuasion"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Overtalelse"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteSleightOfHand"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Færdighed"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteStealth"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Snige"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+                <!--Skill START-->
+                <Border Height="30"
+                Width="230"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,10,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="20"
+                         Width="20"
+                         HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         Stroke="Black"
+                         StrokeThickness="1.5"/>
+                        <TextBlock Name="WriteSurvival"
+                           Text="0"
+                           FontSize="20"
+                           Margin="30,0,0,0"
+                           FontWeight="Bold"/>
+                        <TextBlock Text="Overlevelse"
+                           FontSize="20"
+                           Margin="30,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!--Skill END-->
+            </StackPanel>
+        </Border>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <Border
             Grid.RowSpan="3"
+            Grid.Column="4"
             BorderThickness="3"
             BorderBrush="DimGray"
             Width="270"
@@ -30,60 +988,6 @@
 
             <StackPanel
             VerticalAlignment="Top">
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,0,0,5"
-                    Text="Hvor mange liv? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteHealth"
-                    FontSize="20"
-                    Width="100"/>
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,5,0,5"
-                    Text="Hvor meget defence? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteDefence"
-                    FontSize="20"
-                    Width="100"/>
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,5,0,5"
-                    Text="Hvor meget Agility? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteAgility"
-                    FontSize="20"
-                    Width="100"/>
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,5,0,5"
-                    Text="Hvor meget Styrke? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteStrength"
-                    FontSize="20"
-                    Width="100"/>
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,5,0,5"
-                    Text="Hvor meget Intelect? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteIntelect"
-                    FontSize="20"
-                    Width="100"/>
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,5,0,5"
-                    Text="Hvor meget Karisma? (Skriv kun tal)"
-                    TextAlignment="Center"/>
-                <TextBox
-                    Name="WriteCharisma"
-                    FontSize="20"
-                    Width="100"/>
                 <TextBlock
     FontSize="12"
     Margin="0,5,0,0"
@@ -122,7 +1026,7 @@
         </Border>
 
         <Border
-            Grid.Column="1"
+            Grid.Column="5"
             Grid.RowSpan="3"
             Width="270"
             Height="500"
@@ -134,33 +1038,27 @@
                 FontSize="16"
                 HorizontalAlignment="Center"
                 Margin="0,30,0,0"/>
-            <TextBox
-                Name="WriteName"
-                FontSize="20"/>
-            
-            <TextBlock
+
+                <TextBlock
                 Text="Level (Skriv kun tal)"
                 FontSize="16"
                 HorizontalAlignment="Center"
                 Margin="0,10,0,0"/>
-            <TextBox
-                Name="WriteLevel"
-                FontSize="20"/>
 
-            <TextBlock
+                <TextBlock
                 Text="Alder (Skriv kun tal)"
                 FontSize="16"
                 HorizontalAlignment="Center"
                 Margin="0,10,0,0"/>
-            <TextBox
+                <TextBox
                 Name="WriteAge"
                 FontSize="20"
                 Width="100"/>
 
-            <StackPanel Orientation="Horizontal"
+                <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,10,0,0">
-                <Button
+                    <Button
                 Name="genderMale"
                 Height="35"
                 Width="100"
@@ -168,7 +1066,7 @@
                 FontSize="20"
                 Background="SkyBlue" Click="genderMale_Click"/>
 
-                <Button
+                    <Button
                Name="genderFemale"
                Height="35"
                Width="100"
@@ -176,9 +1074,9 @@
                FontSize="20"
                Background="Pink" Click="genderFemale_Click"/>
 
-                
-            </StackPanel>
-                
+
+                </StackPanel>
+
                 <TextBlock
                     FontSize="16"
                     Margin="0,10,0,5"
@@ -213,10 +1111,10 @@
 
 
             </StackPanel>
-    </Border>
+        </Border>
 
         <Border
-            Grid.Column="2"
+            Grid.Column="6"
             Grid.RowSpan="3"
             Width="270"
             Height="540"
@@ -322,23 +1220,16 @@
             Content="DONE"
             Height="40"
             Width="200"
-            Grid.Column="1"
+            Grid.Column="5"
             Grid.Row="2"
             VerticalAlignment="Bottom" Click="Done_Click"/>
 
         <StackPanel
-            Grid.Column="1"
+            Grid.Column="5"
             Grid.Row="2"
             Width="200"
             Margin="0,60,0,50">
-        <Button
-            Name="AddImage"
-            Content="Tilføj billede"
-            FontSize="20"
-            Height="30"
-            Width="200"
-            VerticalAlignment="Center"
- Click="AddImage_Click"/>
+
 
             <TextBlock
                 Name="ImageUploadText"

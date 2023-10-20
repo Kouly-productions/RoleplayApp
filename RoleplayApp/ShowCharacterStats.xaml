@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="ShowCharacterStats" Height="1000" Width="1880">
 
@@ -113,30 +112,30 @@
                         <StackPanel VerticalAlignment="Center">
                             <TextBlock Text="Alder"
                                    TextAlignment="Center"
-                                   FontSize="16"
+                                   FontSize="20"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"/>
                             <TextBlock Text="Køn"
                                    TextAlignment="Center"
-                                   FontSize="16"
+                                   FontSize="20"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    Margin="0,10,0,0"/>
                             <TextBlock Text="Race"
                                    TextAlignment="Center"
-                                   FontSize="16"
+                                   FontSize="20"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    Margin="0,10,0,0"/>
                             <TextBlock Text="Penge"
                                    TextAlignment="Center"
-                                   FontSize="16"
+                                   FontSize="20"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    Margin="0,10,0,0"/>
                             <TextBlock Text="Land"
                                    TextAlignment="Center"
-                                   FontSize="16"
+                                   FontSize="20"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    Margin="0,10,0,0"/>
@@ -153,22 +152,22 @@
                                     Margin="10,0,0,0">
                             <TextBlock Name="charAge"
                                    Text="Alder"
-                                   FontSize="16"/>
+                                   FontSize="20"/>
                             <TextBlock Name="charGender"
                                    Text="Køn"
-                                   FontSize="16"
+                                   FontSize="20"
                                    Margin="0,10,0,0"/>
                             <TextBlock Name="charType"
                                    Text="Race"
-                                   FontSize="16"
+                                   FontSize="20"
                                    Margin="0,10,0,0"/>
                             <TextBlock Name="charMoney"
                                    Text="Penge"
-                                   FontSize="16"
+                                   FontSize="20"
                                    Margin="0,10,0,0"/>
                             <TextBlock Name="charCountry"
                                    Text="Land"
-                                   FontSize="16"
+                                   FontSize="20"
                                    Margin="0,10,0,0"/>
                         </StackPanel>
                     </Border>
@@ -262,7 +261,7 @@
                                HorizontalAlignment="Center"
                                TextAlignment="Center"
                                Foreground="Black"
-                               FontSize="16"/>
+                               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -307,7 +306,7 @@
                HorizontalAlignment="Center"
                TextAlignment="Center"
                Foreground="Black"
-               FontSize="16"/>
+               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -352,7 +351,7 @@
                HorizontalAlignment="Center"
                TextAlignment="Center"
                Foreground="Black"
-               FontSize="16"/>
+               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -397,7 +396,7 @@
                HorizontalAlignment="Center"
                TextAlignment="Center"
                Foreground="Black"
-               FontSize="16"/>
+               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -442,7 +441,7 @@
                HorizontalAlignment="Center"
                TextAlignment="Center"
                Foreground="Black"
-               FontSize="16"/>
+               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -487,7 +486,7 @@
                HorizontalAlignment="Center"
                TextAlignment="Center"
                Foreground="Black"
-               FontSize="16"/>
+               FontSize="20"/>
                 </Grid>
                 <!--Box END-->
 
@@ -1116,7 +1115,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Friend, StringFormat='+{0}'}"
-                                           FontSize="16"
+                                           FontSize="20"
                                            HorizontalAlignment="Center"
                                            Margin="0,5,0,0"/>
                             </DataTemplate>
@@ -1136,7 +1135,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Enem, StringFormat='+{0}'}"
-                                           FontSize="16"
+                                           FontSize="20"
                                            HorizontalAlignment="Center"
                                            Margin="0,5,0,0"/>
                             </DataTemplate>
@@ -1158,16 +1157,28 @@
                 Height="300"
                 Width="200"
                 Background="{DynamicResource BackGroundColor}">
+            <StackPanel>
             <Border Height="30"
                     CornerRadius="7"
                     VerticalAlignment="Top"
                     Background="{DynamicResource MainColor}">
-                <TextBlock Text="Skills"
+                    <TextBlock Text="Skills"
                            TextAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="20"
                            FontWeight="Bold"/>
-            </Border>
+                </Border>
+                <ItemsControl ItemsSource="{Binding Skills}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Skill, StringFormat='+{0}'}"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0,10,0,0"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
         </Border>
         <!--Personality END-->
 
@@ -1186,7 +1197,8 @@
                         Width="80"
                         Background="{DynamicResource ForeGroundColor}">
                     <Grid>
-                        <TextBlock Text="+0" 
+                        <TextBlock Name="charArmor"
+                               Text="+0" 
                                FontSize="40"
                                TextAlignment="Center"
                                VerticalAlignment="Center">
@@ -1231,7 +1243,8 @@
                         Width="80"
                         Background="{DynamicResource ForeGroundColor}">
                     <Grid>
-                        <TextBlock Text="+0" 
+                        <TextBlock Name="charHaste"
+                               Text="+0" 
                                FontSize="40"
                                TextAlignment="Center"
                                VerticalAlignment="Center">

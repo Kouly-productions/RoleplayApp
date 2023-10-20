@@ -48,9 +48,11 @@ namespace RoleplayApp
             charStrength.Text = character.Strength.ToString();
             charDexterity.Text = character.Dexterity.ToString();
             charConstitution.Text = character.Constitution.ToString();
-            charIntelect.Text = character.Intelect.ToString();
+            charIntelect.Text = character.Intellect.ToString();
             charWisdom.Text = character.Wisdom.ToString();
             charCharisma.Text = character.Charisma.ToString();
+            charArmor.Text = character.Armor.ToString();
+            charHaste.Text = character.Haste.ToString();
             charCountry.Text = character.Country;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
@@ -58,7 +60,7 @@ namespace RoleplayApp
             StrengthMod.Text = CalculateModifier(character.Strength).ToString();
             DexterityMod.Text = CalculateModifier(character.Dexterity).ToString();
             ConstitutionMod.Text = CalculateModifier(character.Constitution).ToString();
-            IntelectMod.Text = CalculateModifier(character.Intelect).ToString();
+            IntelectMod.Text = CalculateModifier(character.Intellect).ToString();
             WisdomMod.Text = CalculateModifier(character.Wisdom).ToString();
             CharismaMod.Text = CalculateModifier(character.Charisma).ToString();
 
