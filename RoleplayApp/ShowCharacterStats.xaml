@@ -86,10 +86,16 @@
                     Grid.ColumnSpan="2"
                     Grid.RowSpan="2"
                     Margin="0,150,0,0">
-        <Border Height="250"
+            
+            <!--Image START-->
+            <Border Height="250"
                 Width="200"
                 BorderThickness="1"
-                BorderBrush="Black"/>
+                BorderBrush="Black">
+                <Image Name="CharImage"
+                   Stretch="Fill"/>
+            </Border>
+            <!--Image END-->
 
             <Border Height="200"
                 Width="250"
@@ -169,7 +175,6 @@
                 </Grid>
         </Border>
         </StackPanel>
-
 
         <!--Character END-->
         
@@ -1074,6 +1079,156 @@
             </StackPanel>
         </Border>
 
+        
+        <!--Relationer START-->
+        <Border Grid.Column="7"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="200"
+                Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Height="30"
+                        CornerRadius="7"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource MainColor}"
+                        BorderBrush="Black"
+                        BorderThickness="1">       
+                    <TextBlock Text="Relationer"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"/>
+                </Border>
+                <Border Height="270"
+                        Width="100"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Text="Ven"
+                               TextAlignment="Center"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextDecorations="Underline"/>
+                </Border>
+                <Border Height="270"
+                        Width="100"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Text="Fjende"
+                               TextAlignment="Center"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextDecorations="Underline"/>
+                </Border>
+            </Grid>
+        </Border>
+        <!--Relationer END-->
+
+        <!--Personality START-->
+        <Border Grid.Column="7"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="200"
+                Background="{DynamicResource BackGroundColor}">
+            <Border Height="30"
+                    CornerRadius="7"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                <TextBlock Text="Personlighed"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+            </Border>
+        </Border>
+        <!--Personality END-->
+
+        <!--BaseStats START-->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.Column="7"
+                    Grid.ColumnSpan="2">
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Armor"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock x:Name="charHealth"
+                                Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Liv"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Hast"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+        </StackPanel>
+        <!--BaseStats END-->
         <Button
             Name="done"
             Grid.Row="2"

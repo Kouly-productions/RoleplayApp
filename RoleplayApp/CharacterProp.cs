@@ -56,6 +56,8 @@ namespace RoleplayApp
         public int Intelect {  get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+        public int Armor { get; set; }
+        public int Haste { get; set; }
         public string Country { get; set; }
         public string Money { get; set; }
         public string Description { get; set; }

@@ -80,8 +80,6 @@ namespace RoleplayApp
             CharacterProp newCharacter = new CharacterProp();
             newCharacter.Name = WriteName.Text;
             newCharacter.Health = int.Parse(WriteHealth.Text);
-            newCharacter.Deffence = int.Parse(WriteDefence.Text);
-            newCharacter.Agility = int.Parse(WriteAgility.Text);
             newCharacter.Strength = int.Parse(WriteStrength.Text);
             newCharacter.Intelect = int.Parse(WriteIntelect.Text);
             newCharacter.Charisma = int.Parse(WriteCharisma.Text);
@@ -91,7 +89,6 @@ namespace RoleplayApp
             newCharacter.Gender = character.Gender;
             newCharacter.Type = character.Type;
             newCharacter.Country = WriteCountry.Text;
-            newCharacter.Weapon = WriteWeapon.Text;
             newCharacter.Money = WriteMoney.Text;
             newCharacter.Description = WriteDescription.Text;
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
