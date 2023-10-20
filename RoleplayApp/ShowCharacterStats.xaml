@@ -1135,7 +1135,7 @@
                     <ItemsControl ItemsSource="{Binding Enemies}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Enemy, StringFormat='+{0}'}"
+                                <TextBlock Text="{Binding Enem, StringFormat='+{0}'}"
                                            FontSize="16"
                                            HorizontalAlignment="Center"
                                            Margin="0,5,0,0"/>
@@ -1162,7 +1162,7 @@
                     CornerRadius="7"
                     VerticalAlignment="Top"
                     Background="{DynamicResource MainColor}">
-                <TextBlock Text="Personlighed"
+                <TextBlock Text="Skills"
                            TextAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="20"
