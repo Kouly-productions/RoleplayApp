@@ -85,7 +85,7 @@ namespace RoleplayApp
             newCharacter.Level = int.Parse(WriteLevel.Text);
             newCharacter.Age = int.Parse(WriteAge.Text);
             newCharacter.ImagePath = destinationFilePath;
-            newCharacter.Gender = character.Gender;
+            newCharacter.Gender = character.Gender; 
             newCharacter.Type = character.Type;
             newCharacter.Country = WriteCountry.Text;
             newCharacter.Money = WriteMoney.Text;
