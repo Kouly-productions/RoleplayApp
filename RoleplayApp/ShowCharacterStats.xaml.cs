@@ -56,7 +56,29 @@ namespace RoleplayApp
             charCountry.Text = character.Country;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
-            
+
+            charArmor.Text = character.Armor.ToString();
+            charHealth.Text = character.Health.ToString();
+            charHaste.Text = character.Haste.ToString();
+
+            charAcrobatic.Text = character.Actrobatic.ToString();
+            charAnimalTaiming.Text = character.AnimalTaiming.ToString();
+            charArcana.Text = character.Arcana.ToString();
+            charAthletics.Text = character.Athletics.ToString();
+            charDeception.Text = character.Deception.ToString();
+            charHistory.Text = character.History.ToString();
+            charInsight.Text = character.Insight.ToString();
+            charIntimidation.Text = character.Intimidation.ToString();
+            charInvestigation.Text = character.Investigation.ToString();
+            charMedicine.Text = character.Medicine.ToString();
+            charNature.Text = character.Nature.ToString();
+            charPerception.Text = character.Perception.ToString();
+            charPerformance.Text = character.Performance.ToString();
+            charPersuasion.Text = character.Persuasion.ToString();
+            charSleightOfHand.Text = character.SleightOfHand.ToString();
+            charStealth.Text = character.Stealth.ToString();
+            charSurvival.Text = character.Survival.ToString();
+
             StrengthMod.Text = CalculateModifier(character.Strength).ToString();
             DexterityMod.Text = CalculateModifier(character.Dexterity).ToString();
             ConstitutionMod.Text = CalculateModifier(character.Constitution).ToString();
@@ -110,6 +132,6 @@ namespace RoleplayApp
                 this.Close();
             }
 
-        }      
+        }
     }
 }

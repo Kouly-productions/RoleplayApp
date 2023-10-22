@@ -40,27 +40,35 @@ namespace RoleplayApp
             public string? Skill { get; set; }
         }
 
-        public class RelationViewModel
+        public class FriendViewModel
         {
             public string? Friend { get; set; }
+        }
+
+        public class EnemyViewModel
+        {
             public string? Enemy { get; set; }
         }
 
+        //Info about character
         public string Name { get; set; }
+        public string Country { get; set; }
+        public string Money { get; set; }
+        public string Description { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
+        public int Armor { get; set; }
+        public int Haste { get; set; }
+
+        //Points for each main skill
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
         public int Intellect {  get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public int Armor { get; set; }
-        public int Haste { get; set; }
-        public string Country { get; set; }
-        public string Money { get; set; }
-        public string Description { get; set; }
 
+        //Amount of points chosen for that skill
         public int Actrobatic { get; set; }
         public int AnimalTaiming { get; set; }
         public int Arcana { get; set; }
@@ -79,9 +87,10 @@ namespace RoleplayApp
         public int Stealth {  get; set; }
         public int Survival { get; set; }
 
+
         public ObservableCollection<SkillViewModel> Skills { get; set; } = new ObservableCollection<SkillViewModel>();
-        public ObservableCollection<RelationViewModel> Friends { get; set; } = new ObservableCollection<RelationViewModel>();
-        public ObservableCollection<RelationViewModel> Enemies { get; set; } = new ObservableCollection<RelationViewModel>();
+        public ObservableCollection<FriendViewModel> Friends { get; set; } = new ObservableCollection<FriendViewModel>();
+        public ObservableCollection<EnemyViewModel> Enemies { get; set; } = new ObservableCollection<EnemyViewModel>();
 
         public Gender Gender { get; set; }
         public Type Type { get; set; }

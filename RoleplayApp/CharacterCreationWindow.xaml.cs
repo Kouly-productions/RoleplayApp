@@ -57,7 +57,7 @@ namespace RoleplayApp
 
         private bool AreAllFieldsFilled()
         {
-            TextBox[] fields = { WriteName, WriteStrength, WriteIntellect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteWeapon, WriteMoney };
+            TextBox[] fields = { WriteName, WriteStrength, WriteIntellect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteMoney };
 
             foreach (TextBox field in fields) 
             {
@@ -79,7 +79,6 @@ namespace RoleplayApp
 
             CharacterProp newCharacter = new CharacterProp();
             newCharacter.Name = WriteName.Text;
-            newCharacter.Health = int.Parse(WriteHealth.Text);
             newCharacter.Strength = int.Parse(WriteStrength.Text);
             newCharacter.Intellect = int.Parse(WriteIntellect.Text);
             newCharacter.Charisma = int.Parse(WriteCharisma.Text);
@@ -91,9 +90,35 @@ namespace RoleplayApp
             newCharacter.Country = WriteCountry.Text;
             newCharacter.Money = WriteMoney.Text;
             newCharacter.Description = WriteDescription.Text;
+            newCharacter.Dexterity = int.Parse(WriteDexterity.Text);
+            newCharacter.Constitution = int.Parse(WriteConstitution.Text);
+            newCharacter.Wisdom = int.Parse(WriteWisdom.Text);
+
+            newCharacter.Armor = int.Parse(WriteArmor.Text);
+            newCharacter.Health = int.Parse(WriteHealth.Text);
+            newCharacter.Haste = int.Parse(WriteHaste.Text);
+
+            newCharacter.Actrobatic = int.Parse(WriteAcrobatic.Text);
+            newCharacter.AnimalTaiming = int.Parse(WriteAnimalTaiming.Text);
+            newCharacter.Arcana = int.Parse(WriteArcana.Text);
+            newCharacter.Athletics = int.Parse(WriteAthletics.Text);
+            newCharacter.Deception = int.Parse(WriteDeception.Text);
+            newCharacter.History = int.Parse(WriteHistory.Text);
+            newCharacter.Insight = int.Parse(WriteInsight.Text);
+            newCharacter.Intimidation = int.Parse(WriteIntimidation.Text);
+            newCharacter.Investigation = int.Parse(WriteInvestigation.Text);
+            newCharacter.Medicine = int.Parse(WriteMedicine.Text);
+            newCharacter.Nature = int.Parse(WriteNature.Text);
+            newCharacter.Perception = int.Parse(WritePerception.Text);
+            newCharacter.Performance = int.Parse(WritePerformance.Text);
+            newCharacter.Persuasion = int.Parse(WritePersuasion.Text);
+            newCharacter.SleightOfHand = int.Parse(WriteSleightOfHand.Text);
+            newCharacter.Stealth = int.Parse(WriteStealth.Text);
+            newCharacter.Survival = int.Parse(WriteSurvival.Text);
+
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
-            newCharacter.Friends = new ObservableCollection<RelationViewModel>(character.Friends.Select(s => new RelationViewModel { Friend = s.Friend }));
-            newCharacter.Enemies = new ObservableCollection<RelationViewModel>(character.Enemies.Select(s => new RelationViewModel { Enemy = s.Enemy }));
+            newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
+            newCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
@@ -183,12 +208,12 @@ namespace RoleplayApp
 
         private void AddFriend(object sender, RoutedEventArgs e)
         {
-            character.Friends.Add(new RelationViewModel { Friend = "" });
+            character.Friends.Add(new FriendViewModel { Friend = "" });
         }
 
         private void AddEnemy(object sender, RoutedEventArgs e)
         {
-            character.Enemies.Add(new RelationViewModel { Enemy = "" });
+            character.Enemies.Add(new EnemyViewModel { Enemy = "" });
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)

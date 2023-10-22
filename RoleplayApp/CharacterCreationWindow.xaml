@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="CharacterCreationWindow" Height="1000" Width="1900">
 
     <Window.Resources>
@@ -22,6 +23,7 @@
         </RadialGradientBrush>
     </Window.Background>
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -30,21 +32,22 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
         </Grid.ColumnDefinitions>
 
 
         <!--Name START-->
-        <Border Grid.Column="3"
+        <Border Grid.Column="4"
                 Grid.ColumnSpan="4"
                 BorderBrush="Black"
                 BorderThickness="1"
@@ -52,7 +55,7 @@
                 Width="450"
                 CornerRadius="15"
                 Background="{DynamicResource BackGroundColor}"
-                VerticalAlignment="Top">
+                VerticalAlignment="Top" Margin="155,0,155,0">
             <TextBox Name="WriteName"
                        TextAlignment="Center"
                        VerticalAlignment="Center"
@@ -60,8 +63,8 @@
         </Border>
         <!--Name END-->
         <!--Level START-->
-        <Border Grid.Column="3"
-                Grid.ColumnSpan="4"
+        <Border Grid.Column="5"
+                Grid.ColumnSpan="2"
                 BorderBrush="Black"
                 BorderThickness="1"
                 Height="50"
@@ -69,7 +72,7 @@
                 CornerRadius="15"
                 Background="#AB91C8"
                 VerticalAlignment="Top"
-                Margin="0,70,0,0">
+                Margin="15,70,15,0">
             <TextBox Name="WriteLevel"
                        Foreground="BlueViolet"
                        TextAlignment="Center"
@@ -79,12 +82,12 @@
         <!--Level END-->
 
         <!--Modifers START-->
-        <Border Grid.ColumnSpan="2"
+        <Border Grid.ColumnSpan="3"
         Grid.RowSpan="3"
         BorderBrush="Black"
         BorderThickness="5"
         Width="170"
-        Height="980">
+        Height="980" Margin="105,2,105,2">
             <StackPanel Margin="0,5,0,5">
 
                 <!--Box START-->
@@ -99,7 +102,13 @@
                     <Border Background="{StaticResource ForeGroundColor}"
                     Height="85"
                     Width="110"
-                    Margin="0,10,0,0">
+                    Margin="0,10,0,0"
+                    ToolTip="Hvor stærk din karakter er til at &#x0a;
++ løfte tunge ting &#x0a;
++ Bære tung rustning &#x0a;
++ Klatre, springe og ødelægge &#x0a;
++ Muskel stærk"
+                    ToolTipService.InitialShowDelay="0">
                         <TextBox  Name="WriteStrength"
                            TextAlignment="Center"
                            FontSize="40"
@@ -143,7 +152,15 @@ CornerRadius="5">
                     <Border Background="{StaticResource ForeGroundColor}"
     Height="85"
     Width="110"
-    Margin="0,10,0,0">
+    Margin="0,10,0,0"
+    ToolTip="Hvor stærk din karakter er til at &#x0a;
++ Holde balance &#x0a;
++ Undvige angreb &#x0a;
++ Snige sig rundt &#x0a;
++ Snigeangreb &#x0a;
++ Låse ting op &#x0a;
++ At være præcis"
+    ToolTipService.InitialShowDelay="0">
                         <TextBox Name="WriteDexterity"
            TextAlignment="Center"
            FontSize="40"
@@ -187,7 +204,13 @@ CornerRadius="5">
                     <Border Background="{StaticResource ForeGroundColor}"
     Height="85"
     Width="110"
-    Margin="0,10,0,0">
+    Margin="0,10,0,0"
+    ToolTip="Hvor meget karakteren kan holde til &#x0a;
++ Immunitet mod gift og sygdomme &#x0a;
++ Hvor længe man kan holde en magi kørende uden afbrydelser &#x0a;
++ Udholdenhed ved svære opgaver"
+    ToolTipService.InitialShowDelay="0">
+
                         <TextBox Name="WriteConstitution"
            TextAlignment="Center"
            FontSize="40"
@@ -231,7 +254,14 @@ CornerRadius="5">
                     <Border Background="{StaticResource ForeGroundColor}"
     Height="85"
     Width="110"
-    Margin="0,10,0,0">
+    Margin="0,10,0,0"
+    ToolTip="Hvor meget karakteren kan tænke &#x0a;
++ God til at huske &#x0a;
++ God til at lære nye ting &#x0a;
++ God til at tale eller lære nye sprog &#x0a;
++ God tænke logisk og løse gåder &#x0a;
++ God til at at huske magi"
+    ToolTipService.InitialShowDelay="0">
                         <TextBox Name="WriteIntellect"
            TextAlignment="Center"
            FontSize="40"
@@ -275,7 +305,15 @@ CornerRadius="5">
                     <Border Background="{StaticResource ForeGroundColor}"
     Height="85"
     Width="110"
-    Margin="0,10,0,0">
+    ToolTip="Karakterens forståelse af verden &#x0a;
++ Bemærke detaljer omrking dig &#x0a;
++ Fornemme hvad folk virkelig vil have &#x0a;
++ Overlevelse ude i verdenen &#x0a;
++ Forstå andres følelser &#x0a;
++ Mærke når noget er galt &#x0a;
++ Finde og behandle sygdomme"
+    ToolTipService.InitialShowDelay="0">
+
                         <TextBox Name="WriteWisdom"
            TextAlignment="Center"
            FontSize="40"
@@ -319,7 +357,13 @@ CornerRadius="5">
                     <Border Background="{StaticResource ForeGroundColor}"
     Height="85"
     Width="110"
-    Margin="0,10,0,0">
+    Margin="0,10,0,0"
+    ToolTip="Karakterens overbevisning &#x0a;
++ Overtale andre til at have tillid til dig  &#x0a;
++ Bedrage uden at blive opdaget &#x0a;
++ Hvor meget andre vil kunne lide dig første gang de ser dig &#x0a;
++ Underholde folk"
+    ToolTipService.InitialShowDelay="0">
                         <TextBox Name="WriteCharisma"
            TextAlignment="Center"
            FontSize="40"
@@ -360,15 +404,15 @@ CornerRadius="5">
 
 
         <!--Saving Throws START-->
-        <Border Grid.Column="1"
-        Grid.ColumnSpan="3"
+        <Border Grid.Column="2"
+        Grid.ColumnSpan="2"
         Width="250"
         Height="260"
         BorderBrush="Black"
         BorderThickness="5"
         CornerRadius="10"
         Background="{DynamicResource BackGroundColor}"
-        Margin="0,0,90,65">
+        Margin="49,2,15,66">
             <StackPanel VerticalAlignment="Center">
                 <!--Saving Throw Item START-->
                 <Border Height="30"
@@ -383,10 +427,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Strength"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -407,10 +451,11 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox
+                                   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Smidighed"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -431,10 +476,11 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox
+                                   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Udholdenhed"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -455,10 +501,11 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox
+                                   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Intelligens"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -479,10 +526,11 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox
+                                   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Visdom"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -503,10 +551,11 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
-                           FontSize="20"
-                           Margin="30,0,0,0"
-                           FontWeight="Bold"/>
+                        <TextBox
+                                   FontSize="20"
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Karisma"
                            FontSize="20"
                            Margin="30,0,0,0"/>
@@ -517,8 +566,8 @@ CornerRadius="5">
         </Border>
         <!--Saving Throws END-->
 
-        <Border Grid.Column="1"
-        Grid.ColumnSpan="3"
+        <Border Grid.Column="2"
+        Grid.ColumnSpan="2"
         Grid.Row="0"
         Grid.RowSpan="3"
         Width="250"
@@ -527,15 +576,22 @@ CornerRadius="5">
         BorderThickness="5"
         CornerRadius="10"
         Background="{DynamicResource BackGroundColor}"
-        Margin="0,270,90,0">
+        Margin="49,277,15,7">
             <StackPanel Height="710">
                 <!--Skill START-->
-                <Border Height="30"
+                <Border Name="AcrobaticSkill"
+                Height="30"
                 Width="230"
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens balance &#x0a;
++ Holde balancen på usikre steder &#x0a;
++ Undvige eller undslippe &#x0a;
++ Udføre imponerende spring og andre triks &#x0a;
++ Rulle ved fald for mindre skade"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -543,20 +599,20 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteAcrobatic"
-                                   Text="0"
+                        <TextBox Name="WriteAcrobatic"
                                    FontSize="20"
-                                   Margin="30,0,0,0"
-                                   FontWeight="Bold"/>      
+                                   Width="30"
+                                   Margin="20,0,-10,0"
+                                   FontWeight="Bold"/>
                         <TextBlock Text="Aktrobatik"
                            FontSize="20"
                            Margin="30,0,0,0"/>
-                        
-                    <Button Width="20"
+
+                        <Button Width="20"
                             Height="20"
                             Margin="50,0,0,0">
-                            
-                    </Button>
+
+                        </Button>
                     </StackPanel>
 
                 </Border>
@@ -567,7 +623,14 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til dyr &#x0a;
++ Berolige urolige eller skræmte dyr &#x0a;
++ Forstå dyr hvad dyret ønsker igennem deres kropssprog &#x0a;
++ Kontrollere og styre dyr som du kan ridde i svære situationer &#x0a;
++ Træne og undervise dyr i kommandoer &#x0a;
++ Tæmme vilde dyr"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -575,10 +638,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteAnimalTaiming"
-                           Text="0"
+                        <TextBox Name="WriteAnimalTaiming"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Dyretæmning"
                            FontSize="20"
@@ -592,7 +655,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens forståelse af magi &#x0a;
++ Identificer om noget er blevet påvirket af magi &#x0a;
++ Genkende og forstå magiske væsner &#x0a;
++ Viden om magisk fortid &#x0a;
++ Forstå hvordan magi fungere"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -600,10 +669,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteArcana"
-                           Text="0"
+                        <TextBox Name="WriteArcana"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Magisk viden"
                            FontSize="20"
@@ -617,7 +686,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til fysiske ting &#x0a;
++ Løfte og bære tunge ting &#x0a;
++ Hoppe og springe over forhindringer &#x0a;
++ Svømme under forskellige forhold &#x0a;
++ Klatre op af klipper og andre svære steder"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -625,10 +700,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteAthletics"
-                           Text="0"
+                        <TextBox Name="WriteAthletics"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Atletik"
                            FontSize="20"
@@ -642,7 +717,12 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at bedrage og manipulere &#x0a;
++ Fortælle overbevisende løgne &#x0a;
++ At lades som om man er en anden en den man faktisk er &#x0a;
++ Skjule det man faktsik øsnker"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -650,10 +730,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteDeception"
-                           Text="0"
+                        <TextBox Name="WriteDeception"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Bedrag"
                            FontSize="20"
@@ -667,7 +747,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens viden om historie &#x0a;
++ Huske vigtige ting fra historien &#x0a;
++ Forstå betydningen af gamle ting &#x0a;
++ Vide hvor gamle ting kommer fra &#x0a;
++ Huske historiske detaljer, som år, teknologi og ledere"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -675,10 +761,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteHistory"
-                           Text="0"
+                        <TextBox Name="WriteHistory"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Historie"
                            FontSize="20"
@@ -692,7 +778,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens forståelse af andre &#x0a;
++ Opdage om nogle lyver eller taler sandt &#x0a;
++ Forstå om andre vil noget ondt eller godt &#x0a;
++ Læse og forstå kropssprog &#x0a;
++ Forudsige andres næste skridt baseret på deres måde at være på"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -700,10 +792,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteInsight"
-                           Text="0"
+                        <TextBox Name="WriteInsight"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Indsigt"
                            FontSize="20"
@@ -717,7 +809,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at skræmme og true &#x0a;
++ Skræmme andre til at gøre din vilje &#x0a;
++ Presse information ud af andre &#x0a;
++ Blive frygtingyende &#x0a;
++ Selv modstå at blive skræmt af andre"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -725,10 +823,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock x:Name="WriteIntimidation"
-                           Text="0"
+                        <TextBox x:Name="WriteIntimidation"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Intimidation"
                            FontSize="20"
@@ -742,7 +840,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til undersøge ting og analysere &#x0a;
++ Finde skjulte ting eller spor &#x0a;
++ Finde spor fra ting som kan give svar &#x0a;
++ Løse gåder og koder &#x0a;
++ Forstå hvad der kunne være sket et sted baseret på spor"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -750,10 +854,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteInvestigation"
-                           Text="0"
+                        <TextBox Name="WriteInvestigation"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Undersøgelse"
                            FontSize="20"
@@ -767,7 +871,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens viden om sundhed og behandling &#x0a;
++ Hjælpe en der er døende &#x0a;
++ Finde sygdomme og behandle dem, eller forgiftninger &#x0a;
++ Bruge førstehjælp til at hele sår eller skader &#x0a;
++ Forstå kroppen og lægevidenskab"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -775,10 +885,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteMedicine"
-                           Text="0"
+                        <TextBox Name="WriteMedicine"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Medicin"
                            FontSize="20"
@@ -792,7 +902,12 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens viden om natur &#x0a;
++ Finde og vide hvilke planter og dyr det er &#x0a;
++ Forstå naturlige ting som storme og vide hvornår det ville komme &#x0a;
++ Genkende naturlige farer eller trusler"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -800,10 +915,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteNature"
-                           Text="0"
+                        <TextBox Name="WriteNature"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Nature"
                            FontSize="20"
@@ -817,7 +932,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at bemærke detaljer rundt om dig &#x0a;
++ Høre skjulte lyde eller opdage skjulte væsner &#x0a;
++ Opdage fælder eller dkjulte døre &#x0a;
++ Bemærke tegn eller ændringer der hvor du er &#x0a;
++  Forstå korpssprog og skjulte intentioner"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -825,10 +946,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WritePerception"
-                           Text="0"
+                        <TextBox Name="WritePerception"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Opfattelse"
                            FontSize="20"
@@ -842,7 +963,13 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at underholde &#x0a;
++ Synge, spil musik ller danse &#x0a;
++ Jonglering eller andre opvisninger &#x0a;
++ Fortælle episke historier eller legender &#x0a;
++ Lave skuespil eller teater"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -850,10 +977,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WritePerformance"
-                           Text="0"
+                        <TextBox Name="WritePerformance"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Opvisning"
                            FontSize="20"
@@ -867,7 +994,14 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at påvirke meninger og beslutnigner &#x0a;
++ Overtale andre til at lade dig komme forbi hvor du ikke må &#x0a;
++ Forhandle om bedre priser &#x0a;
++ Vind folks tillid eller overbevise dem &#x0a;
++ Undgå konflikter ved at tale &#x0a;
++ Overtale en gruppe til at støtte dig"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -875,10 +1009,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WritePersuasion"
-                           Text="0"
+                        <TextBox Name="WritePersuasion"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Overtalelse"
                            FontSize="20"
@@ -892,7 +1026,14 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til præcise og hurtige håndbevægelser &#x0a;
++ Låse døre op uden nøgle &#x0a;
++ Udgøre lommetyveri uden at blive opdaget &#x0a;
++ Gribe objektor der falder i luften &#x0a;
++ Udføre snedige tricks med små genstande &#x0a;
++ Frigør sig fra fælder"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -900,10 +1041,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteSleightOfHand"
-                           Text="0"
+                        <TextBox Name="WriteSleightOfHand"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Færdighed"
                            FontSize="20"
@@ -917,7 +1058,14 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evne til at bevæge sig og gøre ting uden at blive opdaget &#x0a;
++ Skjule sig selv uden at blive opdaget &#x0a;
++ Bevæge sig uden at lave høje lyde &#x0a;
++ Undgå at udløse alarmer eller fælder &#x0a;
++ Skjule genstande &#x0a;
++ Bevæge sig uden at efterlade spor"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -925,10 +1073,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteStealth"
-                           Text="0"
+                        <TextBox Name="WriteStealth"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Snige"
                            FontSize="20"
@@ -942,7 +1090,14 @@ CornerRadius="5">
                 CornerRadius="10"
                 BorderBrush="Black"
                 BorderThickness="1"
-                Margin="0,10,0,0">
+                Margin="0,10,0,0"
+                ToolTip="Karakterens evnen til at klare sig selv ude i det fri &#x0a;
++ Spore dyr, monstre eller mennesker &#x0a;
++ Jagt og fældning for at skaffe mad &#x0a;
++ Finde runt uden af fare vild &#x0a;
++ Forudsige hvordan vejret kommer til at være &#x0a;
++ dentificere og undgå naturlige farer i omgivelserne"
+    ToolTipService.InitialShowDelay="0">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="20"
                          Width="20"
@@ -950,10 +1105,10 @@ CornerRadius="5">
                          Margin="10,0,0,0"
                          Stroke="Black"
                          StrokeThickness="1.5"/>
-                        <TextBlock Name="WriteSurvival"
-                           Text="0"
+                        <TextBox Name="WriteSurvival"
                            FontSize="20"
-                           Margin="30,0,0,0"
+                           Width="30"
+                           Margin="20,0,-10,0"
                            FontWeight="Bold"/>
                         <TextBlock Text="Overlevelse"
                            FontSize="20"
@@ -964,240 +1119,260 @@ CornerRadius="5">
             </StackPanel>
         </Border>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <Border
-            Grid.RowSpan="3"
-            Grid.Column="4"
-            BorderThickness="3"
-            BorderBrush="DimGray"
-            Width="270"
-            Height="543"
-            VerticalAlignment="Bottom">
-
-            <StackPanel
-            VerticalAlignment="Top">
+        <Border Grid.RowSpan="2"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"
+                Height="30"
+                Margin="0,0,0,50">
+            <StackPanel>
+                <Button Content="Tilføj Billede"
+                    FontSize="16"
+                    Click="AddImage_Click"></Button>
                 <TextBlock
-    FontSize="12"
-    Margin="0,5,0,0"
-    Text="1 = Dårligst muligt for et menneske"/>
-                <TextBlock
-    FontSize="12"
-    Text="2 - 3 = Frygteligt svag"/>
-                <TextBlock
-    FontSize="12"
-    Text="4 - 5 = Under gennemsnit"/>
-                <TextBlock
-    FontSize="12"
-    Text="6 - 7 = Lidt under gennemsnit"/>
-                <TextBlock
-    FontSize="12"
-    Text="8 - 9 = Gennemsnitlig"/>
-                <TextBlock
-    FontSize="12"
-    Text="10 - 11 = Lidt over gennemsnit"/>
-                <TextBlock
-    FontSize="12"
-    Text="12 - 13 = Over gennemsnit"/>
-                <TextBlock
-    FontSize="12"
-    Text="14 - 15 = Meget over gennemsnit"/>
-                <TextBlock
-    FontSize="12"
-    Text="16 - 17 = Enestående"/>
-                <TextBlock
-    FontSize="12"
-    Text="18 = Næsten perfekt for et menneske"/>
-                <TextBlock
-    FontSize="12"
-    Text="19 - 20 = Direkte OP"/>
+                Name="ImageUploadText"
+                FontSize="14"
+                Foreground="Green"
+                HorizontalAlignment="Center"
+                Width="300"/>
             </StackPanel>
         </Border>
 
-        <Border
-            Grid.Column="5"
-            Grid.RowSpan="3"
-            Width="270"
-            Height="500"
-            BorderThickness="3"
-            BorderBrush="DimGray">
-            <StackPanel>
-                <TextBlock
-                Text="Skriv navn"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,30,0,0"/>
+        <Border Height="200"
+          Width="250"
+          CornerRadius="10"
+          BorderBrush="Black"
+          BorderThickness="2"
+          Grid.Column="5"
+          Grid.ColumnSpan="2"
+          Grid.Row="1"
+                Margin="0,0,0,80"
+          Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Width="70"
+                  BorderBrush="Black"
+                  BorderThickness="1"
+                  HorizontalAlignment="Left"
+                  CornerRadius="5"
+                  Background="{DynamicResource BackGroundColor}">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Alder"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"/>
+                        <TextBlock Text="Køn"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Race"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Penge"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Land"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Width="177"
+                      BorderBrush="Black"
+                      BorderThickness="1"
+                      CornerRadius="5"
+                      HorizontalAlignment="Right">
 
-                <TextBlock
-                Text="Level (Skriv kun tal)"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-
-                <TextBlock
-                Text="Alder (Skriv kun tal)"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-                <TextBox
-                Name="WriteAge"
-                FontSize="20"
-                Width="100"/>
-
-                <StackPanel Orientation="Horizontal"
+                    <StackPanel VerticalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              Width="160"
+                              Margin="10,0,0,0">
+                        <TextBox Name="WriteAge"
+                             FontSize="20"/>
+                        <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,10,0,0">
-                    <Button
-                Name="genderMale"
-                Height="35"
-                Width="100"
-                Content="Mand"
-                FontSize="20"
-                Background="SkyBlue" Click="genderMale_Click"/>
+                            <Button
+                                Name="genderMale"
+                                Height="35"
+                                Width="80"
+                                Content="Mand"
+                                FontSize="20"
+                                Background="SkyBlue" Click="genderMale_Click"/>
 
-                    <Button
-               Name="genderFemale"
-               Height="35"
-               Width="100"
-               Content="Kvinde"
-               FontSize="20"
-               Background="Pink" Click="genderFemale_Click"/>
-
-
-                </StackPanel>
-
-                <TextBlock
-                    FontSize="16"
-                    Margin="0,10,0,5"
-                    Text="Tryk og vælg race"
-                    TextAlignment="Center"/>
-
-                <ComboBox
-                Name="Type"
-                Grid.Row="2"
-                Grid.ColumnSpan="3"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Width="200" 
-                Height="21" 
-                Margin="0,10,0,0"
-                    SelectionChanged="Type_SelectionChanged">
-                    <ComboBoxItem Content="Menneske"/>
-                    <ComboBoxItem Content="Robot"/>
-                    <ComboBoxItem Content="Drage"/>
-                    <ComboBoxItem Content="Ukendt"/>
-                </ComboBox>
-
-                <TextBlock
-                Text="Skriv landet personen kommer fra"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-                <TextBox
-                Name="WriteCountry"
-                FontSize="20"
-                Width="100"/>
+                            <Button
+                                   Name="genderFemale"
+                                   Height="35"
+                                   Width="80"
+                                   Content="Kvinde"
+                                   FontSize="20"
+                                   Background="Pink" Click="genderFemale_Click"/>
 
 
-            </StackPanel>
+                        </StackPanel>
+                        <ComboBox
+                            Name="Type"
+                            Width="160" 
+                            Height="21" 
+                            Margin="0,10,0,0"
+                            SelectionChanged="Type_SelectionChanged">
+                            <ComboBoxItem Content="Menneske"/>
+                            <ComboBoxItem Content="Robot"/>
+                            <ComboBoxItem Content="Drage"/>
+                            <ComboBoxItem Content="Ukendt"/>
+                        </ComboBox>
+                        <TextBox Name="WriteMoney"
+                             FontSize="20"
+                             Margin="0,10,0,0"/>
+                        <TextBox Name="WriteCountry"
+                             FontSize="20"
+                             Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Border>
 
-        <Border
-            Grid.Column="6"
-            Grid.RowSpan="3"
-            Width="270"
-            Height="540"
-            BorderThickness="3"
-            VerticalAlignment="Bottom"
-            BorderBrush="DimGray">
-            <StackPanel>
-                <TextBlock
-                Text="Skriv våben"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-                <TextBox
-                Name="WriteWeapon"
-                FontSize="20"/>
-                <TextBlock
-                Text="Skriv penge"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-                <TextBox
-                Name="WriteMoney"
-                FontSize="20"/>
-                <TextBlock
-                Text="Skriv en beskrivelse (Behøves ikke)"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
-                <TextBox
-                Name="WriteDescription"
-                Height="100"
-                FontSize="12"
-                TextWrapping="Wrap"/>
+        <!--Description START-->
+        <Border Grid.Row="2"
+                    Grid.Column="4"
+                    Grid.ColumnSpan="4"
+                    Width="500"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Width="500"
+                    Height="50"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+                    <TextBlock Text="Beskrivelse"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           TextAlignment="Center"/>
+                </Border>
+                <Border Height="273"
+                        VerticalAlignment="Bottom"
+                        BorderBrush="Black"
+                        BorderThickness="2">
+                    <TextBox Name="WriteDescription"
+                             FontSize="16"
+                             TextWrapping="Wrap"/>
+                </Border>
+            </Grid>
+        </Border>
+        <!--Description END-->
 
-                <StackPanel Orientation="Horizontal">
-                    <Border
-                        Height="120"
-                        Width="132.5"
-                        BorderBrush="DimGray"
-                        BorderThickness="2">
-                        <StackPanel>
-                            <Button Height="20"
-                                    Content="Tilføj Ven"
-                                    Click="AddFriend"/>
-                            <ItemsControl Name="FriendsList"
-                              ItemsSource="{Binding Friends}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBox Text="{Binding Friend}"
-                                     FontSize="14"
-                                     TextChanged="TextBox_TextChanged_2"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </StackPanel>
-                    </Border>
-                    <Border
-                        Height="120"
-                        Width="132.5"
-                        BorderBrush="DimGray"
-                        BorderThickness="2">
-                        <StackPanel>
-                            <Button Height="20"
-                                    Content="Tilføj Fjende"
-                                    Click="AddEnemy"/>
-                            <ItemsControl Name="EnemiesList"
-                              ItemsSource="{Binding Enemies}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBox Text="{Binding Enemy}"
-                                     FontSize="14"
-                                     TextChanged="TextBox_TextChanged_1"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </StackPanel>
-                    </Border>
+        <!--Relationer START-->
+        <Border Grid.Column="7"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               BorderBrush="Black"
+               BorderThickness="1"
+               CornerRadius="10"
+               Height="300"
+               Width="200"
+               Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Height="30"
+                       CornerRadius="7"
+                       VerticalAlignment="Top"
+                       Background="{DynamicResource MainColor}"
+                       BorderBrush="Black"
+                       BorderThickness="1">
+                    <TextBlock Text="Relationer"
+                              TextAlignment="Center"
+                              VerticalAlignment="Center"
+                              FontSize="20"
+                              FontWeight="Bold"/>
+                </Border>
+                <StackPanel Height="270"
+                   Width="100"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left">
+                    <TextBlock Text="Ven"
+                      TextAlignment="Center"
+                      FontSize="16"
+                      FontWeight="Bold"
+                      TextDecorations="Underline"/>
+                    <Button Height="20"
+                   Content="Tilføj Ven"
+                   Click="AddFriend"/>
+                    <ItemsControl Name="FriendsList"
+                         ItemsSource="{Binding Friends}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Friend}"
+                                FontSize="14"
+                                TextChanged="TextBox_TextChanged_2"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
-                <TextBlock
-                Text="I disse, kan du skrive skills"
-                FontSize="16"
-                HorizontalAlignment="Center"
-                Margin="0,10,0,0"/>
+
+                <!-- Fjender StackPanel -->
+                <StackPanel Height="270"
+                   Width="100"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right">
+                    <TextBlock Text="Fjende"
+                      TextAlignment="Center"
+                      FontSize="16"
+                      FontWeight="Bold"
+                      TextDecorations="Underline"/>
+                    <Button Height="20"
+                   Content="Tilføj Fjende"
+                   Click="AddEnemy"/>
+                    <ItemsControl Name="EnemiesList"
+                         ItemsSource="{Binding Enemies}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Enemy}"
+                                FontSize="14"
+                                TextChanged="TextBox_TextChanged_1"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!--Relationer END-->
+
+
+        <!--Personality START-->
+        <Border Grid.Column="8"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="200"
+                Background="{DynamicResource BackGroundColor}">
+            <StackPanel>
+                <Border Height="30"
+                    CornerRadius="7"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Skills"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+                </Border>
                 <Button
                     Content="Tilføj Skill"
                     FontSize="16"
@@ -1214,30 +1389,170 @@ CornerRadius="5">
                 </ItemsControl>
             </StackPanel>
         </Border>
+        <!--Personality END-->
+
+
+        <!--BaseStats START-->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.Column="8"
+                    Grid.ColumnSpan="2">
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBox Name="WriteArmor"
+                               Height="40"
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBox>
+                        <TextBlock Text="Armor"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBox x:Name="WriteHealth"
+                               Height="40" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBox>
+                        <TextBlock Text="Liv"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBox Name="WriteHaste"
+                               Height="40"
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBox>
+                        <TextBlock Text="Hast"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+        </StackPanel>
+        <!--BaseStats END-->
 
         <Button
             Name="Done"
             Content="DONE"
-            Height="40"
+            Height="25"
             Width="200"
-            Grid.Column="5"
+            Grid.Column="9"
             Grid.Row="2"
-            VerticalAlignment="Bottom" Click="Done_Click"/>
+            VerticalAlignment="Bottom" Click="Done_Click" Grid.ColumnSpan="2" Margin="0,0,180,0"/>
 
-        <StackPanel
-            Grid.Column="5"
-            Grid.Row="2"
-            Width="200"
-            Margin="0,60,0,50">
+        <Border
+            Grid.RowSpan="1"
+            Grid.Column="0"
+            BorderThickness="3"
+            BorderBrush="DimGray"
+            Width="100"
+            Height="50"
+            Background="Gray"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Grid.ColumnSpan="2" 
+            Margin="0,0,110,0" 
+            Grid.Row="1"
+ToolTip="1 = Dårligst muligt for et menneske &#x0a;
+2 - 3 = Frygteligt svag &#x0a;
+4 - 5 = Under normal &#x0a;
+6 - 7 = Lidt under normal &#x0a;
+8 - 9 = Normal for et menneske &#x0a;
+10 - 11 = Lidt over normal &#x0a;
+12 - 13 = Over normal &#x0a;
+14 - 15 = Meget over normal &#x0a;
+16 - 17 = Enestående for et menneske &#x0a;
+18 = Næsten perfekt for et menneske &#x0a;
+19 - 20 = Supermenneskelig begyndelse &#x0a;
+21 - 22 = Heroisk &#x0a;
+23 - 24 = Blandt legender &#x0a;
+25 - 26 = Næsten ustoppelig &#x0a;
+27 - 28 = Ustoppelig &#x0a;
+29 = EKSREMT OP &#x0a;
+30 = MAKS OP EKSTREMT"
+            ToolTipService.InitialShowDelay="0">
+            <TextBlock Text="Info her"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       FontWeight="Bold"></TextBlock>
+        </Border>
 
-
-            <TextBlock
-                Name="ImageUploadText"
-                FontSize="14"
-                Foreground="Green"
-                HorizontalAlignment="Center"/>
-        </StackPanel>
-
+        <Border
+            Grid.RowSpan="1"
+            Grid.Column="4"
+            BorderThickness="3"
+            BorderBrush="DimGray"
+            Width="100"
+            Height="50"
+            Background="Gray"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left"
+            Grid.ColumnSpan="2" 
+            Margin="0,0,110,0" 
+            Grid.Row="1"
+ToolTip="1 = Dårligst muligt for et menneske &#x0a;
+2 - 3 = Frygteligt svag &#x0a;
+4 - 5 = Under normal &#x0a;
+6 - 7 = Lidt under normal &#x0a;
+8 - 9 = Normal for et menneske &#x0a;
+10 - 11 = Lidt over normal &#x0a;
+12 - 13 = Over normal &#x0a;
+14 - 15 = Meget over normal &#x0a;
+16 - 17 = Enestående for et menneske &#x0a;
+18 = Næsten perfekt for et menneske &#x0a;
+19 - 20 = Supermenneskelig begyndelse &#x0a;
+21 - 22 = Heroisk &#x0a;
+23 - 24 = Blandt legender &#x0a;
+25 - 26 = Næsten ustoppelig &#x0a;
+27 - 28 = Ustoppelig &#x0a;
+29 = EKSREMT OP &#x0a;
+30 = MAKS OP EKSTREMT"
+            ToolTipService.InitialShowDelay="0">
+            <TextBlock Text="Info her"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       FontWeight="Bold"></TextBlock>
+        </Border>
 
         <Button
         x:Name="GoBack"
