@@ -86,6 +86,16 @@ namespace RoleplayApp
         public int SleightOfHand { get; set; }
         public int Stealth {  get; set; }
         public int Survival { get; set; }
+
+        //Saving throws
+        public int SavingStrength { get; set; }
+        public int SavingDexterity { get; set; }
+        public int SavingConstitution { get; set; }
+        public int SavingIntellect { get; set; }
+        public int SavingWisdom { get; set; }
+        public int SavingCharisma { get; set; }
+
+        //Potential lover system
         public string LoverId { get; set; }
 
 

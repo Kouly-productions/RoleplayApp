@@ -522,7 +522,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingStrength"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>
@@ -546,7 +547,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingDexterity"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>
@@ -570,7 +572,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingConstitution"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>
@@ -594,7 +597,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingIntellect"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>
@@ -618,7 +622,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingWisdom"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>
@@ -642,7 +647,8 @@
                                  Margin="10,0,0,0"
                                  Stroke="Black"
                                  StrokeThickness="1.5"/>
-                        <TextBlock Text="0"
+                        <TextBlock Name="charSavingCharisma"
+                                   Text="0"
                                    FontSize="20"
                                    Margin="30,0,0,0"
                                    FontWeight="Bold"/>

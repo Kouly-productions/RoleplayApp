@@ -79,6 +79,13 @@ namespace RoleplayApp
             charStealth.Text = character.Stealth.ToString();
             charSurvival.Text = character.Survival.ToString();
 
+            charSavingStrength.Text = character.SavingStrength.ToString();
+            charSavingDexterity.Text = character.SavingDexterity.ToString();
+            charSavingConstitution.Text = character.SavingConstitution.ToString();
+            charSavingIntellect.Text = character.SavingIntellect.ToString();
+            charSavingWisdom.Text = character.SavingWisdom.ToString();
+            charSavingCharisma.Text = character.SavingCharisma.ToString();
+
             StrengthMod.Text = CalculateModifier(character.Strength).ToString();
             DexterityMod.Text = CalculateModifier(character.Dexterity).ToString();
             ConstitutionMod.Text = CalculateModifier(character.Constitution).ToString();
