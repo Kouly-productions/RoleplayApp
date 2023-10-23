@@ -32,7 +32,8 @@ namespace RoleplayApp
             this.character = character;
             this.parentCharacterWindow = parentWindow;
             this.DataContext = character;
-            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "\\RoleplayApp", "characters.json");
+            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "characters.json");
+
             showCharacterInfo(character);
         }
 
@@ -122,9 +123,38 @@ namespace RoleplayApp
 
             if (loverCharacter != null)
             {
-                StackPanel mainInfoPanel = this.FindName("CharacterMainInfoPanel") as StackPanel;
-                mainInfoPanel.Margin = new Thickness(0, 150, 100, 0);
+                string imagePath = loverCharacter.ImagePath;
+                UpdateLoverUI(loverCharacter, imagePath);
+                LoverInfoPanel.Visibility = Visibility.Visible;
             }
+            else
+            {
+                LoverInfoPanel.Visibility= Visibility.Collapsed;
+            }
+        }
+
+        public void UpdateLoverUI(CharacterProp lover, string imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+            {
+                BitmapImage image = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+                LoverImage.Source = image;
+            }
+            loverAge.Text = lover.Age.ToString();
+            loverGender.Text = lover.Gender.ToString();
+            loverRace.Text = lover.Type.ToString();
+            loverMoney.Text = lover.Money.ToString();
+            loverCountry.Text = lover.Country.ToString();
+        }
+
+        public void InitializeUI()
+        {
+            MainInfoContainer.Children.Add(CharacterMainInfoPanel);
+
+            LoverInfoPanel = new StackPanel();
+
+            MainInfoContainer.Children.Add(LoverInfoPanel);
+            LoverInfoPanel.Visibility = Visibility.Collapsed;
         }
 
         public void ShowCharacterImage(string imagePath)
@@ -134,6 +164,11 @@ namespace RoleplayApp
                 BitmapImage image = new BitmapImage(new Uri (imagePath, UriKind.Absolute));
                 CharImage.Source = image;
             }
+        }
+
+        public void showLoverImage()
+        {
+
         }
 
         public static int CalculateModifier(int abilityScore)

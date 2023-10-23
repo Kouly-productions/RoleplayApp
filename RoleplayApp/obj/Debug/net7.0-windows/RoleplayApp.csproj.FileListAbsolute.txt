@@ -68,3 +68,5 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Styles.baml
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\FindLover.g.cs
 C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\FindLover.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\FindLover.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\FindLover.baml

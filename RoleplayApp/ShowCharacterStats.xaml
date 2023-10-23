@@ -81,7 +81,8 @@
         <!--Level END-->
         
         <!--Character START-->
-        <StackPanel Grid.Column="3"
+        <StackPanel Name="MainInfoContainer"
+                    Grid.Column="3"
                     Grid.ColumnSpan="4"
                     Grid.RowSpan="2"
                     Orientation="Horizontal"
@@ -183,11 +184,12 @@
                     Margin="0,150,0,0">
 
                 <!--Image START-->
-                <Border Height="250"
+                <Border 
+                Height="250"
                 Width="200"
                 BorderThickness="1"
                 BorderBrush="Black">
-                    <Image 
+                    <Image Name="LoverImage"
                    Stretch="Fill"/>
                 </Border>
                 <!--Image END-->
@@ -246,22 +248,22 @@
                                     HorizontalAlignment="Left"
                                     Width="160"
                                     Margin="10,0,0,0">
-                                <TextBlock
+                                <TextBlock Name="loverAge"
                                    Text="Alder"
                                    FontSize="20"/>
-                                <TextBlock
+                                <TextBlock Name="loverGender"
                                    Text="Køn"
                                    FontSize="20"
                                    Margin="0,10,0,0"/>
-                                <TextBlock
+                                <TextBlock Name="loverRace"
                                    Text="Race"
                                    FontSize="20"
                                    Margin="0,10,0,0"/>
-                                <TextBlock
+                                <TextBlock Name="loverMoney"
                                    Text="Penge"
                                    FontSize="20"
                                    Margin="0,10,0,0"/>
-                                <TextBlock
+                                <TextBlock Name="loverCountry"
                                    Text="Land"
                                    FontSize="20"
                                    Margin="0,10,0,0"/>
