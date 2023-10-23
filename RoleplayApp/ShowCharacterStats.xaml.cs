@@ -166,11 +166,6 @@ namespace RoleplayApp
             }
         }
 
-        public void showLoverImage()
-        {
-
-        }
-
         public static int CalculateModifier(int abilityScore)
         {
             return (int)Math.Floor((abilityScore - 10) / 2.0);
