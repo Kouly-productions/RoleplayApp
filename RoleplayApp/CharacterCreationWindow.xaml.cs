@@ -130,6 +130,8 @@ namespace RoleplayApp
 
             newCharacter.LoverId = this.SelectedLover;
 
+            
+
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
             //Create list
@@ -137,7 +139,15 @@ namespace RoleplayApp
             //Put into list
             existingCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
 
+            CharacterProp existingLover = existingCharacters.FirstOrDefault(c => c.Name == this.SelectedLover);
+
+            if(existingLover != null)
+            {
+                existingLover.LoverId = newCharacter.Name;
+            }
+
             existingCharacters.Add(newCharacter);
+
 
             string json = JsonConvert.SerializeObject(existingCharacters, Formatting.Indented);
 

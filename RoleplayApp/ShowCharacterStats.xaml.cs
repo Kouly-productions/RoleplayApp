@@ -113,6 +113,7 @@ namespace RoleplayApp
         {
             if (string.IsNullOrEmpty(loverId))
             {
+                LoverInfoPanel.Visibility = Visibility.Collapsed;
                 return;
             }
 
