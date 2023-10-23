@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,7 @@ namespace RoleplayApp
     {
         private CharacterProp character;
         private Character parentCharacterWindow;
+        private string jsonPath;
 
         public ShowCharacterStats(CharacterProp character, Character parentWindow)
         {
@@ -29,6 +32,7 @@ namespace RoleplayApp
             this.character = character;
             this.parentCharacterWindow = parentWindow;
             this.DataContext = character;
+            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "\\RoleplayApp", "characters.json");
             showCharacterInfo(character);
         }
 
@@ -93,12 +97,33 @@ namespace RoleplayApp
             WisdomMod.Text = CalculateModifier(character.Wisdom).ToString();
             CharismaMod.Text = CalculateModifier(character.Charisma).ToString();
 
+            ShowLoverInfo(character.LoverId);
+
             if (!string.IsNullOrEmpty(character.ImagePath))
             {
                 Uri imageUri = new Uri(character.ImagePath, UriKind.Absolute);
                 BitmapImage imageBitMap = new BitmapImage(imageUri);
 
                 CharImage.Source = imageBitMap;
+            }
+        }
+
+        public void ShowLoverInfo(string loverId)
+        {
+            if (string.IsNullOrEmpty(loverId))
+            {
+                return;
+            }
+
+            string json = File.ReadAllText(jsonPath);
+            List<CharacterProp> existringCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
+
+            CharacterProp loverCharacter = existringCharacters.FirstOrDefault(c => c.Name == loverId);
+
+            if (loverCharacter != null)
+            {
+                StackPanel mainInfoPanel = this.FindName("CharacterMainInfoPanel") as StackPanel;
+                mainInfoPanel.Margin = new Thickness(0, 150, 100, 0);
             }
         }
 
