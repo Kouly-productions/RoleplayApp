@@ -181,7 +181,7 @@
             </StackPanel>
             <StackPanel 
                     Name="LoverInfoPanel"
-                    Margin="0,150,0,0">
+                    Margin="100,150,0,0">
 
                 <!--Image START-->
                 <Border 
