@@ -18,6 +18,9 @@
     <Compile Update="DiceRoll.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="FindLover.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ShowCharacterStats.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +36,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DiceRoll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FindLover.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

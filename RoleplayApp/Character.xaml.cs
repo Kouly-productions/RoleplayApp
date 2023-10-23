@@ -28,7 +28,6 @@ namespace RoleplayApp
         {
             InitializeComponent();
 
-            //filePath = "C:\\Users\\EFDK\\AppData\\Roaming\\RoleplayApp";
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "characters.json");
 

@@ -1129,7 +1129,7 @@ CornerRadius="5">
             <StackPanel>
                 <Button Content="Tilføj Billede"
                     FontSize="16"
-                    Click="AddImage_Click"></Button>
+                    Click="AddImage_Click"/>
                 <TextBlock
                 Name="ImageUploadText"
                 FontSize="20"
@@ -1138,6 +1138,10 @@ CornerRadius="5">
                 TextAlignment="Center"
                 Width="300"
                 Text="Intet billede uploaded"/>
+                <Button Content="Tilføj Elsker"
+                    FontSize="16"
+                    Click="AddLover_Click"
+                    Margin="0,40,0,0"/>
             </StackPanel>
         </Border>
 

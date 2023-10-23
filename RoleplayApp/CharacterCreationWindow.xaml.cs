@@ -27,6 +27,7 @@ namespace RoleplayApp
         string filePath;
         string jsonPath;
         string destinationFilePath;
+        public string SelectedLover {  get; set; }
 
         CharacterProp character = new CharacterProp();
 
@@ -126,6 +127,8 @@ namespace RoleplayApp
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
             newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
             newCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
+
+            newCharacter.LoverId = this.SelectedLover;
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
@@ -247,6 +250,12 @@ namespace RoleplayApp
             {
                 character.Friends[index].Friend = box.Text;
             }
+        }
+
+        private void AddLover_Click(object sender, RoutedEventArgs e)
+        {
+            FindLover findLoverWindow = new FindLover(this);
+            findLoverWindow.Show();
         }
     }
 }
