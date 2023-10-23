@@ -86,6 +86,7 @@ namespace RoleplayApp
         public int SleightOfHand { get; set; }
         public int Stealth {  get; set; }
         public int Survival { get; set; }
+        public string LoverId { get; set; }
 
 
         public ObservableCollection<SkillViewModel> Skills { get; set; } = new ObservableCollection<SkillViewModel>();
