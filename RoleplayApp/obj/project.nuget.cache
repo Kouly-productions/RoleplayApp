@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "w7UXI88rNg8U8OhqccmMGTpiqDXAa/HMQLL1Eh58en3Zl/e5ygWwjlDJMlSJmE8s2d6I/QMI1l5XrVROFaGjeQ==",
+  "dgSpecHash": "6gbPZdbaHGmL02e/O6QYk7daqzz2lUFCRBO+4IPTq6PlQ+Tew5DnNFAwRxsq4g5wCb9n/1kh8LUG3H4n3WSyXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eliko\\Documents\\Roleplay\\RoleplayApp\\RoleplayApp\\RoleplayApp.csproj",
+  "projectFilePath": "C:\\Users\\EFDK\\source\\repos\\RoleplayApp\\RoleplayApp\\RoleplayApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\eliko\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\EFDK\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

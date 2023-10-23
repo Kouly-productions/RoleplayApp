@@ -65,3 +65,4 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.genruntimeconfig.cache
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ref\RoleplayApp.dll
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Styles.baml
+C:\Users\EFDK\source\repos\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Styles.baml

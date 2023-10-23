@@ -1119,21 +1119,22 @@ CornerRadius="5">
             </StackPanel>
         </Border>
 
-        <Border Grid.RowSpan="2"
-                Grid.Column="5"
+        <Border Grid.Column="5"
                 Grid.ColumnSpan="2"
-                Height="30"
-                Margin="0,0,0,50">
+                Height="50"
+                Margin="0,100,0,0">
             <StackPanel>
                 <Button Content="Tilføj Billede"
                     FontSize="16"
                     Click="AddImage_Click"></Button>
                 <TextBlock
                 Name="ImageUploadText"
-                FontSize="14"
-                Foreground="Green"
+                FontSize="20"
+                Foreground="Red"
                 HorizontalAlignment="Center"
-                Width="300"/>
+                TextAlignment="Center"
+                Width="300"
+                Text="Intet billede uploaded"/>
             </StackPanel>
         </Border>
 
@@ -1529,23 +1530,11 @@ ToolTip="1 = Dårligst muligt for et menneske &#x0a;
             Grid.ColumnSpan="2" 
             Margin="0,0,110,0" 
             Grid.Row="1"
-ToolTip="1 = Dårligst muligt for et menneske &#x0a;
-2 - 3 = Frygteligt svag &#x0a;
-4 - 5 = Under normal &#x0a;
-6 - 7 = Lidt under normal &#x0a;
-8 - 9 = Normal for et menneske &#x0a;
-10 - 11 = Lidt over normal &#x0a;
-12 - 13 = Over normal &#x0a;
-14 - 15 = Meget over normal &#x0a;
-16 - 17 = Enestående for et menneske &#x0a;
-18 = Næsten perfekt for et menneske &#x0a;
-19 - 20 = Supermenneskelig begyndelse &#x0a;
-21 - 22 = Heroisk &#x0a;
-23 - 24 = Blandt legender &#x0a;
-25 - 26 = Næsten ustoppelig &#x0a;
-27 - 28 = Ustoppelig &#x0a;
-29 = EKSREMT OP &#x0a;
-30 = MAKS OP EKSTREMT"
+ToolTip="1 = Utrænet - Ingen formel træning eller erfaring. &#x0a;
+2 = Grundlæggende - Grundlæggende træning eller en smule erfaring. &#x0a;
+3 = Kyndig - Meget træning eller betydelig erfaring. &#x0a;
+4 = Ekspert - Blandt de bedste, muligvis med mange års erfaring eller naturligt talent. &#x0a;
+5 = Mester - En af de bedste i verden, kendt vidt og bredt for deres evner."
             ToolTipService.InitialShowDelay="0">
             <TextBlock Text="Info her"
                        VerticalAlignment="Center"

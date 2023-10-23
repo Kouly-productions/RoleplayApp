@@ -166,6 +166,7 @@ namespace RoleplayApp
 
                 character.ImagePath = destinationFilePath;
                 BitmapImage image = new BitmapImage(new Uri(destinationFilePath, UriKind.Absolute));
+                ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                 ImageUploadText.Text = "Billede er uploaded";
             }
         }
@@ -189,6 +190,11 @@ namespace RoleplayApp
                 Type selectedType = (Type)Enum.Parse(typeof(Type), selectedContent);
                 character.Type = selectedType;
             }
+        }
+
+        public static int CalculateModifier(int abilityScore)
+        {
+            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void AddSkillButton(object sender, RoutedEventArgs e)
