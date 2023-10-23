@@ -1111,7 +1111,7 @@
                 BorderThickness="1"
                 CornerRadius="10"
                 Height="300"
-                Width="200"
+                Width="250"
                 Background="{DynamicResource BackGroundColor}">
             <Grid>
                 <Border Height="30"
@@ -1127,7 +1127,7 @@
                                FontWeight="Bold"/>
                 </Border>
                 <StackPanel Height="270"
-                        Width="100"
+                        Width="125"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Left">
                     <TextBlock Text="Ven"
@@ -1147,7 +1147,7 @@
                     </ItemsControl>
                 </StackPanel>
                 <StackPanel Height="270"
-                        Width="100"
+                        Width="125"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Right">
                     <TextBlock Text="Fjende"
