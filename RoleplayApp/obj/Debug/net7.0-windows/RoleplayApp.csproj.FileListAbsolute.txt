@@ -106,3 +106,5 @@ C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\refint\
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.pdb
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\RoleplayApp.genruntimeconfig.cache
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\ref\RoleplayApp.dll
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\EditCharacterWindow.g.cs
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\EditCharacterWindow.baml

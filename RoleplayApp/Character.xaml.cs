@@ -95,6 +95,7 @@ namespace RoleplayApp
                             textBlock.TextAlignment = TextAlignment.Center;
 
                             border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
+                            border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
 
                             border.Child = textBlock;
 
@@ -127,6 +128,12 @@ namespace RoleplayApp
         private void ShowCharacterInfo(CharacterProp character)
         {
             ShowCharacterStats showCharacterStats = new ShowCharacterStats(character, this);
+            showCharacterStats.ShowDialog();
+        }
+
+        private void EditCharacterInfo(CharacterProp character)
+        {
+            EditCharacterWindow showCharacterStats = new EditCharacterWindow(character, this);
             showCharacterStats.ShowDialog();
         }
     }
