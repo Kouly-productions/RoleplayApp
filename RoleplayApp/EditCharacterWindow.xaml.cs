@@ -27,6 +27,7 @@ namespace RoleplayApp
         string filePath;
         string jsonPath;
         string destinationFilePath;
+        string oldLover;
         public string SelectedLover { get; set; }
 
         CharacterProp character = new CharacterProp();
@@ -153,7 +154,17 @@ namespace RoleplayApp
                 existingCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
                 existingCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
 
+                oldLover = existingCharacter.LoverId;
                 existingCharacter.LoverId = this.SelectedLover;
+
+                if (!string.IsNullOrEmpty(oldLover) && oldLover != this.SelectedLover)
+                {
+                    CharacterProp oldLoverCharacter = existingCharacters.FirstOrDefault(c => c.Name == oldLover);
+                    if (oldLoverCharacter != null)
+                    {
+                        oldLoverCharacter.LoverId = null;
+                    }
+                }
             }
 
 
@@ -271,10 +282,9 @@ namespace RoleplayApp
 
         private void AddLover_Click(object sender, RoutedEventArgs e)
         {
-
+            FindLover findLoverWindow = new FindLover(this);
+            findLoverWindow.Show();
         }
-
-
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {

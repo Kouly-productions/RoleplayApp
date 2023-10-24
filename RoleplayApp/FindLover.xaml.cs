@@ -23,16 +23,31 @@ namespace RoleplayApp
     {
         public CharacterCreationWindow ParentWindow { get; set; }
 
+        private CharacterCreationWindow ParentCreationWindow;
+        private EditCharacterWindow ParentEditWindow;
+
         string filePath;
         string jsonPath;
 
         public FindLover(CharacterCreationWindow parentWindow)
         {
+            InitializeCommonCode();
+            this.ParentWindow = parentWindow;
+        }
+
+        public FindLover(EditCharacterWindow parentWindow)
+        {
+            InitializeCommonCode();
+            this.ParentEditWindow = parentWindow;
+
+        }
+
+        public void InitializeCommonCode()
+        {
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "characters.json");
-            this.ParentWindow = parentWindow;
 
             GetCharacters();
         }
@@ -99,7 +114,14 @@ namespace RoleplayApp
         }
         private void AddAsLover(CharacterProp selectedCharacter)
         {
-            ParentWindow.SelectedLover = selectedCharacter.Name;
+            if (ParentCreationWindow != null)
+            {
+            ParentCreationWindow.SelectedLover = selectedCharacter.Name;
+            }
+            else if (ParentEditWindow != null)
+            {
+                ParentEditWindow.SelectedLover = selectedCharacter.Name;
+            }
             this.Close();
         }
     }
