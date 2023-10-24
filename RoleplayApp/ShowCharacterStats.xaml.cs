@@ -45,6 +45,7 @@ namespace RoleplayApp
         public void showCharacterInfo(CharacterProp character)
         {
             charName.Text = character.Name;
+            selectedName.Text = character.Name.ToString();
             charLevel.Text = "Level:" + character.Level.ToString();
             charAge.Text = character.Age.ToString();
             charGender.Text = character.Gender.ToString();
@@ -141,6 +142,7 @@ namespace RoleplayApp
                 BitmapImage image = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
                 LoverImage.Source = image;
             }
+            loverName.Text = lover.Name;
             loverAge.Text = lover.Age.ToString();
             loverGender.Text = lover.Gender.ToString();
             loverRace.Text = lover.Type.ToString();

@@ -89,7 +89,20 @@
                     HorizontalAlignment="Center">
             <StackPanel 
                     Name="CharacterMainInfoPanel"
-                    Margin="0,150,0,0">
+                    Margin="0,140,0,0">
+                <Border Height="40"
+                        Width="200"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="2">
+                    <TextBlock Name="selectedName"
+                               Text="selectedNameHere"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24">
+
+                    </TextBlock>
+                </Border>
 
                 <!--Image START-->
                 <Border Height="250"
@@ -179,9 +192,30 @@
                     </Grid>
                 </Border>
             </StackPanel>
-            <StackPanel 
-                    Name="LoverInfoPanel"
-                    Margin="100,150,0,0">
+            <StackPanel Orientation="Horizontal"
+                    Name="LoverInfoPanel">
+                <Image Height="100"
+                        Width="100"
+                        Source="pack://application:,,,/RoleplayApp;component/Resources/Hearth.png"/>
+                    <StackPanel 
+
+                    Margin="0,140,0,0">
+                <Border Height="40"
+                        Width="200"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="2">
+                    <TextBlock Name="loverName"
+                               Text="LovernameHere"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24">
+
+                    </TextBlock>
+                </Border>
+
+
+
 
                 <!--Image START-->
                 <Border 
@@ -192,6 +226,7 @@
                     <Image Name="LoverImage"
                    Stretch="Fill"/>
                 </Border>
+               
                 <!--Image END-->
 
                 <Border Height="200"
@@ -271,6 +306,7 @@
                         </Border>
                     </Grid>
                 </Border>
+            </StackPanel>
             </StackPanel>
         </StackPanel>
         <!--Character END-->
