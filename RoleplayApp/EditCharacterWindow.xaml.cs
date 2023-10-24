@@ -290,5 +290,36 @@ namespace RoleplayApp
         {
             this.Close();
         }
+
+        private void TextBox_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            TextBox box = sender as TextBox;
+            string tag = (string)box.Tag;
+
+            if (tag == "Friends")
+            {
+                int index = FriendsList.Items.IndexOf(box.DataContext);
+                if (index != -1)
+                {
+                    character.Friends.RemoveAt(index);
+                }
+            }
+            else if (tag == "Enemies")
+            {
+                int index = EnemiesList.Items.IndexOf(box.DataContext);
+                if (index != -1)
+                {
+                    character.Enemies.RemoveAt(index);
+                }
+            }
+            else if (tag == "Skills")
+            {
+                int index = SkillsList.Items.IndexOf(box.DataContext);
+                if (index != -1)
+                {
+                    character.Skills.RemoveAt(index);
+                }
+            }
+        }
     }
 }

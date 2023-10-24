@@ -1322,7 +1322,9 @@ CornerRadius="5">
                             <DataTemplate>
                                 <TextBox Text="{Binding Friend}"
                                 FontSize="14"
-                                TextChanged="TextBox_TextChanged_2"/>
+                                TextChanged="TextBox_TextChanged_2"
+                                MouseRightButtonUp="TextBox_MouseRightButtonUp"
+                                Tag="Friends"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
@@ -1347,7 +1349,9 @@ CornerRadius="5">
                             <DataTemplate>
                                 <TextBox Text="{Binding Enemy}"
                                 FontSize="14"
-                                TextChanged="TextBox_TextChanged_1"/>
+                                TextChanged="TextBox_TextChanged_1"
+                                MouseRightButtonUp="TextBox_MouseRightButtonUp"
+                                Tag="Enemies"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
@@ -1389,7 +1393,9 @@ CornerRadius="5">
                         <DataTemplate>
                             <TextBox Text="{Binding Skill}"
                                      FontSize="14"
-                                     TextChanged="TextBox_TextChanged"/>
+                                     TextChanged="TextBox_TextChanged"
+                                     MouseRightButtonUp="TextBox_MouseRightButtonUp"
+                                     Tag="Skills"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
