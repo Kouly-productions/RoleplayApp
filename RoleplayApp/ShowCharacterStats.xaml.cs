@@ -198,5 +198,31 @@ namespace RoleplayApp
             }
 
         }
+
+        private void LoverImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+
+            string json = File.ReadAllText(jsonPath);
+            List<CharacterProp> existingCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
+
+            CharacterProp loverCharacter = existingCharacters.FirstOrDefault(c => c.Name == this.character.LoverId);
+
+            if (loverCharacter != null)
+            {
+            ShowCharacterInfo(loverCharacter);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void ShowCharacterInfo(CharacterProp character)
+        {
+
+            ShowCharacterStats showCharacterStats = new ShowCharacterStats(character, this.parentCharacterWindow);
+            showCharacterStats.ShowDialog();
+        }
     }
 }

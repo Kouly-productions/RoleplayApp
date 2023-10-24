@@ -224,6 +224,7 @@
                 BorderThickness="1"
                 BorderBrush="Black">
                     <Image Name="LoverImage"
+                           MouseLeftButtonDown="LoverImage_MouseLeftButtonDown"
                    Stretch="Fill"/>
                 </Border>
                
