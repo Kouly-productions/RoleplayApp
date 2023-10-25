@@ -24,6 +24,32 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <StackPanel Orientation="Horizontal"
+                 Grid.Row="0"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="5"
+                 Width="500">
+
+            <TextBox Name="SearchBox"
+                 Height="25"
+                 Width="200"
+                 FontSize="16"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 TextChanged="SearchBox_TextChanged"/>
+
+            <ComboBox Name="SortByComboBox"
+                  Height="25"
+                  Width="200"
+                  VerticalAlignment="Top"
+                  Margin="100,0,0,0" SelectionChanged="SortByComboBox_SelectionChanged">
+                <ComboBoxItem Content="Navn"/>
+                <ComboBoxItem Content="Level"/>
+                <ComboBoxItem Content="Styrke"/>
+            </ComboBox>
+            
+        </StackPanel>
+
         <Button
         x:Name="GoBack"
         Height="25"

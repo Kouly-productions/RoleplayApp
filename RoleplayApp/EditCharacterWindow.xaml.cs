@@ -154,6 +154,14 @@ namespace RoleplayApp
                 existingCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
                 existingCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
 
+                existingCharacter.ModifiersCombined = CalculateModifier(existingCharacter.Strength) +
+                    CalculateModifier(existingCharacter.Dexterity) +
+                    CalculateModifier(existingCharacter.Constitution) +
+                    CalculateModifier(existingCharacter.Intellect) +
+                    CalculateModifier(existingCharacter.Wisdom) +
+                    CalculateModifier(existingCharacter.Charisma);
+
+
                 oldLover = existingCharacter.LoverId;
                 existingCharacter.LoverId = this.SelectedLover;
 
@@ -162,7 +170,26 @@ namespace RoleplayApp
                     CharacterProp oldLoverCharacter = existingCharacters.FirstOrDefault(c => c.Name == oldLover);
                     if (oldLoverCharacter != null)
                     {
-                        oldLoverCharacter.LoverId = null;
+                        if (oldLoverCharacter.LoverId == existingCharacter.Name)
+                        {
+                            oldLoverCharacter.LoverId = null;
+                        }
+                    }
+                }
+                if (!string.IsNullOrEmpty(this.SelectedLover))
+                {
+                    CharacterProp newLoverCharacter = existingCharacters.FirstOrDefault(c => c.Name == this.SelectedLover);
+                    if (newLoverCharacter != null)
+                    {
+                        if (newLoverCharacter.LoverId != null && newLoverCharacter.LoverId != existingCharacter.Name)
+                        {
+                            CharacterProp previousLoverOfNewLover = existingCharacters.FirstOrDefault(c => c.Name == newLoverCharacter.LoverId);
+                            if (previousLoverOfNewLover != null)
+                            {
+                                previousLoverOfNewLover.LoverId = null;
+                            }
+                        }
+                        newLoverCharacter.LoverId = existingCharacter.Name;
                     }
                 }
             }
@@ -191,7 +218,10 @@ namespace RoleplayApp
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
             }
         }
-
+        public static int CalculateModifier(int abilityScore)
+        {
+            return (int)Math.Floor((abilityScore - 10) / 2.0);
+        }
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
@@ -320,6 +350,31 @@ namespace RoleplayApp
                     character.Skills.RemoveAt(index);
                 }
             }
+        }
+
+        private void deleteChar_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
+            string jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            string jsonData = System.IO.File.ReadAllText(jsonPath);
+
+            List<CharacterProp> characterList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
+
+            CharacterProp characterToRemove = characterList.FirstOrDefault(c => c.Name == this.character.Name);
+
+            if (characterToRemove != null)
+            {
+                characterList.Remove(characterToRemove);
+
+                string updatedJsonData = Newtonsoft.Json.JsonConvert.SerializeObject(characterList, Newtonsoft.Json.Formatting.Indented);
+
+                System.IO.File.WriteAllText(jsonPath, updatedJsonData);
+
+                parentCharacterWindow.UpdateCharacterList();
+
+                this.Close();
+            }
+
         }
     }
 }

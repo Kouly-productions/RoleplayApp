@@ -23,6 +23,7 @@ namespace RoleplayApp
     {
         string filePath;
         string jsonPath;
+        private List<CharacterProp> loadedCharacters;
 
         public Character()
         {
@@ -65,7 +66,7 @@ namespace RoleplayApp
                 {
                     string json = File.ReadAllText(jsonPath);
 
-                    List<CharacterProp> loadedCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
+                    this.loadedCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
 
                     if (loadedCharacters != null)
                     {
@@ -75,6 +76,44 @@ namespace RoleplayApp
                             border.BorderBrush = Brushes.Black;
                             border.BorderThickness = new Thickness(1);
                             border.Margin = new Thickness(5);
+
+                            Image image = null;
+
+                            if (characters.ImagePath != null)
+                            {
+                            image = new Image();
+                            image.Height = 100;
+                            image.Width = 100;
+                            image.Stretch = Stretch.Fill;
+                            image.Source = new BitmapImage(new Uri(characters.ImagePath));
+                            }
+
+                            StackPanel stackPanel = new StackPanel();
+                            stackPanel.Orientation = Orientation.Vertical;
+
+                            double logScale = Math.Log(characters.ModifiersCombined + 1);
+
+                            if (logScale < Math.Log(4 + 1))
+                            {
+                                border.Background = new SolidColorBrush(Colors.Pink);
+                            }
+                            else if (logScale < Math.Log(8 + 1))
+                            {
+                                border.Background = new SolidColorBrush(Colors.SkyBlue);
+                            }
+                            else if (logScale < Math.Log(10 + 1))
+                            {
+                                border.Background = new SolidColorBrush(Colors.Yellow);
+                            }
+                            else if (logScale < Math.Log(15 + 1))
+                            {
+                                border.Background = new SolidColorBrush(Colors.DarkRed);
+                            }
+                            else
+                            {
+                                border.Background = new SolidColorBrush(Colors.BlueViolet);
+                            }
+
 
                             TextBlock textBlock = new TextBlock();
                             textBlock.FontSize = 16;
@@ -97,7 +136,14 @@ namespace RoleplayApp
                             border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
                             border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
 
-                            border.Child = textBlock;
+                            if (image != null)
+                            {
+                                stackPanel.Children.Add(image);
+                            }
+
+                            stackPanel.Children.Add(textBlock);
+
+                            border.Child = stackPanel;
 
                             CharacterPanel.Children.Add(border);
                         }
@@ -119,6 +165,96 @@ namespace RoleplayApp
             }
         }
 
+        private void UpdateCharacterPanel(List<CharacterProp> charactersToShow)
+        {
+            CharacterPanel.Children.Clear();
+
+            foreach (var characters in charactersToShow)
+            {
+                Border border = new Border();
+                border.BorderBrush = Brushes.Black;
+                border.BorderThickness = new Thickness(1);
+                border.Margin = new Thickness(5);
+
+                Image image = null;
+                
+                if (characters.ImagePath != null)
+                {
+                    image = new Image();
+                    image.Height = 100;
+                    image.Width = 100;
+                    image.Stretch = Stretch.Fill;
+                    image.Source = new BitmapImage(new Uri(characters.ImagePath));
+                }
+
+                StackPanel stackPanel = new StackPanel();
+                stackPanel.Orientation = Orientation.Vertical;
+
+                double logScale = Math.Log(characters.ModifiersCombined + 1);
+
+                if (logScale < Math.Log(4 + 1))
+                {
+                    border.Background = new SolidColorBrush(Colors.Pink);
+                }
+                else if (logScale < Math.Log(8 + 1))
+                {
+                    border.Background = new SolidColorBrush(Colors.SkyBlue);
+                }
+                else if (logScale < Math.Log(10 + 1))
+                {
+                    border.Background = new SolidColorBrush(Colors.Yellow);
+                }
+                else if (logScale < Math.Log(15 + 1))
+                {
+                    border.Background = new SolidColorBrush(Colors.DarkRed);
+                }
+                else
+                {
+                    border.Background = new SolidColorBrush(Colors.BlueViolet);
+                }
+
+                TextBlock textBlock = new TextBlock();
+                textBlock.FontSize = 16;
+                textBlock.Width = 170;
+                textBlock.Margin = new Thickness(5);
+
+                Run nameRun = new Run();
+                nameRun.Text = characters.Name;
+
+                Run levelRun = new Run();
+                levelRun.Text = "Level " + characters.Level.ToString();
+                levelRun.Foreground = new SolidColorBrush(Colors.BlueViolet);
+
+                textBlock.Inlines.Add(nameRun);
+                textBlock.Inlines.Add(new Run { Text = "  " });
+                textBlock.Inlines.Add(levelRun);
+
+                textBlock.TextAlignment = TextAlignment.Center;
+
+                border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
+                border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
+
+                if (image != null)
+                {
+                stackPanel.Children.Add(image);
+                }
+                stackPanel.Children.Add(textBlock);
+
+                border.Child = stackPanel;
+
+                CharacterPanel.Children.Add(border);
+            }
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string query = (sender as TextBox).Text.ToLower();
+
+            var filteredCharacters = loadedCharacters.Where(c => c.Name.ToLower().Contains(query)).ToList();
+
+            UpdateCharacterPanel(filteredCharacters);
+        }
+
         public void UpdateCharacterList()
         {
             CharacterPanel.Children.Clear();
@@ -135,6 +271,35 @@ namespace RoleplayApp
         {
             EditCharacterWindow showCharacterStats = new EditCharacterWindow(character, this);
             showCharacterStats.ShowDialog();
+        }
+
+        private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (loadedCharacters == null)
+            {
+                return;
+            }
+
+            string selectedOption = (SortByComboBox.SelectedItem as ComboBoxItem).Content.ToString();
+
+            List<CharacterProp> sortedCharacters = new List<CharacterProp>(loadedCharacters);
+
+            switch (selectedOption)
+            {
+                case "Navn":
+                    SearchBox.Text = default;
+                    sortedCharacters = sortedCharacters.OrderBy(c => c.Name).ToList();
+                    break;
+                case "Level":
+                    SearchBox.Text = default;
+                    sortedCharacters = sortedCharacters.OrderByDescending(c => c.Level).ToList();
+                    break;
+                case "Styrke":
+                    SearchBox.Text = default;
+                    sortedCharacters = sortedCharacters.OrderByDescending(c => c.ModifiersCombined).ToList();
+                    break;
+            }
+            UpdateCharacterPanel(sortedCharacters);
         }
     }
 }

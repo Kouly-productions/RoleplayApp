@@ -128,9 +128,14 @@ namespace RoleplayApp
             newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
             newCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
 
-            newCharacter.LoverId = this.SelectedLover;
+            newCharacter.ModifiersCombined = CalculateModifier(newCharacter.Strength) + 
+                CalculateModifier(newCharacter.Dexterity) + 
+                CalculateModifier(newCharacter.Constitution) + 
+                CalculateModifier(newCharacter.Intellect) +
+                CalculateModifier(newCharacter.Wisdom) +
+                CalculateModifier(newCharacter.Charisma);
 
-            
+            newCharacter.LoverId = this.SelectedLover;
 
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
@@ -162,6 +167,11 @@ namespace RoleplayApp
             {
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
             }
+        }
+
+        public static int CalculateModifier(int abilityScore)
+        {
+            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -210,11 +220,6 @@ namespace RoleplayApp
                 Type selectedType = (Type)Enum.Parse(typeof(Type), selectedContent);
                 character.Type = selectedType;
             }
-        }
-
-        public static int CalculateModifier(int abilityScore)
-        {
-            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void AddSkillButton(object sender, RoutedEventArgs e)

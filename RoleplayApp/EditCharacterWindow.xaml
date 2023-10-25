@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="EditCharacterWindow" Height="1000" Width="1900">
     <Window.Resources>
         <ResourceDictionary>
@@ -1615,5 +1616,15 @@ ToolTip="1 = Utrænet - Ingen formel træning eller erfaring. &#x0a;
         FontSize="15"
         FontWeight="Bold"
         Background="#dc3131" Click="GoBack_Click"/>
+
+        <Button
+            Name="deleteChar"
+            Grid.Row="2"
+            Grid.Column="0"
+            VerticalAlignment="Bottom"
+            Height="30"
+            Content="Delete"
+            FontSize="20"
+            Background="DarkRed" Click="deleteChar_Click"/>
     </Grid>
 </Window>
