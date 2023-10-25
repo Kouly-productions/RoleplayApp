@@ -74,7 +74,7 @@ namespace RoleplayApp
                         {
                             Border border = new Border();
                             border.BorderBrush = Brushes.Black;
-                            border.BorderThickness = new Thickness(1);
+                            border.BorderThickness = new Thickness(5);
                             border.Margin = new Thickness(5);
 
                             Image image = null;
@@ -93,25 +93,42 @@ namespace RoleplayApp
 
                             double logScale = Math.Log(characters.ModifiersCombined + 1);
 
-                            if (logScale < Math.Log(4 + 1))
+                            TextBlock textBlockRank = new TextBlock();
+                            textBlockRank.FontSize = 16;
+                            textBlockRank.Width = 170;
+                            textBlockRank.Margin = new Thickness(5);
+                            textBlockRank.TextAlignment = TextAlignment.Center;
+                            textBlockRank.FontWeight = FontWeights.Bold;
+
+                            if (logScale < Math.Log(10 + 1))
                             {
+                                textBlockRank.Text = "Svag";
                                 border.Background = new SolidColorBrush(Colors.Pink);
+                                stackPanel.Children.Add(textBlockRank);
                             }
                             else if (logScale < Math.Log(8 + 1))
                             {
+                                textBlockRank.Text = "Okay";
                                 border.Background = new SolidColorBrush(Colors.SkyBlue);
+                                stackPanel.Children.Add(textBlockRank);
                             }
                             else if (logScale < Math.Log(10 + 1))
                             {
+                                textBlockRank.Text = "Stærk";
                                 border.Background = new SolidColorBrush(Colors.Yellow);
+                                stackPanel.Children.Add(textBlockRank);
                             }
                             else if (logScale < Math.Log(15 + 1))
                             {
+                                textBlockRank.Text = "OP";
                                 border.Background = new SolidColorBrush(Colors.DarkRed);
+                                stackPanel.Children.Add(textBlockRank);
                             }
                             else
                             {
-                                border.Background = new SolidColorBrush(Colors.BlueViolet);
+                                textBlockRank.Text = "BROKEN";
+                                border.Background = new SolidColorBrush(Colors.Cyan);
+                                stackPanel.Children.Add(textBlockRank);
                             }
 
 
@@ -181,7 +198,7 @@ namespace RoleplayApp
                 if (characters.ImagePath != null)
                 {
                     image = new Image();
-                    image.Height = 100;
+                    image.Height = 00;
                     image.Width = 100;
                     image.Stretch = Stretch.Fill;
                     image.Source = new BitmapImage(new Uri(characters.ImagePath));
@@ -192,25 +209,42 @@ namespace RoleplayApp
 
                 double logScale = Math.Log(characters.ModifiersCombined + 1);
 
-                if (logScale < Math.Log(4 + 1))
+                TextBlock textBlockRank = new TextBlock();
+                textBlockRank.FontSize = 16;
+                textBlockRank.Width = 170;
+                textBlockRank.Margin = new Thickness(5);
+                textBlockRank.TextAlignment = TextAlignment.Center;
+                textBlockRank.FontWeight = FontWeights.Bold;
+
+                if (logScale < Math.Log(10 + 1))
                 {
+                    textBlockRank.Text = "Svag";
                     border.Background = new SolidColorBrush(Colors.Pink);
+                    stackPanel.Children.Add(textBlockRank);
                 }
                 else if (logScale < Math.Log(8 + 1))
                 {
+                    textBlockRank.Text = "Okay";
                     border.Background = new SolidColorBrush(Colors.SkyBlue);
+                    stackPanel.Children.Add(textBlockRank);
                 }
                 else if (logScale < Math.Log(10 + 1))
                 {
+                    textBlockRank.Text = "Stærk";
                     border.Background = new SolidColorBrush(Colors.Yellow);
+                    stackPanel.Children.Add(textBlockRank);
                 }
                 else if (logScale < Math.Log(15 + 1))
                 {
+                    textBlockRank.Text = "OP";
                     border.Background = new SolidColorBrush(Colors.DarkRed);
+                    stackPanel.Children.Add(textBlockRank);
                 }
                 else
                 {
-                    border.Background = new SolidColorBrush(Colors.BlueViolet);
+                    textBlockRank.Text = "BROKEN";
+                    border.Background = new SolidColorBrush(Colors.Cyan);
+                    stackPanel.Children.Add(textBlockRank);
                 }
 
                 TextBlock textBlock = new TextBlock();
