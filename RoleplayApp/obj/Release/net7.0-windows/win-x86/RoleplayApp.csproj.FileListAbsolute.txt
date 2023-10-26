@@ -31,3 +31,8 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-win
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\RoleplayApp.pdb
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\RoleplayApp.genruntimeconfig.cache
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\ref\RoleplayApp.dll
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Styles.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\EditCharacterWindow.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\FindLover.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\EditCharacterWindow.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\FindLover.baml

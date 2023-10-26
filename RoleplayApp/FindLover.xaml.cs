@@ -74,11 +74,15 @@ namespace RoleplayApp
 
                             if (characters.ImagePath != null)
                             {
-                                image = new Image();
-                                image.Height = 100;
-                                image.Width = 100;
-                                image.Stretch = Stretch.Fill;
-                                image.Source = new BitmapImage(new Uri(characters.ImagePath));
+                                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", characters.ImagePath);
+                                if (System.IO.File.Exists(fullImagePath))
+                                {
+                                    image = new Image();
+                                    image.Height = 100;
+                                    image.Width = 100;
+                                    image.Stretch = Stretch.Fill;
+                                    image.Source = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                                }
                             }
 
                             StackPanel stackPanel = new StackPanel();

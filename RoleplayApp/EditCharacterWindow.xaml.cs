@@ -30,6 +30,7 @@ namespace RoleplayApp
         string destinationFilePath;
         string oldLover;
         public string SelectedLover { get; set; }
+        string fileName;
 
         CharacterProp character = new CharacterProp();
 
@@ -112,7 +113,7 @@ namespace RoleplayApp
                 existingCharacter.Charisma = int.Parse(WriteCharisma.Text);
                 existingCharacter.Level = int.Parse(WriteLevel.Text);
                 existingCharacter.Age = int.Parse(WriteAge.Text);
-                existingCharacter.ImagePath = string.IsNullOrEmpty(destinationFilePath) ? existingCharacter.ImagePath : destinationFilePath;
+                existingCharacter.ImagePath = string.IsNullOrEmpty(fileName) ? existingCharacter.ImagePath : fileName;
                 existingCharacter.Gender = character.Gender;
                 existingCharacter.Type = character.Type;
                 existingCharacter.Country = WriteCountry.Text;
@@ -222,6 +223,7 @@ namespace RoleplayApp
         {
             return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
+
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
@@ -234,15 +236,28 @@ namespace RoleplayApp
                 {
                     Directory.CreateDirectory(destinationDirectory);
                 }
-                destinationFilePath = System.IO.Path.Combine(destinationDirectory, System.IO.Path.GetFileName(selectedFilePath));
+                string fileName = System.IO.Path.GetFileName(selectedFilePath);
+                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, fileName);
                 File.Copy(selectedFilePath, destinationFilePath, true);
 
-                character.ImagePath = destinationFilePath;
-                BitmapImage image = new BitmapImage(new Uri(destinationFilePath, UriKind.Absolute));
+                // Inde i AddImage_Click
+                this.fileName = System.IO.Path.GetFileName(selectedFilePath);
+
+
+                // Gem kun filnavnet i JSON (ingen ændring her)
+                character.ImagePath = fileName;
+
+                // Konstruér den fulde sti dynamisk (ingen ændring her, da det allerede var korrekt)
+                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
+
+                // Vis billedet (ingen ændring nødvendig her)
+                BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
                 ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                 ImageUploadText.Text = "Billede er uploaded";
             }
         }
+
+
 
         private void AddFriend(object sender, RoutedEventArgs e)
         {

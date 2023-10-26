@@ -28,6 +28,7 @@ namespace RoleplayApp
         string jsonPath;
         string destinationFilePath;
         public string SelectedLover {  get; set; }
+        string fileName = "RoleplayApp";
 
         CharacterProp character = new CharacterProp();
 
@@ -85,7 +86,7 @@ namespace RoleplayApp
             newCharacter.Charisma = int.Parse(WriteCharisma.Text);
             newCharacter.Level = int.Parse(WriteLevel.Text);
             newCharacter.Age = int.Parse(WriteAge.Text);
-            newCharacter.ImagePath = destinationFilePath;
+            newCharacter.ImagePath = fileName;
             newCharacter.Gender = character.Gender; 
             newCharacter.Type = character.Type;
             newCharacter.Country = WriteCountry.Text;
@@ -142,7 +143,7 @@ namespace RoleplayApp
             //Create list
             List<CharacterProp> existingCharacters = new List<CharacterProp>();
             //Put into list
-            existingCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
+            existingCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData) ?? new List<CharacterProp>();
 
             CharacterProp existingLover = existingCharacters.FirstOrDefault(c => c.Name == this.SelectedLover);
 
@@ -182,7 +183,7 @@ namespace RoleplayApp
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png\")";
-            if(openFileDialog.ShowDialog() == true)
+            if (openFileDialog.ShowDialog() == true)
             {
                 string selectedFilePath = openFileDialog.FileName;
                 string destinationDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp\\Images";
@@ -190,15 +191,27 @@ namespace RoleplayApp
                 {
                     Directory.CreateDirectory(destinationDirectory);
                 }
-                destinationFilePath = System.IO.Path.Combine(destinationDirectory, System.IO.Path.GetFileName(selectedFilePath));
+                string fileName = System.IO.Path.GetFileName(selectedFilePath);
+                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, fileName);
                 File.Copy(selectedFilePath, destinationFilePath, true);
 
-                character.ImagePath = destinationFilePath;
-                BitmapImage image = new BitmapImage(new Uri(destinationFilePath, UriKind.Absolute));
+                // Inde i AddImage_Click
+                this.fileName = System.IO.Path.GetFileName(selectedFilePath);
+
+
+                // Gem kun filnavnet i JSON (ingen ændring her)
+                character.ImagePath = fileName;
+
+                // Konstruér den fulde sti dynamisk (ingen ændring her, da det allerede var korrekt)
+                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
+
+                // Vis billedet (ingen ændring nødvendig her)
+                BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
                 ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                 ImageUploadText.Text = "Billede er uploaded";
             }
         }
+
 
         private void genderMale_Click(object sender, RoutedEventArgs e)
         {

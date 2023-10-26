@@ -103,11 +103,23 @@ namespace RoleplayApp
 
             if (!string.IsNullOrEmpty(character.ImagePath))
             {
-                Uri imageUri = new Uri(character.ImagePath, UriKind.Absolute);
-                BitmapImage imageBitMap = new BitmapImage(imageUri);
+                try
+                {
+                    // Konstruér den fulde sti dynamisk
+                    string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
 
-                CharImage.Source = imageBitMap;
+                    // Forsøger at oprette en ny URI. Hvis det fejler, fanges det i catch blokken.
+                    Uri imageUri = new Uri(fullImagePath, UriKind.Absolute);
+                    BitmapImage imageBitMap = new BitmapImage(imageUri);
+                    CharImage.Source = imageBitMap;
+                }
+                catch (UriFormatException)
+                {
+                    // Log fejlen, vis en advarsel, eller gør noget andet for at håndtere fejlen.
+                    MessageBox.Show("Ugyldig billede sti.");
+                }
             }
+
         }
 
         public void ShowLoverInfo(string loverId)
@@ -137,10 +149,14 @@ namespace RoleplayApp
 
         public void UpdateLoverUI(CharacterProp lover, string imagePath)
         {
-            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+            if (!string.IsNullOrEmpty(imagePath))
             {
-                BitmapImage image = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
-                LoverImage.Source = image;
+                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", imagePath);
+                if (System.IO.File.Exists(fullImagePath))
+                {
+                    BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                    LoverImage.Source = image;
+                }
             }
             loverName.Text = lover.Name;
             loverAge.Text = lover.Age.ToString();
@@ -160,14 +176,20 @@ namespace RoleplayApp
             LoverInfoPanel.Visibility = Visibility.Collapsed;
         }
 
-        public void ShowCharacterImage(string imagePath)
+        public void ShowCharacterImage(string imageName)
         {
-            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
+            if (!string.IsNullOrEmpty(imageName))
             {
-                BitmapImage image = new BitmapImage(new Uri (imagePath, UriKind.Absolute));
-                CharImage.Source = image;
+                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", imageName);
+
+                if (System.IO.File.Exists(fullImagePath))
+                {
+                    BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                    CharImage.Source = image;
+                }
             }
         }
+
 
         public static int CalculateModifier(int abilityScore)
         {
