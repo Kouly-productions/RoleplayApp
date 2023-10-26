@@ -19,6 +19,8 @@ namespace RoleplayApp
         Menneske,
         Robot,
         Drage,
+        MagiskVæsen,
+        Dyr,
         Ukendt
     }
 

@@ -72,10 +72,18 @@ namespace RoleplayApp
                     {
                         foreach (var characters in loadedCharacters)
                         {
+
                             Border border = new Border();
-                            border.BorderBrush = Brushes.Black;
                             border.BorderThickness = new Thickness(5);
                             border.Margin = new Thickness(5);
+                            if (characters.Gender == Gender.Mand)
+                            {
+                            border.BorderBrush = Brushes.CornflowerBlue;
+                            }
+                            else if (characters.Gender == Gender.Kvinde)
+                            {
+                                border.BorderBrush = Brushes.HotPink;
+                            }
 
                             Image image = null;
 
@@ -119,7 +127,7 @@ namespace RoleplayApp
                             else if (characters.ModifiersCombined <= 40)
                             {
                                 textBlockRank.Text = "OP";
-                                border.Background = new SolidColorBrush(Colors.DarkRed);
+                                border.Background = new SolidColorBrush(Colors.OrangeRed);
                                 stackPanel.Children.Add(textBlockRank);
                             }
                             else
@@ -187,9 +195,16 @@ namespace RoleplayApp
             foreach (var characters in charactersToShow)
             {
                 Border border = new Border();
-                border.BorderBrush = Brushes.Black;
-                border.BorderThickness = new Thickness(1);
+                border.BorderThickness = new Thickness(5);
                 border.Margin = new Thickness(5);
+                if (characters.Gender == Gender.Mand)
+                {
+                    border.BorderBrush = Brushes.DarkBlue;
+                }
+                else if (characters.Gender == Gender.Kvinde)
+                {
+                    border.BorderBrush = Brushes.HotPink;
+                }
 
                 Image image = null;
                 
@@ -233,7 +248,7 @@ namespace RoleplayApp
                 else if (characters.ModifiersCombined <= 40)
                 {
                     textBlockRank.Text = "OP";
-                    border.Background = new SolidColorBrush(Colors.DarkRed);
+                    border.Background = new SolidColorBrush(Colors.OrangeRed);
                     stackPanel.Children.Add(textBlockRank);
                 }
                 else

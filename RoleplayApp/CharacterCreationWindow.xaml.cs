@@ -266,11 +266,6 @@ namespace RoleplayApp
             }
         }
 
-        private void deleteField()
-        {
-
-        }
-
         private void AddLover_Click(object sender, RoutedEventArgs e)
         {
             FindLover findLoverWindow = new FindLover(this);
