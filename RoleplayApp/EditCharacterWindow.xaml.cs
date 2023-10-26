@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -209,7 +210,6 @@ namespace RoleplayApp
             try
             {
                 File.WriteAllText(jsonPath, json);
-                MessageBox.Show("Succes!");
                 parentCharacterWindow.UpdateCharacterList();
                 this.Close();
             }
@@ -375,6 +375,38 @@ namespace RoleplayApp
                 this.Close();
             }
 
+        }
+
+        private void RemoveLover(object sender, RoutedEventArgs e)
+        {
+            var jsonData = System.IO.File.ReadAllText(jsonPath);
+            List<CharacterProp> existingCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
+
+            CharacterProp existingCharacter = existingCharacters.FirstOrDefault(c => c.Name == character.Name);
+
+            if (existingCharacter != null)
+            {
+                CharacterProp oldLoverCharacter = existingCharacters.FirstOrDefault(c => c.Name == existingCharacter.LoverId);
+
+                if (oldLoverCharacter != null)
+                {
+                    if (oldLoverCharacter.LoverId == existingCharacter.Name) 
+                    {
+                        oldLoverCharacter.LoverId = null;
+                    }
+                }
+                existingCharacter.LoverId = null;
+
+                string json = JsonConvert.SerializeObject(existingCharacter, Formatting.Indented);
+                try
+                {
+                    parentCharacterWindow.UpdateCharacterList();
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show("Kunne ikke gemme fil: " + ex.Message);
+                }
+            }
         }
     }
 }

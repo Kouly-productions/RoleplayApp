@@ -1141,6 +1141,10 @@ CornerRadius="5">
                     FontSize="16"
                     Click="AddLover_Click"
                     Margin="0,40,0,0"/>
+                <Button Content="Fjern Elsker"
+                    FontSize="16"
+                    Click="RemoveLover"
+                    Margin="0,5,0,0"/>
             </StackPanel>
         </Border>
 

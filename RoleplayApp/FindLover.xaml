@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
         Background="DarkGray"
-        Title="FindLover" Height="600" Width="1000">
+        Title="FindLover" Height="600" Width="1020">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

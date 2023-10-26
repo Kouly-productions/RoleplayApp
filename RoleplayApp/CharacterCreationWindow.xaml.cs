@@ -159,7 +159,6 @@ namespace RoleplayApp
             try
             {
                 File.WriteAllText(jsonPath, json);
-                MessageBox.Show("Succes!");
                 parentCharacterWindow.UpdateCharacterList();
                 this.Close();
             }

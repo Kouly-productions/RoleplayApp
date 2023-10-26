@@ -61,7 +61,6 @@ namespace RoleplayApp
                     string json = File.ReadAllText(jsonPath);
 
                     List<CharacterProp> loadedCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
-
                     if (loadedCharacters != null)
                     {
                         foreach (var characters in loadedCharacters)
@@ -70,6 +69,58 @@ namespace RoleplayApp
                             border.BorderBrush = Brushes.Black;
                             border.BorderThickness = new Thickness(1);
                             border.Margin = new Thickness(5);
+
+                            Image image = null;
+
+                            if (characters.ImagePath != null)
+                            {
+                                image = new Image();
+                                image.Height = 100;
+                                image.Width = 100;
+                                image.Stretch = Stretch.Fill;
+                                image.Source = new BitmapImage(new Uri(characters.ImagePath));
+                            }
+
+                            StackPanel stackPanel = new StackPanel();
+                            stackPanel.Orientation = Orientation.Vertical;
+
+                            TextBlock textBlockRank = new TextBlock();
+                            textBlockRank.FontSize = 16;
+                            textBlockRank.Width = 170;
+                            textBlockRank.Margin = new Thickness(5);
+                            textBlockRank.TextAlignment = TextAlignment.Center;
+                            textBlockRank.FontWeight = FontWeights.Bold;
+
+                            if (characters.ModifiersCombined < 4)
+                            {
+                                textBlockRank.Text = "Svag";
+                                border.Background = new SolidColorBrush(Colors.Pink);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.ModifiersCombined < 8)
+                            {
+                                textBlockRank.Text = "Okay";
+                                border.Background = new SolidColorBrush(Colors.SkyBlue);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.ModifiersCombined < 14)
+                            {
+                                textBlockRank.Text = "Stærk";
+                                border.Background = new SolidColorBrush(Colors.Yellow);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.ModifiersCombined > 14)
+                            {
+                                textBlockRank.Text = "OP";
+                                border.Background = new SolidColorBrush(Colors.DarkRed);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else
+                            {
+                                textBlockRank.Text = "BROKEN";
+                                border.Background = new SolidColorBrush(Colors.Cyan);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
 
                             TextBlock textBlock = new TextBlock();
                             textBlock.FontSize = 16;
@@ -91,7 +142,12 @@ namespace RoleplayApp
 
                             border.MouseLeftButtonDown += (sender, e) => { AddAsLover(characters); };
 
-                            border.Child = textBlock;
+                            if (image != null)
+                            {
+                                stackPanel.Children.Add(image);
+                            }
+                            stackPanel.Children.Add(textBlock);
+                            border.Child = stackPanel;
 
                             CharacterPanel.Children.Add(border);
                         }
@@ -112,6 +168,7 @@ namespace RoleplayApp
                 System.IO.File.WriteAllText(jsonPath, "[]");
             }
         }
+
         private void AddAsLover(CharacterProp selectedCharacter)
         {
             if (ParentCreationWindow != null)

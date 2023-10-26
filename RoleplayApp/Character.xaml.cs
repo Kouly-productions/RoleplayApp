@@ -91,8 +91,6 @@ namespace RoleplayApp
                             StackPanel stackPanel = new StackPanel();
                             stackPanel.Orientation = Orientation.Vertical;
 
-                            double logScale = Math.Log(characters.ModifiersCombined + 1);
-
                             TextBlock textBlockRank = new TextBlock();
                             textBlockRank.FontSize = 16;
                             textBlockRank.Width = 170;
@@ -100,25 +98,25 @@ namespace RoleplayApp
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (logScale < Math.Log(10 + 1))
+                            if (characters.ModifiersCombined <= 4)
                             {
                                 textBlockRank.Text = "Svag";
                                 border.Background = new SolidColorBrush(Colors.Pink);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (logScale < Math.Log(8 + 1))
+                            else if (characters.ModifiersCombined <= 10)
                             {
                                 textBlockRank.Text = "Okay";
                                 border.Background = new SolidColorBrush(Colors.SkyBlue);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (logScale < Math.Log(10 + 1))
+                            else if (characters.ModifiersCombined <= 20)
                             {
                                 textBlockRank.Text = "Stærk";
                                 border.Background = new SolidColorBrush(Colors.Yellow);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (logScale < Math.Log(15 + 1))
+                            else if (characters.ModifiersCombined <= 40)
                             {
                                 textBlockRank.Text = "OP";
                                 border.Background = new SolidColorBrush(Colors.DarkRed);
@@ -198,7 +196,7 @@ namespace RoleplayApp
                 if (characters.ImagePath != null)
                 {
                     image = new Image();
-                    image.Height = 00;
+                    image.Height = 100;
                     image.Width = 100;
                     image.Stretch = Stretch.Fill;
                     image.Source = new BitmapImage(new Uri(characters.ImagePath));
@@ -207,8 +205,6 @@ namespace RoleplayApp
                 StackPanel stackPanel = new StackPanel();
                 stackPanel.Orientation = Orientation.Vertical;
 
-                double logScale = Math.Log(characters.ModifiersCombined + 1);
-
                 TextBlock textBlockRank = new TextBlock();
                 textBlockRank.FontSize = 16;
                 textBlockRank.Width = 170;
@@ -216,25 +212,25 @@ namespace RoleplayApp
                 textBlockRank.TextAlignment = TextAlignment.Center;
                 textBlockRank.FontWeight = FontWeights.Bold;
 
-                if (logScale < Math.Log(10 + 1))
+                if (characters.ModifiersCombined <= 4)
                 {
                     textBlockRank.Text = "Svag";
                     border.Background = new SolidColorBrush(Colors.Pink);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (logScale < Math.Log(8 + 1))
+                else if (characters.ModifiersCombined <= 10)
                 {
                     textBlockRank.Text = "Okay";
                     border.Background = new SolidColorBrush(Colors.SkyBlue);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (logScale < Math.Log(10 + 1))
+                else if (characters.ModifiersCombined <= 20)
                 {
                     textBlockRank.Text = "Stærk";
                     border.Background = new SolidColorBrush(Colors.Yellow);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (logScale < Math.Log(15 + 1))
+                else if (characters.ModifiersCombined <= 40)
                 {
                     textBlockRank.Text = "OP";
                     border.Background = new SolidColorBrush(Colors.DarkRed);
