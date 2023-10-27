@@ -23,6 +23,7 @@ namespace RoleplayApp
     {
         string filePath;
         string jsonPath;
+        string characterPath;
         private List<CharacterProp> loadedCharacters;
 
         public Character()
@@ -30,11 +31,17 @@ namespace RoleplayApp
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            jsonPath = System.IO.Path.Combine(filePath, "Characters", "characters.json");
+            characterPath = System.IO.Path.Combine(filePath, "Characters");
 
             if (!Directory.Exists(filePath))
             {
                 Directory.CreateDirectory(filePath);
+            }
+            
+            if (!Directory.Exists(characterPath))
+            {
+                Directory.CreateDirectory(characterPath);
             }
 
             GetCharacters();

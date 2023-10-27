@@ -32,7 +32,7 @@ namespace RoleplayApp
             this.character = character;
             this.parentCharacterWindow = parentWindow;
             this.DataContext = character;
-            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "characters.json");
+            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "Characters" , "characters.json");
 
             showCharacterInfo(character);
         }

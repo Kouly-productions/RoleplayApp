@@ -51,7 +51,7 @@ namespace RoleplayApp
 
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            jsonPath = System.IO.Path.Combine(filePath, "Characters");
             this.parentCharacterWindow = parentCharacterWindow;
 
             this.DataContext = character;
@@ -146,6 +146,7 @@ namespace RoleplayApp
 
             newCharacter.LoverId = this.SelectedLover;
 
+
             //Read existing json data
             var jsonData = System.IO.File.ReadAllText(jsonPath);
             //Create list
@@ -157,30 +158,49 @@ namespace RoleplayApp
 
             if(existingLover != null)
             {
-                CharacterProp previousLover = existingCharacters.FirstOrDefault(c => c.Name == existingLover.LoverId);
+                UpdateCharacterLoverId(existingLover.LoverId, null);
 
-                if (previousLover != null)
-                {
-                    previousLover.LoverId = null;
-                }
-
-                existingLover.LoverId = newCharacter.Name;
+                UpdateCharacterLoverId(existingLover.Name, newCharacter.Name);
             }
 
             existingCharacters.Add(newCharacter);
 
 
-            string json = JsonConvert.SerializeObject(existingCharacters, Formatting.Indented);
+            string characterFileName = $"{newCharacter.Name}.json";
+            string characterFilePath = System.IO.Path.Combine(jsonPath, characterFileName);
+
+            string json = JsonConvert.SerializeObject(newCharacter, Formatting.Indented);
 
             try
             {
-                File.WriteAllText(jsonPath, json);
+                File.WriteAllText(characterFilePath, json);
                 parentCharacterWindow.UpdateCharacterList();
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
+            }
+        }
+
+        private void UpdateCharacterLoverId(string characterName, string newLoverId)
+        {
+            string characterFileName = $"{characterName}.json";
+            string characterFilePath = System.IO.Path.Combine(jsonPath, characterFileName);
+
+            if (File.Exists(characterFilePath))
+            {
+                var existingCharacterJson = File.ReadAllText(characterFilePath);
+                CharacterProp existingCharacter = JsonConvert.DeserializeObject<CharacterProp>(existingCharacterJson);
+
+                existingCharacter.LoverId = newLoverId;
+
+                string updatedJson = JsonConvert.SerializeObject(existingCharacter, Formatting.Indented);
+                File.WriteAllText(characterFilePath , updatedJson);
+            }
+            else
+            {
+                MessageBox.Show($"Karakteren {characterName} findes ikke.");
             }
         }
 
