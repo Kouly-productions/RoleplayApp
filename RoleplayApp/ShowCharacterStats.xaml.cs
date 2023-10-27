@@ -85,12 +85,14 @@ namespace RoleplayApp
             charStealth.Text = character.Stealth.ToString();
             charSurvival.Text = character.Survival.ToString();
 
+            /*
             charSavingStrength.Text = character.SavingStrength.ToString();
             charSavingDexterity.Text = character.SavingDexterity.ToString();
             charSavingConstitution.Text = character.SavingConstitution.ToString();
             charSavingIntellect.Text = character.SavingIntellect.ToString();
             charSavingWisdom.Text = character.SavingWisdom.ToString();
             charSavingCharisma.Text = character.SavingCharisma.ToString();
+            */
 
             StrengthMod.Text = CalculateModifier(character.Strength).ToString();
             DexterityMod.Text = CalculateModifier(character.Dexterity).ToString();
@@ -195,7 +197,7 @@ namespace RoleplayApp
         {
             return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
-
+        /*
         private void deleteChar_Click(object sender, RoutedEventArgs e)
         {
             string filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
@@ -218,8 +220,8 @@ namespace RoleplayApp
 
                 this.Close();
             }
-
         }
+        */
 
         private void LoverImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

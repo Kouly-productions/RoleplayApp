@@ -59,7 +59,11 @@ namespace RoleplayApp
 
         private bool AreAllFieldsFilled()
         {
-            TextBox[] fields = { WriteName, WriteStrength, WriteIntellect, WriteCharisma, WriteLevel, WriteAge, WriteCountry, WriteMoney };
+            TextBox[] fields = { WriteName, WriteLevel, WriteStrength, WriteDexterity, WriteConstitution,
+            WriteIntellect, WriteWisdom, WriteCharisma, WriteAcrobatic, WriteAnimalTaiming, WriteArcana,
+            WriteAthletics, WriteDeception, WriteHistory, WriteInsight, WriteIntimidation, WriteInvestigation,
+            WriteMedicine, WriteNature, WritePerception, WriteSleightOfHand, WriteStealth, WriteSurvival, WriteAge,
+            WriteArmor, WriteHealth, WriteHaste};
 
             foreach (TextBox field in fields) 
             {
@@ -118,12 +122,14 @@ namespace RoleplayApp
             newCharacter.Stealth = int.Parse(WriteStealth.Text);
             newCharacter.Survival = int.Parse(WriteSurvival.Text);
 
+            /*
             newCharacter.SavingStrength = int.Parse(SavingStrength.Text);
             newCharacter.SavingDexterity = int.Parse(SavingDexterity.Text);
             newCharacter.SavingConstitution = int.Parse(SavingConstitution.Text);
             newCharacter.SavingIntellect = int.Parse(SavingInteligence.Text);
             newCharacter.SavingWisdom = int.Parse(SavingWisdom.Text);
             newCharacter.SavingCharisma = int.Parse(SavingCharisma.Text);
+            */
 
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
             newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
@@ -135,6 +141,8 @@ namespace RoleplayApp
                 CalculateModifier(newCharacter.Intellect) +
                 CalculateModifier(newCharacter.Wisdom) +
                 CalculateModifier(newCharacter.Charisma);
+
+            newCharacter.StatsCombined = newCharacter.Health + newCharacter.Haste + newCharacter.Armor;
 
             newCharacter.LoverId = this.SelectedLover;
 
@@ -149,6 +157,13 @@ namespace RoleplayApp
 
             if(existingLover != null)
             {
+                CharacterProp previousLover = existingCharacters.FirstOrDefault(c => c.Name == existingLover.LoverId);
+
+                if (previousLover != null)
+                {
+                    previousLover.LoverId = null;
+                }
+
                 existingLover.LoverId = newCharacter.Name;
             }
 
@@ -191,9 +206,10 @@ namespace RoleplayApp
                 {
                     Directory.CreateDirectory(destinationDirectory);
                 }
-                string fileName = System.IO.Path.GetFileName(selectedFilePath);
-                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, fileName);
+                string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(selectedFilePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(selectedFilePath)}";
+                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
                 File.Copy(selectedFilePath, destinationFilePath, true);
+
 
                 // Inde i AddImage_Click
                 this.fileName = System.IO.Path.GetFileName(selectedFilePath);
@@ -283,6 +299,8 @@ namespace RoleplayApp
         {
             FindLover findLoverWindow = new FindLover(this);
             findLoverWindow.Show();
+            LoverAddedText.Foreground = new SolidColorBrush(Colors.Green);
+            LoverAddedText.Text = "Elsker er valgt";
         }
 
         private void TextBox_MouseRightButtonUp(object sender, MouseButtonEventArgs e)

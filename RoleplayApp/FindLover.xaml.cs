@@ -32,14 +32,13 @@ namespace RoleplayApp
         public FindLover(CharacterCreationWindow parentWindow)
         {
             InitializeCommonCode();
-            this.ParentWindow = parentWindow;
+            this.ParentCreationWindow = parentWindow;
         }
 
         public FindLover(EditCharacterWindow parentWindow)
         {
             InitializeCommonCode();
             this.ParentEditWindow = parentWindow;
-
         }
 
         public void InitializeCommonCode()
@@ -95,31 +94,31 @@ namespace RoleplayApp
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (characters.ModifiersCombined < 4)
+                            if (characters.ModifiersCombined <= 4 && characters.StatsCombined <= 50)
                             {
                                 textBlockRank.Text = "Svag";
                                 border.Background = new SolidColorBrush(Colors.Pink);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined < 8)
+                            else if (characters.ModifiersCombined <= 10 && characters.StatsCombined <= 90)
                             {
                                 textBlockRank.Text = "Okay";
                                 border.Background = new SolidColorBrush(Colors.SkyBlue);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined < 14)
+                            else if (characters.ModifiersCombined <= 20 && characters.StatsCombined <= 200)
                             {
                                 textBlockRank.Text = "Stærk";
                                 border.Background = new SolidColorBrush(Colors.Yellow);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined > 14)
+                            else if (characters.ModifiersCombined <= 40 && characters.StatsCombined <= 250)
                             {
                                 textBlockRank.Text = "OP";
-                                border.Background = new SolidColorBrush(Colors.DarkRed);
+                                border.Background = new SolidColorBrush(Colors.OrangeRed);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else
+                            else if (characters.ModifiersCombined <= 50 && characters.StatsCombined <= 350)
                             {
                                 textBlockRank.Text = "BROKEN";
                                 border.Background = new SolidColorBrush(Colors.Cyan);

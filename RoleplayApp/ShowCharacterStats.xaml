@@ -633,7 +633,7 @@
         </Border>
         <!--Modifers END-->
 
-        <!--Saving Throws START-->
+        <!--Saving Throws START--><!--
         <Border Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Width="250"
@@ -644,7 +644,7 @@
                 Background="{DynamicResource BackGroundColor}"
                 Margin="0,0,90,65">
             <StackPanel VerticalAlignment="Center">
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -667,8 +667,8 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item END-->
+                <!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -692,8 +692,8 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item END-->
+                <!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -717,8 +717,8 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item END-->
+                <!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -742,8 +742,8 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item END-->
+                <!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -767,8 +767,8 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
-                <!--Saving Throw Item START-->
+                --><!--Saving Throw Item END-->
+                <!--Saving Throw Item START--><!--
                 <Border Height="30"
                         Width="230"
                         CornerRadius="10"
@@ -792,10 +792,10 @@
                                    Margin="30,0,0,0"/>
                     </StackPanel>
                 </Border>
-                <!--Saving Throw Item END-->
+                --><!--Saving Throw Item END--><!--
             </StackPanel>
         </Border>
-        <!--Saving Throws END-->
+        --><!--Saving Throws END-->
 
         <Border Grid.Column="1"
                 Grid.ColumnSpan="3"
@@ -807,7 +807,7 @@
                 BorderThickness="5"
                 CornerRadius="10"
                 Background="{DynamicResource BackGroundColor}"
-                Margin="0,270,90,0">
+                Margin="0,0,90,0">
             <StackPanel Height="710">
                 <!--Skill START-->
                 <Border Height="30"
@@ -1425,15 +1425,5 @@
             Height="30"
             Content="Done"
             FontSize="20" Click="done_Click"/>
-
-        <Button
-            Name="deleteChar"
-            Grid.Row="2"
-            Grid.Column="0"
-            VerticalAlignment="Bottom"
-            Height="30"
-            Content="Delete"
-            FontSize="20"
-            Background="DarkRed" Click="deleteChar_Click"/>
     </Grid>
 </Window>

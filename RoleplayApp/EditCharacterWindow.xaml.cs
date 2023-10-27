@@ -88,12 +88,14 @@ namespace RoleplayApp
             WriteSleightOfHand.Text = characterToEdit.SleightOfHand.ToString();
             WriteStealth.Text = characterToEdit.Stealth.ToString();
             WriteSurvival.Text = characterToEdit.Survival.ToString();
+            /*
             SavingStrength.Text = characterToEdit.SavingStrength.ToString();
             SavingDexterity.Text = characterToEdit.SavingDexterity.ToString();
             SavingConstitution.Text = characterToEdit.SavingConstitution.ToString();
             SavingInteligence.Text = characterToEdit.SavingIntellect.ToString();
             SavingWisdom.Text = characterToEdit.SavingWisdom.ToString();
             SavingCharisma.Text = characterToEdit.SavingCharisma.ToString();
+            */
         }
 
 
@@ -145,12 +147,14 @@ namespace RoleplayApp
                 existingCharacter.Stealth = int.Parse(WriteStealth.Text);
                 existingCharacter.Survival = int.Parse(WriteSurvival.Text);
 
+                /*
                 existingCharacter.SavingStrength = int.Parse(SavingStrength.Text);
                 existingCharacter.SavingDexterity = int.Parse(SavingDexterity.Text);
                 existingCharacter.SavingConstitution = int.Parse(SavingConstitution.Text);
                 existingCharacter.SavingIntellect = int.Parse(SavingInteligence.Text);
                 existingCharacter.SavingWisdom = int.Parse(SavingWisdom.Text);
                 existingCharacter.SavingCharisma = int.Parse(SavingCharisma.Text);
+                */
 
                 existingCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
                 existingCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
@@ -162,6 +166,8 @@ namespace RoleplayApp
                     CalculateModifier(existingCharacter.Intellect) +
                     CalculateModifier(existingCharacter.Wisdom) +
                     CalculateModifier(existingCharacter.Charisma);
+
+                existingCharacter.StatsCombined = existingCharacter.Health + existingCharacter.Haste + existingCharacter.Armor;
 
 
                 oldLover = existingCharacter.LoverId;
@@ -236,8 +242,8 @@ namespace RoleplayApp
                 {
                     Directory.CreateDirectory(destinationDirectory);
                 }
-                string fileName = System.IO.Path.GetFileName(selectedFilePath);
-                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, fileName);
+                string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(selectedFilePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(selectedFilePath)}";
+                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
                 File.Copy(selectedFilePath, destinationFilePath, true);
 
                 // Inde i AddImage_Click
