@@ -1299,7 +1299,7 @@ CornerRadius="5">
                BorderThickness="1"
                CornerRadius="10"
                Height="300"
-               Width="200"
+               Width="250"
                Background="{DynamicResource BackGroundColor}">
             <Grid>
                 <Border Height="30"
@@ -1315,7 +1315,7 @@ CornerRadius="5">
                               FontWeight="Bold"/>
                 </Border>
                 <StackPanel Height="270"
-                   Width="100"
+                   Width="125"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Left">
                     <TextBlock Text="Ven"
@@ -1342,7 +1342,7 @@ CornerRadius="5">
 
                 <!-- Fjender StackPanel -->
                 <StackPanel Height="270"
-                   Width="100"
+                   Width="125"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Right">
                     <TextBlock Text="Fjende"
