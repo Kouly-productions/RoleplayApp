@@ -110,31 +110,31 @@ namespace RoleplayApp
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (characters.ModifiersCombined <= 4 && characters.StatsCombined <= 50)
+                            if (characters.ModifiersCombined <= 4)
                             {
                                 textBlockRank.Text = "Svag";
                                 border.Background = new SolidColorBrush(Colors.Pink);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined <= 10 && characters.StatsCombined <= 90)
+                            else if (characters.ModifiersCombined <= 10)
                             {
                                 textBlockRank.Text = "Okay";
                                 border.Background = new SolidColorBrush(Colors.SkyBlue);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined <= 20 && characters.StatsCombined <= 200)
+                            else if (characters.ModifiersCombined <= 20)
                             {
                                 textBlockRank.Text = "Stærk";
                                 border.Background = new SolidColorBrush(Colors.Yellow);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined <= 40 && characters.StatsCombined <= 250)
+                            else if (characters.ModifiersCombined <= 40)
                             {
                                 textBlockRank.Text = "OP";
                                 border.Background = new SolidColorBrush(Colors.OrangeRed);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (characters.ModifiersCombined <= 50 && characters.StatsCombined <= 350)
+                            else if (characters.ModifiersCombined <= 50)
                             {
                                 textBlockRank.Text = "BROKEN";
                                 border.Background = new SolidColorBrush(Colors.Cyan);
@@ -235,31 +235,31 @@ namespace RoleplayApp
                 textBlockRank.TextAlignment = TextAlignment.Center;
                 textBlockRank.FontWeight = FontWeights.Bold;
 
-                if (characters.ModifiersCombined <= 4 && characters.StatsCombined <= 50)
+                if (characters.ModifiersCombined <= 4)
                 {
                     textBlockRank.Text = "Svag";
                     border.Background = new SolidColorBrush(Colors.Pink);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (characters.ModifiersCombined <= 10 && characters.StatsCombined <= 90)
+                else if (characters.ModifiersCombined <= 10)
                 {
                     textBlockRank.Text = "Okay";
                     border.Background = new SolidColorBrush(Colors.SkyBlue);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (characters.ModifiersCombined <= 20 && characters.StatsCombined <= 200)
+                else if (characters.ModifiersCombined <= 20)
                 {
                     textBlockRank.Text = "Stærk";
                     border.Background = new SolidColorBrush(Colors.Yellow);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (characters.ModifiersCombined <= 40 && characters.StatsCombined <= 250)
+                else if (characters.ModifiersCombined <= 40)
                 {
                     textBlockRank.Text = "OP";
                     border.Background = new SolidColorBrush(Colors.OrangeRed);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (characters.ModifiersCombined <= 50 && characters.StatsCombined <= 350)
+                else if (characters.ModifiersCombined <= 50)
                 {
                     textBlockRank.Text = "BROKEN";
                     border.Background = new SolidColorBrush(Colors.Cyan);

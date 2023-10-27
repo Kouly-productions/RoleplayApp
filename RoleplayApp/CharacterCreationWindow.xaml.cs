@@ -142,8 +142,6 @@ namespace RoleplayApp
                 CalculateModifier(newCharacter.Wisdom) +
                 CalculateModifier(newCharacter.Charisma);
 
-            newCharacter.StatsCombined = newCharacter.Health + newCharacter.Haste + newCharacter.Armor;
-
             newCharacter.LoverId = this.SelectedLover;
 
             //Read existing json data
