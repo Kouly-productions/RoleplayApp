@@ -75,7 +75,12 @@ namespace RoleplayApp
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            double x = this.Left;
+            double y = this.Top;
+
             FantasyShowCharacters fantasy = new FantasyShowCharacters();
+            fantasy.Left = x;
+            fantasy.Top = y;
             fantasy.Show();
             this.Close();
         }

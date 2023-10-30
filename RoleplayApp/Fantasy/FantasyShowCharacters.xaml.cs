@@ -109,38 +109,6 @@ namespace RoleplayApp.Fantasy
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (characters.ModifiersCombined <= 4 && characters.StatsCombined <= 50)
-                            {
-                                textBlockRank.Text = "Svag";
-                                border.Background = new SolidColorBrush(Colors.Pink);
-                                stackPanel.Children.Add(textBlockRank);
-                            }
-                            else if (characters.ModifiersCombined <= 10 && characters.StatsCombined <= 90)
-                            {
-                                textBlockRank.Text = "Okay";
-                                border.Background = new SolidColorBrush(Colors.SkyBlue);
-                                stackPanel.Children.Add(textBlockRank);
-                            }
-                            else if (characters.ModifiersCombined <= 20 && characters.StatsCombined <= 200)
-                            {
-                                textBlockRank.Text = "Stærk";
-                                border.Background = new SolidColorBrush(Colors.Yellow);
-                                stackPanel.Children.Add(textBlockRank);
-                            }
-                            else if (characters.ModifiersCombined <= 40 && characters.StatsCombined <= 250)
-                            {
-                                textBlockRank.Text = "OP";
-                                border.Background = new SolidColorBrush(Colors.OrangeRed);
-                                stackPanel.Children.Add(textBlockRank);
-                            }
-                            else if (characters.ModifiersCombined <= 50 && characters.StatsCombined <= 350)
-                            {
-                                textBlockRank.Text = "BROKEN";
-                                border.Background = new SolidColorBrush(Colors.Cyan);
-                                stackPanel.Children.Add(textBlockRank);
-                            }
-
-
                             TextBlock textBlock = new TextBlock();
                             textBlock.FontSize = 16;
                             textBlock.Width = 170;
@@ -234,37 +202,6 @@ namespace RoleplayApp.Fantasy
                 textBlockRank.TextAlignment = TextAlignment.Center;
                 textBlockRank.FontWeight = FontWeights.Bold;
 
-                if (characters.ModifiersCombined <= 4 && characters.StatsCombined <= 50)
-                {
-                    textBlockRank.Text = "Svag";
-                    border.Background = new SolidColorBrush(Colors.Pink);
-                    stackPanel.Children.Add(textBlockRank);
-                }
-                else if (characters.ModifiersCombined <= 10 && characters.StatsCombined <= 90)
-                {
-                    textBlockRank.Text = "Okay";
-                    border.Background = new SolidColorBrush(Colors.SkyBlue);
-                    stackPanel.Children.Add(textBlockRank);
-                }
-                else if (characters.ModifiersCombined <= 20 && characters.StatsCombined <= 200)
-                {
-                    textBlockRank.Text = "Stærk";
-                    border.Background = new SolidColorBrush(Colors.Yellow);
-                    stackPanel.Children.Add(textBlockRank);
-                }
-                else if (characters.ModifiersCombined <= 40 && characters.StatsCombined <= 250)
-                {
-                    textBlockRank.Text = "OP";
-                    border.Background = new SolidColorBrush(Colors.OrangeRed);
-                    stackPanel.Children.Add(textBlockRank);
-                }
-                else if (characters.ModifiersCombined <= 50 && characters.StatsCombined <= 350)
-                {
-                    textBlockRank.Text = "BROKEN";
-                    border.Background = new SolidColorBrush(Colors.Cyan);
-                    stackPanel.Children.Add(textBlockRank);
-                }
-
                 TextBlock textBlock = new TextBlock();
                 textBlock.FontSize = 16;
                 textBlock.Width = 170;
@@ -316,13 +253,13 @@ namespace RoleplayApp.Fantasy
         private void ShowCharacterInfo(CharacterProp character)
         {
             /*FantasyShowCharacterStats showCharacterStats = new FantasyShowCharacterStats(character, this);
-            showCharacterStats.ShowDialog();/*
+            showCharacterStats.ShowDialog();*/
         }
 
         private void EditCharacterInfo(CharacterProp character)
         {
-            /*EditCharacterWindow showCharacterStats = new EditCharacterWindow(character, this);
-            showCharacterStats.ShowDialog();*/
+            FantasyEditCharacter editCharacterStats = new FantasyEditCharacter(character, this);
+            editCharacterStats.ShowDialog();
         }
 
         private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

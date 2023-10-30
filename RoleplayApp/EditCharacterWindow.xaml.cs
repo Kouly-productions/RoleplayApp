@@ -88,14 +88,6 @@ namespace RoleplayApp
             WriteSleightOfHand.Text = characterToEdit.SleightOfHand.ToString();
             WriteStealth.Text = characterToEdit.Stealth.ToString();
             WriteSurvival.Text = characterToEdit.Survival.ToString();
-            /*
-            SavingStrength.Text = characterToEdit.SavingStrength.ToString();
-            SavingDexterity.Text = characterToEdit.SavingDexterity.ToString();
-            SavingConstitution.Text = characterToEdit.SavingConstitution.ToString();
-            SavingInteligence.Text = characterToEdit.SavingIntellect.ToString();
-            SavingWisdom.Text = characterToEdit.SavingWisdom.ToString();
-            SavingCharisma.Text = characterToEdit.SavingCharisma.ToString();
-            */
         }
 
 
