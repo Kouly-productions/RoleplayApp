@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\
 RoleplayApp
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\App.xaml
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\App.xaml
 9-1705852674
 
 131292730693
-1992079390922
+198-306949569
 Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
 
-False
+True
 
