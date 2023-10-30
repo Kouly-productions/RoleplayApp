@@ -167,10 +167,16 @@ namespace RoleplayApp
                     CalculateModifier(existingCharacter.Wisdom) +
                     CalculateModifier(existingCharacter.Charisma);
 
-                existingCharacter.StatsCombined = existingCharacter.Health + existingCharacter.Haste + existingCharacter.Armor;
-
 
                 oldLover = existingCharacter.LoverId;
+
+                if (string.IsNullOrEmpty(this.SelectedLover))
+                {
+                    this.SelectedLover = oldLover;
+                }
+
+                existingCharacter.LoverId = this.SelectedLover;
+
                 existingCharacter.LoverId = this.SelectedLover;
 
                 if (!string.IsNullOrEmpty(oldLover) && oldLover != this.SelectedLover)
