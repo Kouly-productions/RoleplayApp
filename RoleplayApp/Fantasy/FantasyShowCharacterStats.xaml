@@ -1,0 +1,574 @@
+﻿<Window x:Class="RoleplayApp.FantasyShowCharacterStats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoleplayApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="ShowCharacterStats" Height="1000" Width="1880">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Background>
+        <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
+            <GradientStop Color="LightBlue" Offset="0.0"/>
+            <GradientStop Color="Blue" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Name START-->
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="4"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="70"
+                Width="450"
+                CornerRadius="15"
+                Background="{DynamicResource BackGroundColor}"
+                VerticalAlignment="Top">
+            <TextBlock Name="charName"
+                       Text="Mike"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="50"/>
+        </Border>
+        <!--Name END-->
+        <!--Level START-->
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="4"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="50"
+                Width="350"
+                CornerRadius="15"
+                Background="#AB91C8"
+                VerticalAlignment="Top"
+                Margin="0,70,0,0">
+            <TextBlock Name="charLevel"
+                       Text="Level 0"
+                       Foreground="BlueViolet"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"/>
+        </Border>
+        <!--Level END-->
+        
+        <!--Powers START-->
+        <Border Grid.ColumnSpan="3"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Width="300"
+                Height="450"
+                Background="{DynamicResource BackGroundColor}"
+                CornerRadius="10"
+                Margin="0,0,0,200">
+            <Border Height="40"
+                    CornerRadius="10"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                <TextBlock Text="Krafter"
+                           FontSize="30"
+                           TextAlignment="Center"
+                           FontWeight="Bold"/>
+            </Border>
+        </Border>
+        <!--Powers END-->
+        <!--Info START-->
+        <Border BorderBrush="Black"
+                BorderThickness="2"
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="2"
+                Grid.Row="1"
+                Width="300"
+                Height="450"
+                CornerRadius="10"
+                Margin="0,200,0,0">
+            
+        </Border>
+        <!--Info END-->
+
+        <!--Character START-->
+        <StackPanel Name="MainInfoContainer"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="4"
+                    Grid.RowSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <StackPanel 
+                    Name="CharacterMainInfoPanel"
+                    Margin="0,140,0,0">
+                <Border Height="40"
+                        Width="200"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="2">
+                    <TextBlock Name="selectedName"
+                               Text="selectedNameHere"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24">
+
+                    </TextBlock>
+                </Border>
+
+                <!--Image START-->
+                <Border Height="250"
+                Width="200"
+                BorderThickness="1"
+                BorderBrush="Black">
+                    <Image Name="CharImage"
+                   Stretch="Fill"/>
+                </Border>
+                <!--Image END-->
+
+                <Border Height="200"
+                Width="250"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Background="{DynamicResource BackGroundColor}">
+                    <Grid>
+                        <Border Width="70"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        CornerRadius="5"
+                        Background="{DynamicResource BackGroundColor}">
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="Alder"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"/>
+                                <TextBlock Text="Køn"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Text="Race"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Text="Penge"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Text="Land"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Width="177"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5"
+                            HorizontalAlignment="Right">
+                            <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Width="160"
+                                    Margin="10,0,0,0">
+                                <TextBlock Name="charAge"
+                                   Text="Alder"
+                                   FontSize="20"/>
+                                <TextBlock Name="charGender"
+                                   Text="Køn"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Name="charType"
+                                   Text="Race"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Name="charMoney"
+                                   Text="Penge"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                <TextBlock Name="charCountry"
+                                   Text="Land"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                    Name="LoverInfoPanel">
+                <Image Height="100"
+                        Width="100"
+                        Source="pack://application:,,,/RoleplayApp;component/Resources/Hearth.png"/>
+                <StackPanel 
+
+                    Margin="0,140,0,0">
+                    <Border Height="40"
+                        Width="200"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="2">
+                        <TextBlock Name="loverName"
+                               Text="LovernameHere"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24">
+
+                        </TextBlock>
+                    </Border>
+
+
+
+
+                    <!--Image START-->
+                    <Border 
+                Height="250"
+                Width="200"
+                BorderThickness="1"
+                BorderBrush="Black">
+                        <Image Name="LoverImage"
+                           MouseLeftButtonDown="LoverImage_MouseLeftButtonDown"
+                   Stretch="Fill"/>
+                    </Border>
+
+                    <!--Image END-->
+
+                    <Border Height="200"
+                Width="250"
+                CornerRadius="10"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Background="{DynamicResource BackGroundColor}">
+                        <Grid>
+                            <Border Width="70"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        CornerRadius="5"
+                        Background="{DynamicResource BackGroundColor}">
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="Alder"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"/>
+                                    <TextBlock Text="Køn"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Text="Race"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Text="Penge"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Text="Land"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   TextDecorations="Underline"
+                                   Margin="0,10,0,0"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Width="177"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5"
+                            HorizontalAlignment="Right">
+                                <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Width="160"
+                                    Margin="10,0,0,0">
+                                    <TextBlock Name="loverAge"
+                                   Text="Alder"
+                                   FontSize="20"/>
+                                    <TextBlock Name="loverGender"
+                                   Text="Køn"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Name="loverRace"
+                                   Text="Race"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Name="loverMoney"
+                                   Text="Penge"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                    <TextBlock Name="loverCountry"
+                                   Text="Land"
+                                   FontSize="20"
+                                   Margin="0,10,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!--Character END-->
+
+        <!--Description START-->
+        <Border Grid.Row="2"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="4"
+                    Width="500"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Width="500"
+                    Height="50"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+                    <TextBlock Text="Beskrivelse"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           TextAlignment="Center"/>
+                </Border>
+                <Border Height="273"
+                        VerticalAlignment="Bottom"
+                        BorderBrush="Black"
+                        BorderThickness="2">
+                    <TextBlock Name="charDescription"
+                               Text="Dette er en beskrivelse"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                </Border>
+            </Grid>
+        </Border>
+        <!--Description END-->
+
+        <!--Relationer START-->
+        <Border Grid.Column="7"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="250"
+                Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Height="30"
+                        CornerRadius="7"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource MainColor}"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <TextBlock Text="Relationer"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"/>
+                </Border>
+                <StackPanel Height="270"
+                        Width="125"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left">
+                    <TextBlock Text="Ven"
+                               TextAlignment="Center"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextDecorations="Underline"/>
+                    <ItemsControl ItemsSource="{Binding Friends}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Friend, StringFormat='+{0}'}"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,5,0,0"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+                <StackPanel Height="270"
+                        Width="125"
+                        VerticalAlignment="Bottom" 
+                        HorizontalAlignment="Right">
+                    <TextBlock Text="Fjende"
+                               TextAlignment="Center"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextDecorations="Underline"/>
+                    <ItemsControl ItemsSource="{Binding Enemies}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Enemy, StringFormat='-{0}'}"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,5,0,0"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!--Relationer END-->
+
+        <!--Personality START-->
+        <Border Grid.Column="7"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="250"
+                Background="{DynamicResource BackGroundColor}">
+            <StackPanel>
+                <Border Height="30"
+                    CornerRadius="7"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Skills"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+                </Border>
+                <ItemsControl ItemsSource="{Binding Skills}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Skill, StringFormat='+{0}'}"
+                                   FontSize="16"
+                                   Margin="0,10,0,0"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Border>
+        <!--Personality END-->
+
+        <!--BaseStats START-->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.Column="7"
+                    Grid.ColumnSpan="2">
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock Name="charArmor"
+                               Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Armor"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock x:Name="charHealth"
+                                Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Liv"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border Height="100"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,30"
+                    Background="{DynamicResource BackGroundColor}"
+                    CornerRadius="10">
+                <Border Height="80"
+                        Width="80"
+                        Background="{DynamicResource ForeGroundColor}">
+                    <Grid>
+                        <TextBlock Name="charHaste"
+                               Text="+0" 
+                               FontSize="40"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center">
+                        </TextBlock>
+                        <TextBlock Text="Hast"
+                               FontSize="15"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Border>
+        </StackPanel>
+        <!--BaseStats END-->
+        <Button
+            Name="done"
+            Grid.Row="2"
+            Grid.Column="9"
+            VerticalAlignment="Bottom"
+            Height="30"
+            Content="Done"
+            FontSize="20" Click="done_Click"/>
+    </Grid>
+</Window>

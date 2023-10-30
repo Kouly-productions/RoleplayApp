@@ -41,7 +41,16 @@
 
         <Button Grid.Column="1"
                 Grid.Row="2"
-                Content="Karakterer"
+                Content="DND"
+                FontSize="25"
+                FontWeight="Bold"
+                Background="#c7c7c7"
+                Click="Button_Click_3"
+                />
+
+        <Button Grid.Column="3"
+                Grid.Row="2"
+                Content="Fantasy"
                 FontSize="25"
                 FontWeight="Bold"
                 Background="#c7c7c7"
@@ -53,13 +62,7 @@
                 Content="Afstemning"
                 FontSize="25"
                 FontWeight="Bold"
-                Background="#c7c7c7" Click="Button_Click_2"/>
-
-        <Button Grid.Column="3"
-                Grid.Row="4"
-                Content="Butikker"
-                FontSize="25"
-                FontWeight="Bold"
-                Background="#c7c7c7"/>
+                Background="#c7c7c7"
+                Click="Button_Click_4"/>
     </Grid>
 </Window>

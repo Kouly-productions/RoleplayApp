@@ -24,19 +24,29 @@ namespace RoleplayApp
         Ukendt
     }
 
-    public class Inventory
+    public enum AbilityType
     {
-        public string? ItemName { get; set; }
-        public string? ItemDescription { get; set; }
-        public int ItemValue { get; set; }
+        Ild,
+        Vand,
+        Is,
+        Elektricitet,
+        Natur,
+        Lys,
+        Mørke
+    }
+
+    public class Forces
+    {
+        public string? Name { get; set; }
+        public string Description { get; set; }
+        int AbilityLevelRequirement { get; set; }
+        string imagePath { get; set; }
+        AbilityType abilityType { get; set; }
+        bool IsAOE { get; set; }
     }
 
     public class CharacterProp
     {
-        public CharacterProp() 
-        {
-        }
-
         public class SkillViewModel
         {
             public string? Skill { get; set; }

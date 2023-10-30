@@ -9,12 +9,21 @@ RoleplayApp
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+<<<<<<< Updated upstream
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\App.xaml
 9-1705852674
 
 112114216065
 1992079390922
 Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
+=======
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\App.xaml
+111557545401
+
+13-56173383
+199-1444110115
+Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;Fantasy\FantasyShowCharacters.xaml;Fantasy\FantasyShowCharacterStats.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
+>>>>>>> Stashed changes
 
 False
 

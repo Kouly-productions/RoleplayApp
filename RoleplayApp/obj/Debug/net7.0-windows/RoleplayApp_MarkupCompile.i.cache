@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\App.xaml
-9-1705852674
+111557545401
 
-131292730693
+15-877658755
 198-306949569
-Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
+Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;Fantasy\FantasyShowCharacters.xaml;Fantasy\FantasyShowCharacterStats.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
 
-True
+False
 

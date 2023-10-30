@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoleplayApp.Fantasy;
+using System;
 using System.Collections.Generic;
 using System.IO.Enumeration;
 using System.Linq;
@@ -70,6 +71,13 @@ namespace RoleplayApp
             character.Top = y;
             this.Close();
             character.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            FantasyShowCharacters fantasy = new FantasyShowCharacters();
+            fantasy.Show();
+            this.Close();
         }
     }
 }
