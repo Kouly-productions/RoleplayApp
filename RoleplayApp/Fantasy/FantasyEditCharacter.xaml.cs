@@ -50,7 +50,7 @@ namespace RoleplayApp.Fantasy
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             this.parentCharacterWindow = parentCharacterWindow;
             this.character = characterToEdit;
             this.DataContext = character;
@@ -61,6 +61,7 @@ namespace RoleplayApp.Fantasy
             WriteCountry.Text = characterToEdit.Country;
             WriteMoney.Text = characterToEdit.Money;
             WriteDescription.Text = characterToEdit.Description;
+            WriteHistory.Text = characterToEdit.CharacterHistory;
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
@@ -78,21 +79,15 @@ namespace RoleplayApp.Fantasy
                 existingCharacter.ImagePath = string.IsNullOrEmpty(fileName) ? existingCharacter.ImagePath : fileName;
                 existingCharacter.Gender = character.Gender;
                 existingCharacter.Type = character.Type;
+                existingCharacter.Power = character.Power;
                 existingCharacter.Country = WriteCountry.Text;
                 existingCharacter.Money = WriteMoney.Text;
                 existingCharacter.Description = WriteDescription.Text;
+                existingCharacter.CharacterHistory = WriteHistory.Text;
 
                 existingCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
                 existingCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
                 existingCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
-
-                existingCharacter.ModifiersCombined = CalculateModifier(existingCharacter.Strength) +
-                    CalculateModifier(existingCharacter.Dexterity) +
-                    CalculateModifier(existingCharacter.Constitution) +
-                    CalculateModifier(existingCharacter.Intellect) +
-                    CalculateModifier(existingCharacter.Wisdom) +
-                    CalculateModifier(existingCharacter.Charisma);
-
 
                 oldLover = existingCharacter.LoverId;
 
@@ -156,10 +151,6 @@ namespace RoleplayApp.Fantasy
             {
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
             }
-        }
-        public static int CalculateModifier(int abilityScore)
-        {
-            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
@@ -308,7 +299,7 @@ namespace RoleplayApp.Fantasy
         private void deleteChar_Click(object sender, RoutedEventArgs e)
         {
             string filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            string jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            string jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             string jsonData = System.IO.File.ReadAllText(jsonPath);
 
             List<CharacterProp> characterList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CharacterProp>>(jsonData);
@@ -359,6 +350,17 @@ namespace RoleplayApp.Fantasy
                 {
                     MessageBox.Show("Kunne ikke gemme fil: " + ex.Message);
                 }
+            }
+        }
+
+        private void Power_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            if (comboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string selectedContent = (string)selectedItem.Content;
+                Power selectedPower = (Power)Enum.Parse(typeof(Power), selectedContent);
+                character.Power = selectedPower;
             }
         }
     }

@@ -192,6 +192,8 @@ namespace RoleplayApp.Fantasy
                     }
                 }
 
+
+
                 StackPanel stackPanel = new StackPanel();
                 stackPanel.Orientation = Orientation.Vertical;
 

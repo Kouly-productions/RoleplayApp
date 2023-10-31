@@ -88,6 +88,7 @@
                 Margin="0,100,0,0"
                 VerticalAlignment="Bottom">
             <StackPanel>
+
                 <Button Content="Tilføj Billede"
                     FontSize="16"
                     Click="AddImage_Click"/>
@@ -223,7 +224,7 @@
                     BorderThickness="3"
                     CornerRadius="5"
                     Background="{DynamicResource BackGroundColor}">
-            <Grid>
+            <StackPanel>
                 <Border Width="500"
                     Height="50"
                     BorderBrush="Black"
@@ -236,15 +237,14 @@
                            FontWeight="Bold"
                            TextAlignment="Center"/>
                 </Border>
-                <Border Height="273"
-                        VerticalAlignment="Bottom"
+                <Border Height="400"
                         BorderBrush="Black"
                         BorderThickness="2">
                     <TextBox Name="WriteDescription"
                              FontSize="16"
                              TextWrapping="Wrap"/>
                 </Border>
-            </Grid>
+            </StackPanel>
         </Border>
         <!--Description END-->
 
@@ -256,7 +256,7 @@
                BorderThickness="1"
                CornerRadius="10"
                Height="300"
-               Width="200"
+               Width="250"
                Background="{DynamicResource BackGroundColor}">
             <Grid>
                 <Border Height="30"
@@ -272,7 +272,7 @@
                               FontWeight="Bold"/>
                 </Border>
                 <StackPanel Height="270"
-                   Width="100"
+                   Width="125"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Left">
                     <TextBlock Text="Ven"
@@ -299,7 +299,7 @@
 
                 <!-- Fjender StackPanel -->
                 <StackPanel Height="270"
-                   Width="100"
+                   Width="125"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Right">
                     <TextBlock Text="Fjende"
@@ -337,7 +337,7 @@
                 BorderThickness="1"
                 CornerRadius="10"
                 Height="300"
-                Width="200"
+                Width="250"
                 Background="{DynamicResource BackGroundColor}">
             <StackPanel>
                 <Border Height="30"
@@ -369,6 +369,91 @@
             </StackPanel>
         </Border>
         <!--Personality END-->
+
+        <!--Powers START-->
+        <Border Grid.ColumnSpan="3"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               BorderBrush="Black"
+               BorderThickness="2"
+               Width="300"
+               Height="450"
+               Background="{DynamicResource BackGroundColor}"
+               CornerRadius="10"
+               Margin="0,0,0,200">
+            <Grid>
+            <Border Height="40"
+                   CornerRadius="10"
+                   BorderBrush="Black"
+                   BorderThickness="1"
+                   VerticalAlignment="Top"
+                   Background="{DynamicResource MainColor}">
+                <TextBlock Text="Krafter"
+                          FontSize="30"
+                          TextAlignment="Center"
+                          FontWeight="Bold"/>
+            </Border>
+                <Button Height="20"
+                        Content="Tilføj kraft"
+                        VerticalAlignment="Top"
+                        Margin="0,40,0,0"/>
+            </Grid>
+        </Border>
+        <!--Powers END-->
+
+        <!--History START-->
+        <Border Grid.ColumnSpan="3"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+                Grid.Row="1"
+               BorderBrush="Black"
+               BorderThickness="2"
+               Width="300"
+               Height="450"
+               Background="{DynamicResource BackGroundColor}"
+               CornerRadius="10"
+               Margin="0,150,0,0">
+            <Grid>
+                <Border Height="40"
+                   CornerRadius="10"
+                   BorderBrush="Black"
+                   BorderThickness="1"
+                   VerticalAlignment="Top"
+                   Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Historie"
+                          FontSize="30"
+                          TextAlignment="Center"
+                          FontWeight="Bold"/>
+                </Border>
+                <TextBox Name="WriteHistory"
+                         Height="405"
+                         Width="300"
+                         FontSize="20"
+                         VerticalAlignment="Bottom"
+                         TextWrapping="Wrap"/>
+            </Grid>
+        </Border>
+        <!--History END-->
+
+        <ComboBox Name="Power"
+                  Grid.Column="5"
+                  Grid.ColumnSpan="2"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  Height="25"
+                  Width="300"
+                  SelectionChanged="Power_SelectionChanged"
+                  Margin="0,230,0,0">
+            <ComboBoxItem Content="MegetSvag"/>
+            <ComboBoxItem Content="Svag"/>
+            <ComboBoxItem Content="Menneske"/>
+            <ComboBoxItem Content="Trænet"/>
+            <ComboBoxItem Content="Stærk"/>
+            <ComboBoxItem Content="Elite"/>
+            <ComboBoxItem Content="Mystisk"/>
+            <ComboBoxItem Content="OP"/>
+            <ComboBoxItem Content="BROKEN"/>
+        </ComboBox>
 
         <Button
             Name="Done"

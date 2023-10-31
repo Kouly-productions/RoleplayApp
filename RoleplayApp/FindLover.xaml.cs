@@ -34,26 +34,26 @@ namespace RoleplayApp
 
         public FindLover(CharacterCreationWindow parentWindow)
         {
-            InitializeCommonCode();
             this.ParentCreationWindow = parentWindow;
+            InitializeCommonCode();
         }
 
         public FindLover(FantasyCreateCharacter parentWindow)
         {
-            InitializeCommonCode();
             this.fantasyCreateCharacter = parentWindow;
+            InitializeCommonCode();
         }
 
         public FindLover(FantasyEditCharacter parentWindow)
         {
-            InitializeCommonCode();
             this.fantasyEditParentWindow = parentWindow;
+            InitializeCommonCode();
         }
 
         public FindLover(EditCharacterWindow parentWindow)
         {
-            InitializeCommonCode();
             this.ParentEditWindow = parentWindow;
+            InitializeCommonCode();
         }
 
         public void InitializeCommonCode()
@@ -61,7 +61,16 @@ namespace RoleplayApp
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            if (fantasyEditParentWindow != null || fantasyCreateCharacter != null)
+            {
+                // Ændre stien for Fantasy karakterer
+                jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
+            }
+            else
+            {
+                // Standard sti
+                jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            }
 
             GetCharacters();
         }

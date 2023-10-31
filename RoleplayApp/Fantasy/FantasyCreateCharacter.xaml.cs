@@ -49,7 +49,7 @@ namespace RoleplayApp.Fantasy
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "characters.json");
+            jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             this.parentCharacterWindow = parentCharacterWindow;
 
             this.DataContext = character;
@@ -84,29 +84,15 @@ namespace RoleplayApp.Fantasy
             newCharacter.ImagePath = fileName;
             newCharacter.Gender = character.Gender;
             newCharacter.Type = character.Type;
+            newCharacter.Power = character.Power;
             newCharacter.Country = WriteCountry.Text;
             newCharacter.Money = WriteMoney.Text;
             newCharacter.Description = WriteDescription.Text;
-
-            /*
-            newCharacter.SavingStrength = int.Parse(SavingStrength.Text);
-            newCharacter.SavingDexterity = int.Parse(SavingDexterity.Text);
-            newCharacter.SavingConstitution = int.Parse(SavingConstitution.Text);
-            newCharacter.SavingIntellect = int.Parse(SavingInteligence.Text);
-            newCharacter.SavingWisdom = int.Parse(SavingWisdom.Text);
-            newCharacter.SavingCharisma = int.Parse(SavingCharisma.Text);
-            */
+            newCharacter.CharacterHistory = WriteHistory.Text;
 
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
             newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
             newCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
-
-            newCharacter.ModifiersCombined = CalculateModifier(newCharacter.Strength) +
-                CalculateModifier(newCharacter.Dexterity) +
-                CalculateModifier(newCharacter.Constitution) +
-                CalculateModifier(newCharacter.Intellect) +
-                CalculateModifier(newCharacter.Wisdom) +
-                CalculateModifier(newCharacter.Charisma);
 
             newCharacter.LoverId = this.SelectedLover;
 
@@ -146,11 +132,6 @@ namespace RoleplayApp.Fantasy
             {
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
             }
-        }
-
-        public static int CalculateModifier(int abilityScore)
-        {
-            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -297,6 +278,15 @@ namespace RoleplayApp.Fantasy
                 }
             }
         }
-
+        private void Power_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            if (comboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string selectedContent = (string)selectedItem.Content;
+                Power selectedPower = (Power)Enum.Parse(typeof(Power), selectedContent);
+                character.Power = selectedPower;
+            }
+        }
     }
 }

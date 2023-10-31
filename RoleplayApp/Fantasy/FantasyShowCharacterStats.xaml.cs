@@ -53,6 +53,7 @@ namespace RoleplayApp
             charCountry.Text = character.Country;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
+            charHistory.Text = character.CharacterHistory;
 
             ShowLoverInfo(character.LoverId);
 
@@ -143,12 +144,6 @@ namespace RoleplayApp
                     CharImage.Source = image;
                 }
             }
-        }
-
-
-        public static int CalculateModifier(int abilityScore)
-        {
-            return (int)Math.Floor((abilityScore - 10) / 2.0);
         }
 
         private void LoverImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

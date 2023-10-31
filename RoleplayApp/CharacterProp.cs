@@ -24,6 +24,18 @@ namespace RoleplayApp
         Ukendt
     }
 
+    public enum Power
+    {
+        MegetSvag,
+        Svag,
+        Menneske,
+        Trænet,
+        Elite,
+        Mystisk,
+        OP,
+        BROKEN
+    }
+
     public enum AbilityType
     {
         Ild,
@@ -67,6 +79,7 @@ namespace RoleplayApp
         public string Country { get; set; }
         public string Money { get; set; }
         public string Description { get; set; }
+        public string CharacterHistory { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
         public int Armor { get; set; }
@@ -118,6 +131,7 @@ namespace RoleplayApp
         public int ModifiersCombined { get; set; }
         public Gender Gender { get; set; }
         public Type Type { get; set; }
+        public Power Power { get; set; }
         public int Age { get; set; }
         public string ImagePath { get; set; }
     }

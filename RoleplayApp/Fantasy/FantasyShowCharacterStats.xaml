@@ -114,17 +114,24 @@
                 CornerRadius="10"
                 Background="{DynamicResource BackGroundColor}"
                 Margin="0,200,0,0">
-            <Border Height="40"
-                    CornerRadius="10"
-                    BorderBrush="Black"
-                    BorderThickness="1"
-                    VerticalAlignment="Top"
-                    Background="{DynamicResource MainColor}">
-                <TextBlock Text="Historie"
-                           FontSize="30"
-                           TextAlignment="Center"
-                           FontWeight="Bold"/>
-            </Border>
+            <StackPanel>
+                <Border Height="40"
+                        CornerRadius="10"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Historie"
+                               FontSize="30"
+                               TextAlignment="Center"
+                               FontWeight="Bold"/>
+                </Border>
+                <TextBlock Name="charHistory"
+                           Text="History goes here"
+                           FontSize="20"
+                           TextWrapping="Wrap"
+                           Height="410"/>
+            </StackPanel>
         </Border>
         <!--Info END-->
 
@@ -369,7 +376,7 @@
                     BorderThickness="3"
                     CornerRadius="5"
                     Background="{DynamicResource BackGroundColor}">
-            <Grid>
+            <StackPanel>
                 <Border Width="500"
                     Height="50"
                     BorderBrush="Black"
@@ -382,8 +389,7 @@
                            FontWeight="Bold"
                            TextAlignment="Center"/>
                 </Border>
-                <Border Height="273"
-                        VerticalAlignment="Bottom"
+                <Border Height="400"
                         BorderBrush="Black"
                         BorderThickness="2">
                     <TextBlock Name="charDescription"
@@ -391,7 +397,7 @@
                                FontSize="16"
                                TextWrapping="Wrap"/>
                 </Border>
-            </Grid>
+            </StackPanel>
         </Border>
         <!--Description END-->
 
