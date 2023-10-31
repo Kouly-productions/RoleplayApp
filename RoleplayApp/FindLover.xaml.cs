@@ -63,12 +63,10 @@ namespace RoleplayApp
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             if (fantasyEditParentWindow != null || fantasyCreateCharacter != null)
             {
-                // Ændre stien for Fantasy karakterer
                 jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             }
             else
             {
-                // Standard sti
                 jsonPath = System.IO.Path.Combine(filePath, "characters.json");
             }
 

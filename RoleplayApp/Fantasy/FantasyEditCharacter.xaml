@@ -474,7 +474,6 @@
         FontSize="15"
         FontWeight="Bold"
         Background="#dc3131" Click="GoBack_Click"/>
-
         <Button
             Name="deleteChar"
             Grid.Row="2"

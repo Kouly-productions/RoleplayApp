@@ -277,10 +277,6 @@ namespace RoleplayApp.Fantasy
 
             switch (selectedOption)
             {
-                case "Navn":
-                    SearchBox.Text = default;
-                    sortedCharacters = sortedCharacters.OrderBy(c => c.Name).ToList();
-                    break;
                 case "Level":
                     SearchBox.Text = default;
                     sortedCharacters = sortedCharacters.OrderByDescending(c => c.Level).ToList();

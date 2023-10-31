@@ -43,7 +43,6 @@
                   Width="200"
                   VerticalAlignment="Top"
                   Margin="100,0,0,0" SelectionChanged="SortByComboBox_SelectionChanged">
-                <ComboBoxItem Content="Navn"/>
                 <ComboBoxItem Content="Level"/>
                 <ComboBoxItem Content="Styrke"/>
             </ComboBox>
