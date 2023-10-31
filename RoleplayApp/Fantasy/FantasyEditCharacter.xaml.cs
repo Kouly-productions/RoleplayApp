@@ -33,7 +33,7 @@ namespace RoleplayApp.Fantasy
 
         CharacterProp character = new CharacterProp();
 
-        private Character parentCharacterWindow;
+        private FantasyShowCharacters parentCharacterWindow;
 
         private CharacterProp charInfo = new CharacterProp();
 
@@ -45,7 +45,7 @@ namespace RoleplayApp.Fantasy
             UseShellExecute = true,
         };
 
-        public FantasyEditCharacter(CharacterProp characterToEdit, Character parentCharacterWindow)
+        public FantasyEditCharacter(CharacterProp characterToEdit, FantasyShowCharacters parentCharacterWindow)
         {
             InitializeComponent();
 

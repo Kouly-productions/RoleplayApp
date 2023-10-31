@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using RoleplayApp.Fantasy;
 
 namespace RoleplayApp
 {
@@ -22,10 +23,10 @@ namespace RoleplayApp
     public partial class FantasyShowCharacterStats : Window
     {
         private CharacterProp character;
-        private Character parentCharacterWindow;
+        private FantasyShowCharacters parentCharacterWindow;
         private string jsonPath;
 
-        public FantasyShowCharacterStats(CharacterProp character, Character parentWindow)
+        public FantasyShowCharacterStats(CharacterProp character, FantasyShowCharacters parentWindow)
         {
             InitializeComponent();
             this.character = character;
@@ -49,16 +50,9 @@ namespace RoleplayApp
             charAge.Text = character.Age.ToString();
             charGender.Text = character.Gender.ToString();
             charType.Text = character.Type.ToString();
-            charHealth.Text = character.Health.ToString();
-            charArmor.Text = character.Armor.ToString();
-            charHaste.Text = character.Haste.ToString();
             charCountry.Text = character.Country;
             charMoney.Text = character.Money;
             charDescription.Text = character.Description;
-
-            charArmor.Text = character.Armor.ToString();
-            charHealth.Text = character.Health.ToString();
-            charHaste.Text = character.Haste.ToString();
 
             ShowLoverInfo(character.LoverId);
 

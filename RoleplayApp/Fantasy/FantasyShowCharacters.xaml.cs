@@ -53,8 +53,8 @@ namespace RoleplayApp.Fantasy
 
         private void CreateCharacter_Click(object sender, RoutedEventArgs e)
         {
-            /*CharacterCreationWindow characterCreationWindow = new CharacterCreationWindow()
-            characterCreationWindow.Show();*/
+            FantasyCreateCharacter characterCreationWindow = new FantasyCreateCharacter(this);
+            characterCreationWindow.Show();
         }
 
         public void GetCharacters()
@@ -128,7 +128,7 @@ namespace RoleplayApp.Fantasy
                             textBlock.TextAlignment = TextAlignment.Center;
 
                             border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
-                            //border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
+                            border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
 
                             if (image != null)
                             {
@@ -221,7 +221,7 @@ namespace RoleplayApp.Fantasy
                 textBlock.TextAlignment = TextAlignment.Center;
 
                 border.MouseLeftButtonDown += (sender, e) => { ShowCharacterInfo(characters); };
-                //border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
+                border.MouseRightButtonDown += (sender, e) => { EditCharacterInfo(characters); };
 
                 if (image != null)
                 {
@@ -252,14 +252,14 @@ namespace RoleplayApp.Fantasy
 
         private void ShowCharacterInfo(CharacterProp character)
         {
-            /*FantasyShowCharacterStats showCharacterStats = new FantasyShowCharacterStats(character, this);
-            showCharacterStats.ShowDialog();*/
+            FantasyShowCharacterStats showCharacterStats = new FantasyShowCharacterStats(character, this);
+            showCharacterStats.ShowDialog();
         }
 
         private void EditCharacterInfo(CharacterProp character)
         {
-            FantasyEditCharacter editCharacterStats = new FantasyEditCharacter(character, this);
-            editCharacterStats.ShowDialog();
+            FantasyEditCharacter fantasyEditCharacterStats = new FantasyEditCharacter(character, this);
+            fantasyEditCharacterStats.ShowDialog();
         }
 
         private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

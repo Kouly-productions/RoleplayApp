@@ -1,0 +1,398 @@
+﻿<Window x:Class="RoleplayApp.Fantasy.FantasyCreateCharacter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoleplayApp.Fantasy"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="CharacterCreationWindow" Height="1000" Width="1900">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Background>
+        <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
+            <GradientStop Color="DarkGray" Offset="0.0"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!--Name START-->
+        <Border Grid.Column="4"
+                Grid.ColumnSpan="4"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="70"
+                Width="450"
+                CornerRadius="15"
+                Background="{DynamicResource BackGroundColor}"
+                VerticalAlignment="Top" Margin="155,0,155,0">
+            <TextBox Name="WriteName"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="50"/>
+        </Border>
+        <!--Name END-->
+        <!--Level START-->
+        <Border Grid.Column="5"
+                Grid.ColumnSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Height="50"
+                Width="350"
+                CornerRadius="15"
+                Background="#AB91C8"
+                VerticalAlignment="Top"
+                Margin="15,70,15,0">
+            <TextBox Name="WriteLevel"
+                       Foreground="BlueViolet"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"/>
+        </Border>
+        <!--Level END-->
+
+        <Border Grid.Column="5"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Height="150"
+                Margin="0,100,0,0"
+                VerticalAlignment="Bottom">
+            <StackPanel>
+                <Button Content="Tilføj Billede"
+                    FontSize="16"
+                    Click="AddImage_Click"/>
+                <TextBlock
+                Name="ImageUploadText"
+                FontSize="20"
+                Foreground="Red"
+                HorizontalAlignment="Center"
+                TextAlignment="Center"
+                Width="300"
+                Text="Intet billede uploaded"/>
+                <Button Content="Tilføj Elsker"
+                    FontSize="16"
+                    Click="AddLover_Click"
+                    Margin="0,40,0,0"/>
+                <TextBlock
+                Name="LoverAddedText"
+                FontSize="20"
+                Foreground="Red"
+                HorizontalAlignment="Center"
+                TextAlignment="Center"
+                Width="300"
+                Text="Ingen Elsker valgt"/>
+            </StackPanel>
+        </Border>
+
+        <Border Height="200"
+          Width="250"
+          CornerRadius="10"
+          BorderBrush="Black"
+          BorderThickness="2"
+          Grid.Column="5"
+          Grid.ColumnSpan="2"
+          Grid.Row="1"
+                Margin="0,0,0,80"
+          Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Width="70"
+                  BorderBrush="Black"
+                  BorderThickness="1"
+                  HorizontalAlignment="Left"
+                  CornerRadius="5"
+                  Background="{DynamicResource BackGroundColor}">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Alder"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"/>
+                        <TextBlock Text="Køn"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Race"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Penge"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                        <TextBlock Text="Land"
+                             TextAlignment="Center"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextDecorations="Underline"
+                             Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Width="177"
+                      BorderBrush="Black"
+                      BorderThickness="1"
+                      CornerRadius="5"
+                      HorizontalAlignment="Right">
+
+                    <StackPanel VerticalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              Width="160"
+                              Margin="10,0,0,0">
+                        <TextBox Name="WriteAge"
+                             FontSize="20"/>
+                        <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0">
+                            <Button
+                                Name="genderMale"
+                                Height="35"
+                                Width="80"
+                                Content="Mand"
+                                FontSize="20"
+                                Background="SkyBlue" Click="genderMale_Click"/>
+
+                            <Button
+                                   Name="genderFemale"
+                                   Height="35"
+                                   Width="80"
+                                   Content="Kvinde"
+                                   FontSize="20"
+                                   Background="Pink" Click="genderFemale_Click"/>
+
+
+                        </StackPanel>
+                        <ComboBox
+                            Name="Type"
+                            Width="160" 
+                            Height="21" 
+                            Margin="0,10,0,0"
+                            SelectionChanged="Type_SelectionChanged">
+                            <ComboBoxItem Content="Menneske"/>
+                            <ComboBoxItem Content="Robot"/>
+                            <ComboBoxItem Content="Drage"/>
+                            <ComboBoxItem Content="Ukendt"/>
+                        </ComboBox>
+                        <TextBox Name="WriteMoney"
+                             FontSize="20"
+                             Margin="0,10,0,0"/>
+                        <TextBox Name="WriteCountry"
+                             FontSize="20"
+                             Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--Description START-->
+        <Border Grid.Row="2"
+                    Grid.Column="4"
+                    Grid.ColumnSpan="4"
+                    Width="500"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Width="500"
+                    Height="50"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+                    <TextBlock Text="Beskrivelse"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           TextAlignment="Center"/>
+                </Border>
+                <Border Height="273"
+                        VerticalAlignment="Bottom"
+                        BorderBrush="Black"
+                        BorderThickness="2">
+                    <TextBox Name="WriteDescription"
+                             FontSize="16"
+                             TextWrapping="Wrap"/>
+                </Border>
+            </Grid>
+        </Border>
+        <!--Description END-->
+
+        <!--Relationer START-->
+        <Border Grid.Column="7"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="2"
+               BorderBrush="Black"
+               BorderThickness="1"
+               CornerRadius="10"
+               Height="300"
+               Width="250"
+               Background="{DynamicResource BackGroundColor}">
+            <Grid>
+                <Border Height="30"
+                       CornerRadius="7"
+                       VerticalAlignment="Top"
+                       Background="{DynamicResource MainColor}"
+                       BorderBrush="Black"
+                       BorderThickness="1">
+                    <TextBlock Text="Relationer"
+                              TextAlignment="Center"
+                              VerticalAlignment="Center"
+                              FontSize="20"
+                              FontWeight="Bold"/>
+                </Border>
+                <StackPanel Height="270"
+                   Width="125"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left">
+                    <TextBlock Text="Ven"
+                      TextAlignment="Center"
+                      FontSize="16"
+                      FontWeight="Bold"
+                      TextDecorations="Underline"/>
+                    <Button Height="20"
+                   Content="Tilføj Ven"
+                   Click="AddFriend"/>
+                    <ItemsControl Name="FriendsList"
+                         ItemsSource="{Binding Friends}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Friend}"
+                                FontSize="14"
+                                TextChanged="TextBox_TextChanged_2"
+                                Tag="Friends"
+                                MouseRightButtonUp="TextBox_MouseRightButtonUp"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <!-- Fjender StackPanel -->
+                <StackPanel Height="270"
+                   Width="125"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right">
+                    <TextBlock Text="Fjende"
+                      TextAlignment="Center"
+                      FontSize="16"
+                      FontWeight="Bold"
+                      TextDecorations="Underline"/>
+                    <Button Height="20"
+                   Content="Tilføj Fjende"
+                   Click="AddEnemy"/>
+                    <ItemsControl Name="EnemiesList"
+                         ItemsSource="{Binding Enemies}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Enemy}"
+                                FontSize="14"
+                                TextChanged="TextBox_TextChanged_1"
+                                MouseRightButtonUp="TextBox_MouseRightButtonUp"
+                                Tag="Enemies"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!--Relationer END-->
+
+
+        <!--Personality START-->
+        <Border Grid.Column="8"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="10"
+                Height="300"
+                Width="200"
+                Background="{DynamicResource BackGroundColor}">
+            <StackPanel>
+                <Border Height="30"
+                    CornerRadius="7"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Skills"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+                </Border>
+                <Button
+                    Content="Tilføj Skill"
+                    FontSize="16"
+                    Click="AddSkillButton"/>
+                <ItemsControl Name="SkillsList"
+                              ItemsSource="{Binding Skills}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Skill}"
+                                     FontSize="14"
+                                     TextChanged="TextBox_TextChanged"
+                                     MouseRightButtonUp="TextBox_MouseRightButtonUp"
+                                     Tag="Skills"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Border>
+        <!--Personality END-->
+
+        <Button
+            Name="Done"
+            Content="DONE"
+            Height="25"
+            Width="200"
+            Grid.Column="9"
+            Grid.Row="2"
+            VerticalAlignment="Bottom" Click="Done_Click" Grid.ColumnSpan="2" Margin="0,0,180,0"/>
+
+
+        <Button
+        x:Name="GoBack"
+        Height="25"
+        Width="50"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Left"
+        Content="Back"
+        FontSize="15"
+        FontWeight="Bold"
+        Background="#dc3131" Click="GoBack_Click"/>
+    </Grid>
+</Window>

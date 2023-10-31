@@ -112,8 +112,19 @@
                 Width="300"
                 Height="450"
                 CornerRadius="10"
+                Background="{DynamicResource BackGroundColor}"
                 Margin="0,200,0,0">
-            
+            <Border Height="40"
+                    CornerRadius="10"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    VerticalAlignment="Top"
+                    Background="{DynamicResource MainColor}">
+                <TextBlock Text="Historie"
+                           FontSize="30"
+                           TextAlignment="Center"
+                           FontWeight="Bold"/>
+            </Border>
         </Border>
         <!--Info END-->
 
@@ -486,82 +497,6 @@
         </Border>
         <!--Personality END-->
 
-        <!--BaseStats START-->
-        <StackPanel Orientation="Horizontal"
-                    Grid.Row="2"
-                    Grid.Column="7"
-                    Grid.ColumnSpan="2">
-            <Border Height="100"
-                    Width="100"
-                    VerticalAlignment="Bottom"
-                    Margin="0,0,0,30"
-                    Background="{DynamicResource BackGroundColor}"
-                    CornerRadius="10">
-                <Border Height="80"
-                        Width="80"
-                        Background="{DynamicResource ForeGroundColor}">
-                    <Grid>
-                        <TextBlock Name="charArmor"
-                               Text="+0" 
-                               FontSize="40"
-                               TextAlignment="Center"
-                               VerticalAlignment="Center">
-                        </TextBlock>
-                        <TextBlock Text="Armor"
-                               FontSize="15"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"/>
-                    </Grid>
-                </Border>
-            </Border>
-            <Border Height="100"
-                    Width="100"
-                    VerticalAlignment="Bottom"
-                    Margin="30,0,0,30"
-                    Background="{DynamicResource BackGroundColor}"
-                    CornerRadius="10">
-                <Border Height="80"
-                        Width="80"
-                        Background="{DynamicResource ForeGroundColor}">
-                    <Grid>
-                        <TextBlock x:Name="charHealth"
-                                Text="+0" 
-                               FontSize="40"
-                               TextAlignment="Center"
-                               VerticalAlignment="Center">
-                        </TextBlock>
-                        <TextBlock Text="Liv"
-                               FontSize="15"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"/>
-                    </Grid>
-                </Border>
-            </Border>
-            <Border Height="100"
-                    Width="100"
-                    VerticalAlignment="Bottom"
-                    Margin="30,0,0,30"
-                    Background="{DynamicResource BackGroundColor}"
-                    CornerRadius="10">
-                <Border Height="80"
-                        Width="80"
-                        Background="{DynamicResource ForeGroundColor}">
-                    <Grid>
-                        <TextBlock Name="charHaste"
-                               Text="+0" 
-                               FontSize="40"
-                               TextAlignment="Center"
-                               VerticalAlignment="Center">
-                        </TextBlock>
-                        <TextBlock Text="Hast"
-                               FontSize="15"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"/>
-                    </Grid>
-                </Border>
-            </Border>
-        </StackPanel>
-        <!--BaseStats END-->
         <Button
             Name="done"
             Grid.Row="2"

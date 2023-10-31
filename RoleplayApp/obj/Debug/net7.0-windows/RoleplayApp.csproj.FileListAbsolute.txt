@@ -114,3 +114,7 @@ C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyShowCharacterStats.g.cs
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyShowCharacters.baml
 C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyShowCharacterStats.baml
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyEditCharacter.g.cs
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyEditCharacter.baml
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyCreateCharacter.g.cs
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyCreateCharacter.baml

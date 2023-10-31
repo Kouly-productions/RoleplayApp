@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using RoleplayApp.Fantasy;
 
 namespace RoleplayApp
 {
@@ -23,6 +24,8 @@ namespace RoleplayApp
     {
         public CharacterCreationWindow ParentWindow { get; set; }
 
+        private FantasyEditCharacter fantasyEditParentWindow;
+        private FantasyCreateCharacter fantasyCreateCharacter;
         private CharacterCreationWindow ParentCreationWindow;
         private EditCharacterWindow ParentEditWindow;
 
@@ -33,6 +36,18 @@ namespace RoleplayApp
         {
             InitializeCommonCode();
             this.ParentCreationWindow = parentWindow;
+        }
+
+        public FindLover(FantasyCreateCharacter parentWindow)
+        {
+            InitializeCommonCode();
+            this.fantasyCreateCharacter = parentWindow;
+        }
+
+        public FindLover(FantasyEditCharacter parentWindow)
+        {
+            InitializeCommonCode();
+            this.fantasyEditParentWindow = parentWindow;
         }
 
         public FindLover(EditCharacterWindow parentWindow)
