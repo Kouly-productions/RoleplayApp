@@ -109,6 +109,55 @@ namespace RoleplayApp.Fantasy
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
+                            if (characters.Power == Power.MegetSvag)
+                            {
+                                textBlockRank.Text = "Meget Svag";
+                                border.Background = new SolidColorBrush(Colors.DarkGray);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Svag)
+                            {
+                                textBlockRank.Text = "Svag";
+                                border.Background = new SolidColorBrush(Colors.Gray);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Menneske)
+                            {
+                                textBlockRank.Text = "Menneske";
+                                border.Background = new SolidColorBrush(Colors.Beige);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Trænet)
+                            {
+                                textBlockRank.Text = "Trænet";
+                                border.Background = new SolidColorBrush(Colors.OrangeRed);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Elite)
+                            {
+                                textBlockRank.Text = "Elite";
+                                border.Background = new SolidColorBrush(Colors.Gold);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Mystisk)
+                            {
+                                textBlockRank.Text = "Mystisk";
+                                border.Background = new SolidColorBrush(Colors.Green);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.OP)
+                            {
+                                textBlockRank.Text = "OP";
+                                border.Background = new SolidColorBrush(Colors.DarkRed);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.BROKEN)
+                            {
+                                textBlockRank.Text = "BROKEN";
+                                border.Background = new SolidColorBrush(Colors.Cyan);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+
                             TextBlock textBlock = new TextBlock();
                             textBlock.FontSize = 16;
                             textBlock.Width = 170;
@@ -204,6 +253,55 @@ namespace RoleplayApp.Fantasy
                 textBlockRank.TextAlignment = TextAlignment.Center;
                 textBlockRank.FontWeight = FontWeights.Bold;
 
+                if (characters.Power == Power.MegetSvag)
+                {
+                    textBlockRank.Text = "Meget Svag";
+                    border.Background = new SolidColorBrush(Colors.DarkGray);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Svag)
+                {
+                    textBlockRank.Text = "Svag";
+                    border.Background = new SolidColorBrush(Colors.Gray);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Menneske)
+                {
+                    textBlockRank.Text = "Menneske";
+                    border.Background = new SolidColorBrush(Colors.Beige);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Trænet)
+                {
+                    textBlockRank.Text = "Trænet";
+                    border.Background = new SolidColorBrush(Colors.OrangeRed);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Elite)
+                {
+                    textBlockRank.Text = "Elite";
+                    border.Background = new SolidColorBrush(Colors.Gold);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Mystisk)
+                {
+                    textBlockRank.Text = "Mystisk";
+                    border.Background = new SolidColorBrush(Colors.Green);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.OP)
+                {
+                    textBlockRank.Text = "OP";
+                    border.Background = new SolidColorBrush(Colors.DarkRed);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.BROKEN)
+                {
+                    textBlockRank.Text = "BROKEN";
+                    border.Background = new SolidColorBrush(Colors.Cyan);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+
                 TextBlock textBlock = new TextBlock();
                 textBlock.FontSize = 16;
                 textBlock.Width = 170;
@@ -283,7 +381,7 @@ namespace RoleplayApp.Fantasy
                     break;
                 case "Styrke":
                     SearchBox.Text = default;
-                    sortedCharacters = sortedCharacters.OrderByDescending(c => c.ModifiersCombined).ToList();
+                    sortedCharacters = sortedCharacters.OrderByDescending(c => c.Power).ToList();
                     break;
             }
             UpdateCharacterPanel(sortedCharacters);

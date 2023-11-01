@@ -435,7 +435,7 @@
         </Border>
         <!--History END-->
 
-        <ComboBox Name="Power"
+        <ComboBox Name="PowerCombo"
                   Grid.Column="5"
                   Grid.ColumnSpan="2"
                   Grid.Row="1"
