@@ -48,6 +48,9 @@ namespace RoleplayApp.Fantasy
         {
             InitializeComponent();
 
+            genderFemale.Background = new SolidColorBrush(Colors.Gray);
+            genderMale.Background = new SolidColorBrush(Colors.Gray);
+
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             this.parentCharacterWindow = parentCharacterWindow;
@@ -167,9 +170,16 @@ namespace RoleplayApp.Fantasy
                 string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
 
                 // Vis billedet (ingen ændring nødvendig her)
-                BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
-                ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
-                ImageUploadText.Text = "Billede er uploaded";
+                try
+                {
+                    BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                    ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
+                    ImageUploadText.Text = "Billede er uploaded";
+                }
+                catch 
+                {
+                    MessageBox.Show("Fejl. Kunne ikke læse billede, find et andet");
+                }
             }
         }
 
@@ -177,11 +187,15 @@ namespace RoleplayApp.Fantasy
         private void genderMale_Click(object sender, RoutedEventArgs e)
         {
             character.Gender = Gender.Mand;
+            genderFemale.Background = new SolidColorBrush(Colors.Gray);
+            genderMale.Background = new SolidColorBrush(Colors.SkyBlue);
         }
 
         private void genderFemale_Click(object sender, RoutedEventArgs e)
         {
             character.Gender = Gender.Kvinde;
+            genderFemale.Background = new SolidColorBrush(Colors.Pink);
+            genderMale.Background = new SolidColorBrush(Colors.Gray);
         }
 
         private void Type_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RoleplayApp"
         mc:Ignorable="d"
         Background="DarkGray"
-        Title="Character" Height="600" Width="1020">
+        Title="Character" Height="600" Width="1035">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,6 +24,15 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <ScrollViewer Grid.RowSpan="3"
+                      Grid.ColumnSpan="7">
+            <WrapPanel
+            x:Name="CharacterPanel"
+            Orientation="Horizontal"
+            Margin="0,25,0,0"
+            />
+        </ScrollViewer>
+
         <StackPanel Orientation="Horizontal"
                  Grid.Row="0"
                  Grid.Column="1"
@@ -38,6 +47,7 @@
                  HorizontalAlignment="Left"
                  TextChanged="SearchBox_TextChanged"/>
 
+
             <ComboBox Name="SortByComboBox"
                   Height="25"
                   Width="200"
@@ -47,7 +57,7 @@
                 <ComboBoxItem Content="Level"/>
                 <ComboBoxItem Content="Styrke"/>
             </ComboBox>
-            
+
         </StackPanel>
 
         <Button
@@ -72,13 +82,7 @@
         FontWeight="Bold"
         Background="SkyBlue" Click="CreateCharacter_Click"/>
 
-        <WrapPanel
-            x:Name="CharacterPanel"
-            Grid.RowSpan="3"
-            Orientation="Horizontal"
-            Margin="0,25,0,0"
-            Grid.ColumnSpan="7"
-            />
+
 
 
     </Grid>

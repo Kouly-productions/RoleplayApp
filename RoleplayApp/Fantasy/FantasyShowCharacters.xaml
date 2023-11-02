@@ -24,6 +24,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <ScrollViewer Grid.RowSpan="3"
+                      Grid.ColumnSpan="7">
+        <WrapPanel
+            x:Name="CharacterPanel"
+            Orientation="Horizontal"
+            Margin="0,25,0,0"
+            />
+        </ScrollViewer>
+
+
         <StackPanel Orientation="Horizontal"
                  Grid.Row="0"
                  Grid.Column="1"
@@ -70,15 +80,6 @@
         FontSize="20"
         FontWeight="Bold"
         Background="SkyBlue" Click="CreateCharacter_Click"/>
-
-        <WrapPanel
-            x:Name="CharacterPanel"
-            Grid.RowSpan="3"
-            Orientation="Horizontal"
-            Margin="0,25,0,0"
-            Grid.ColumnSpan="7"
-            />
-
 
     </Grid>
 </Window>

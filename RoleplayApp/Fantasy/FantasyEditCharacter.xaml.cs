@@ -62,6 +62,23 @@ namespace RoleplayApp.Fantasy
             WriteMoney.Text = characterToEdit.Money;
             WriteDescription.Text = characterToEdit.Description;
             WriteHistory.Text = characterToEdit.CharacterHistory;
+
+            if (characterToEdit.ImagePath != null)
+            {
+                ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
+                ImageUploadText.Text = "Billede er uploaded";
+            }
+
+            if (characterToEdit.Gender == Gender.Mand)
+            {
+                genderFemale.Background = new SolidColorBrush(Colors.Gray);
+                genderMale.Background = new SolidColorBrush(Colors.SkyBlue);
+            }
+            else
+            {
+                genderMale.Background = new SolidColorBrush(Colors.Gray);
+                genderFemale.Background = new SolidColorBrush(Colors.Pink);
+            }
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
@@ -180,9 +197,16 @@ namespace RoleplayApp.Fantasy
                 string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
 
                 // Vis billedet (ingen ændring nødvendig her)
-                BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
-                ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
-                ImageUploadText.Text = "Billede er uploaded";
+                try
+                {
+                    BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                    ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
+                    ImageUploadText.Text = "Billede er uploaded";
+                }
+                catch
+                {
+                    MessageBox.Show("Fejl. Kunne ikke læse billede, find et andet");
+                }
             }
         }
 
@@ -206,11 +230,15 @@ namespace RoleplayApp.Fantasy
         private void genderMale_Click(object sender, RoutedEventArgs e)
         {
             character.Gender = Gender.Mand;
+            genderFemale.Background = new SolidColorBrush(Colors.Gray);
+            genderMale.Background = new SolidColorBrush(Colors.SkyBlue);
         }
 
         private void genderFemale_Click(object sender, RoutedEventArgs e)
         {
             character.Gender = Gender.Kvinde;
+            genderFemale.Background = new SolidColorBrush(Colors.Pink);
+            genderMale.Background = new SolidColorBrush(Colors.Gray);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
