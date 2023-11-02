@@ -139,15 +139,6 @@ namespace RoleplayApp
                 existingCharacter.Stealth = int.Parse(WriteStealth.Text);
                 existingCharacter.Survival = int.Parse(WriteSurvival.Text);
 
-                /*
-                existingCharacter.SavingStrength = int.Parse(SavingStrength.Text);
-                existingCharacter.SavingDexterity = int.Parse(SavingDexterity.Text);
-                existingCharacter.SavingConstitution = int.Parse(SavingConstitution.Text);
-                existingCharacter.SavingIntellect = int.Parse(SavingInteligence.Text);
-                existingCharacter.SavingWisdom = int.Parse(SavingWisdom.Text);
-                existingCharacter.SavingCharisma = int.Parse(SavingCharisma.Text);
-                */
-
                 existingCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
                 existingCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
                 existingCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));
@@ -166,8 +157,6 @@ namespace RoleplayApp
                 {
                     this.SelectedLover = oldLover;
                 }
-
-                existingCharacter.LoverId = this.SelectedLover;
 
                 existingCharacter.LoverId = this.SelectedLover;
 

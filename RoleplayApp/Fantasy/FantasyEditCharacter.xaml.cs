@@ -115,8 +115,6 @@ namespace RoleplayApp.Fantasy
 
                 existingCharacter.LoverId = this.SelectedLover;
 
-                existingCharacter.LoverId = this.SelectedLover;
-
                 if (!string.IsNullOrEmpty(oldLover) && oldLover != this.SelectedLover)
                 {
                     CharacterProp oldLoverCharacter = existingCharacters.FirstOrDefault(c => c.Name == oldLover);
@@ -284,7 +282,7 @@ namespace RoleplayApp.Fantasy
 
         private void AddLover_Click(object sender, RoutedEventArgs e)
         {
-            FindLover findLoverWindow = new FindLover(this);
+            FindLover findLoverWindow = new FindLover(this); 
             findLoverWindow.Show();
         }
 

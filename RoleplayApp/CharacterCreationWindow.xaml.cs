@@ -122,15 +122,6 @@ namespace RoleplayApp
             newCharacter.Stealth = int.Parse(WriteStealth.Text);
             newCharacter.Survival = int.Parse(WriteSurvival.Text);
 
-            /*
-            newCharacter.SavingStrength = int.Parse(SavingStrength.Text);
-            newCharacter.SavingDexterity = int.Parse(SavingDexterity.Text);
-            newCharacter.SavingConstitution = int.Parse(SavingConstitution.Text);
-            newCharacter.SavingIntellect = int.Parse(SavingInteligence.Text);
-            newCharacter.SavingWisdom = int.Parse(SavingWisdom.Text);
-            newCharacter.SavingCharisma = int.Parse(SavingCharisma.Text);
-            */
-
             newCharacter.Skills = new ObservableCollection<SkillViewModel>(character.Skills.Select(s => new SkillViewModel { Skill = s.Skill }));
             newCharacter.Friends = new ObservableCollection<FriendViewModel>(character.Friends.Select(s => new FriendViewModel { Friend = s.Friend }));
             newCharacter.Enemies = new ObservableCollection<EnemyViewModel>(character.Enemies.Select(s => new EnemyViewModel { Enemy = s.Enemy }));

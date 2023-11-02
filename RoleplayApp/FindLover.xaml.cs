@@ -254,11 +254,19 @@ namespace RoleplayApp
         {
             if (ParentCreationWindow != null)
             {
-            ParentCreationWindow.SelectedLover = selectedCharacter.Name;
+                ParentCreationWindow.SelectedLover = selectedCharacter.Name;
             }
             else if (ParentEditWindow != null)
             {
                 ParentEditWindow.SelectedLover = selectedCharacter.Name;
+            }
+            else if (fantasyEditParentWindow != null)
+            {
+                fantasyEditParentWindow.SelectedLover = selectedCharacter.Name;
+            }
+            else if (ParentCreationWindow != null)
+            {
+                ParentCreationWindow.SelectedLover = selectedCharacter.Name;
             }
             this.Close();
         }
