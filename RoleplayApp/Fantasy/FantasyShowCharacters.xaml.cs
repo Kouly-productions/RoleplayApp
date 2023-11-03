@@ -38,6 +38,7 @@ namespace RoleplayApp.Fantasy
             }
 
             GetCharacters();
+            SortByComboBox_SelectionChanged(SortByComboBox, null);
         }
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
@@ -188,7 +189,7 @@ namespace RoleplayApp.Fantasy
 
                             border.Child = stackPanel;
 
-                            CharacterPanel.Children.Add(border);
+                            FantasyCharacterPanel.Children.Add(border);
                         }
                     }
                     else
@@ -210,7 +211,7 @@ namespace RoleplayApp.Fantasy
 
         private void UpdateCharacterPanel(List<CharacterProp> charactersToShow)
         {
-            CharacterPanel.Children.Clear();
+            FantasyCharacterPanel.Children.Clear();
 
             foreach (var characters in charactersToShow)
             {
@@ -331,7 +332,7 @@ namespace RoleplayApp.Fantasy
 
                 border.Child = stackPanel;
 
-                CharacterPanel.Children.Add(border);
+                FantasyCharacterPanel.Children.Add(border);
             }
         }
 
@@ -346,7 +347,7 @@ namespace RoleplayApp.Fantasy
 
         public void UpdateCharacterList()
         {
-            CharacterPanel.Children.Clear();
+            FantasyCharacterPanel.Children.Clear();
             GetCharacters();
         }
 

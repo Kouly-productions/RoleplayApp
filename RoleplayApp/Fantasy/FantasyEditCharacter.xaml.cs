@@ -367,7 +367,8 @@ namespace RoleplayApp.Fantasy
                 }
                 existingCharacter.LoverId = null;
 
-                string json = JsonConvert.SerializeObject(existingCharacter, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(existingCharacters, Formatting.Indented);
+                File.WriteAllText(jsonPath, json);
                 try
                 {
                     parentCharacterWindow.UpdateCharacterList();

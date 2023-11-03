@@ -38,6 +38,7 @@ namespace RoleplayApp
             }
 
             GetCharacters();
+            SortByComboBox_SelectionChanged(SortByComboBox, null);
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)

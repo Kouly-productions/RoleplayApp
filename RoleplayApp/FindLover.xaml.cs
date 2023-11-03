@@ -25,7 +25,7 @@ namespace RoleplayApp
         public CharacterCreationWindow ParentWindow { get; set; }
 
         private FantasyEditCharacter fantasyEditParentWindow;
-        private FantasyCreateCharacter fantasyCreateCharacter;
+        private FantasyCreateCharacter fantasyCreateCharacterWindow;
         private CharacterCreationWindow ParentCreationWindow;
         private EditCharacterWindow ParentEditWindow;
 
@@ -40,7 +40,7 @@ namespace RoleplayApp
 
         public FindLover(FantasyCreateCharacter parentWindow)
         {
-            this.fantasyCreateCharacter = parentWindow;
+            this.fantasyCreateCharacterWindow = parentWindow;
             InitializeCommonCode();
         }
 
@@ -61,7 +61,7 @@ namespace RoleplayApp
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            if (fantasyEditParentWindow != null || fantasyCreateCharacter != null)
+            if (fantasyEditParentWindow != null || fantasyCreateCharacterWindow != null)
             {
                 jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             }
@@ -116,7 +116,7 @@ namespace RoleplayApp
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (fantasyEditParentWindow != null || fantasyCreateCharacter != null)
+                            if (fantasyEditParentWindow != null || fantasyCreateCharacterWindow != null)
                             {
                                 if (characters.Power == Power.MegetSvag)
                                 {
@@ -264,9 +264,9 @@ namespace RoleplayApp
             {
                 fantasyEditParentWindow.SelectedLover = selectedCharacter.Name;
             }
-            else if (ParentCreationWindow != null)
+            else if (fantasyCreateCharacterWindow != null)
             {
-                ParentCreationWindow.SelectedLover = selectedCharacter.Name;
+                fantasyCreateCharacterWindow.SelectedLover = selectedCharacter.Name;
             }
             this.Close();
         }

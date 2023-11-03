@@ -49,6 +49,7 @@
 
 
             <ComboBox Name="SortByComboBox"
+                  SelectedIndex="2"
                   Height="25"
                   Width="200"
                   VerticalAlignment="Top"
