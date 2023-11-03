@@ -30,6 +30,7 @@ namespace RoleplayApp
         Svag,
         Menneske,
         Trænet,
+        Stærk,
         Elite,
         Mystisk,
         OP,

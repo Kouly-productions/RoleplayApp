@@ -139,6 +139,12 @@ namespace RoleplayApp
                                 else if (characters.Power == Power.Trænet)
                                 {
                                     textBlockRank.Text = "Trænet";
+                                    border.Background = new SolidColorBrush(Colors.Yellow);
+                                    stackPanel.Children.Add(textBlockRank);
+                                }
+                                else if (characters.Power == Power.Stærk)
+                                {
+                                    textBlockRank.Text = "Stærk";
                                     border.Background = new SolidColorBrush(Colors.OrangeRed);
                                     stackPanel.Children.Add(textBlockRank);
                                 }

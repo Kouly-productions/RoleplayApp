@@ -29,6 +29,7 @@ namespace RoleplayApp.Fantasy
         {
             InitializeComponent();
 
+
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
 
@@ -131,6 +132,12 @@ namespace RoleplayApp.Fantasy
                             else if (characters.Power == Power.Trænet)
                             {
                                 textBlockRank.Text = "Trænet";
+                                border.Background = new SolidColorBrush(Colors.Yellow);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.Stærk)
+                            {
+                                textBlockRank.Text = "Stærk";
                                 border.Background = new SolidColorBrush(Colors.OrangeRed);
                                 stackPanel.Children.Add(textBlockRank);
                             }
@@ -275,6 +282,12 @@ namespace RoleplayApp.Fantasy
                 else if (characters.Power == Power.Trænet)
                 {
                     textBlockRank.Text = "Trænet";
+                    border.Background = new SolidColorBrush(Colors.Yellow);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (characters.Power == Power.Stærk)
+                {
+                    textBlockRank.Text = "Stærk";
                     border.Background = new SolidColorBrush(Colors.OrangeRed);
                     stackPanel.Children.Add(textBlockRank);
                 }

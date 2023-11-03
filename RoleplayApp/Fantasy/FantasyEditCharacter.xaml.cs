@@ -63,7 +63,7 @@ namespace RoleplayApp.Fantasy
             WriteDescription.Text = characterToEdit.Description;
             WriteHistory.Text = characterToEdit.CharacterHistory;
 
-            if (characterToEdit.ImagePath != null)
+            if (characterToEdit.ImagePath != "RoleplayApp")
             {
                 ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                 ImageUploadText.Text = "Billede er uploaded";
@@ -389,6 +389,18 @@ namespace RoleplayApp.Fantasy
                 Power selectedPower = (Power)Enum.Parse(typeof(Power), selectedContent);
                 character.Power = selectedPower;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            double x = this.Left;
+            double y = this.Top;
+
+            FantasyAddPower fantasyAddPower = new FantasyAddPower();
+            fantasyAddPower.Left = x;
+            fantasyAddPower.Top = y;
+            fantasyAddPower.Show();
+
         }
     }
 }

@@ -21,6 +21,9 @@
     <Compile Update="EditCharacterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Fantasy\FantasyAddPower.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Fantasy\FantasyCreateCharacter.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +57,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditCharacterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fantasy\FantasyAddPower.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Fantasy\FantasyCreateCharacter.xaml">

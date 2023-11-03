@@ -64,10 +64,16 @@ namespace RoleplayApp
                     // Konstruér den fulde sti dynamisk
                     string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
 
-                    // Forsøger at oprette en ny URI. Hvis det fejler, fanges det i catch blokken.
+                    if (File.Exists(fullImagePath))
+                    {
                     Uri imageUri = new Uri(fullImagePath, UriKind.Absolute);
                     BitmapImage imageBitMap = new BitmapImage(imageUri);
                     CharImage.Source = imageBitMap;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Karakteren har ikke noget billede");
+                    }
                 }
                 catch (UriFormatException)
                 {

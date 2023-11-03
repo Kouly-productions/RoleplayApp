@@ -396,6 +396,7 @@
                 <Button Height="20"
                         Content="Tilføj kraft"
                         VerticalAlignment="Top"
+                        Click="Button_Click"
                         Margin="0,40,0,0"/>
             </Grid>
         </Border>
