@@ -34,16 +34,6 @@ namespace RoleplayApp.Fantasy
 
         private FantasyShowCharacters parentCharacterWindow;
 
-        private CharacterProp charInfo = new CharacterProp();
-
-        List<CharacterProp> characters = new List<CharacterProp>();
-
-        ProcessStartInfo startInfo = new ProcessStartInfo
-        {
-            FileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-            UseShellExecute = true,
-        };
-
         public FantasyCreateCharacter(FantasyShowCharacters parentCharacterWindow)
         {
             InitializeComponent();

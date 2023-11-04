@@ -51,11 +51,11 @@ namespace RoleplayApp
     public class Forces
     {
         public string? Name { get; set; }
-        public string Description { get; set; }
-        int AbilityLevelRequirement { get; set; }
-        string imagePath { get; set; }
-        AbilityType abilityType { get; set; }
-        bool IsAOE { get; set; }
+        public string? Description { get; set; }
+        public int AbilityLevelRequirement { get; set; }
+        public string? imagePath { get; set; }
+        public AbilityType abilityType { get; set; }
+        public bool IsAOE { get; set; }
     }
 
     public class CharacterProp

@@ -19,4 +19,9 @@
     <Resource Include="Resources\Hearth.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 </Project>

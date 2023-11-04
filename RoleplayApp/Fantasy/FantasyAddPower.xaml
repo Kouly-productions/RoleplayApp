@@ -6,8 +6,101 @@
         xmlns:local="clr-namespace:RoleplayApp.Fantasy"
         mc:Ignorable="d"
         Background="DarkGray"
+        WindowStartupLocation="CenterScreen"
         Title="FantasyAddPower" Height="600" Width="1035">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="2"
+                    Grid.RowSpan="3"
+                     Grid.ColumnSpan="3"
+                     Grid.Row="0">
+
+            <TextBlock Text="Navn på Force?"
+                       TextAlignment="Center"
+                       FontSize="20"/>
+
+            <TextBox x:Name="WriteName"
+                     Height="25"
+                     Width="300"
+                     FontSize="20">
+            
+            </TextBox>
+
+            <TextBlock Text="Hvad level skal man være for at kunne få denne ability?"
+                       TextAlignment="Center"
+                       FontSize="16"
+                       Margin="0,25,0,0"/>
+
+            <TextBox Name="WriteAbilityLevelRequirement"
+                     Height="25"
+                     Width="300"
+                     FontSize="20">
+
+            </TextBox>
+
+            <TextBlock Text="Upload billede"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="0,25,0,0"/>
+
+            <Button Height="25"
+                     Width="300"
+                     FontSize="16"
+                     Content="Upload billede her"/>
+
+            <TextBlock Text="Type force?"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="0,25,0,0"/>
+
+            <ComboBox Name="ChooseType"
+                      Width="200">
+                <ComboBoxItem Content="Ild"/>
+                <ComboBoxItem Content="Vand"/>
+                <ComboBoxItem Content="Is"/>
+                <ComboBoxItem Content="Elektricitet"/>
+                <ComboBoxItem Content="Natur"/>
+                <ComboBoxItem Content="Healing"/>
+            </ComboBox>
+
+            <TextBlock Text="Er dette AOE?"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="0,25,0,0"/>
+            <CheckBox  HorizontalAlignment="Center"/>
+
+
+            <TextBlock Text="Skriv noget om denne ability"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="0,25,0,0"/>
+            <TextBox Name="WriteDescription"
+                     Height="150"
+                     FontSize="20"
+                     TextWrapping="Wrap"/>
+
+
+        </StackPanel>
+            <Button x:Name="Done"
+                    Content="Done"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Height="25"
+                    VerticalAlignment="Bottom" Click="Done_Click"/>
     </Grid>
 </Window>

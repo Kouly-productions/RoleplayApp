@@ -197,7 +197,7 @@ namespace RoleplayApp.Fantasy {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RoleplayApp;V1.0.0.0;component/fantasy/fantasyeditcharacter.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RoleplayApp;component/fantasy/fantasyeditcharacter.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Fantasy\FantasyEditCharacter.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
