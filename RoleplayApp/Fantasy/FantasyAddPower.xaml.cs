@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace RoleplayApp.Fantasy
 {
@@ -71,6 +72,16 @@ namespace RoleplayApp.Fantasy
             List<CharacterProp> existingAbilities = new List<CharacterProp>();
 
             string json = JsonConvert.SerializeObject(existingAbilities, Formatting.Indented);
+
+            try
+            {
+                File.WriteAllText(jsonPath, json);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
+            }
         }
     }
 }

@@ -36,3 +36,13 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-win
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\FindLover.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\EditCharacterWindow.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\FindLover.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyAddPower.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyCreateCharacter.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyEditCharacter.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyShowCharacters.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyShowCharacterStats.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyAddPower.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyCreateCharacter.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyEditCharacter.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyShowCharacters.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\win-x86\Fantasy\FantasyShowCharacterStats.baml
