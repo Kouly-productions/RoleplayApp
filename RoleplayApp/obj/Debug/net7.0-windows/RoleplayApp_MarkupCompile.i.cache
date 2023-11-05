@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\App.xaml
-14927957916
+15574865971
 
-18349993485
+19-911116329
 1992079390922
-Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;Fantasy\FantasyAddPower.xaml;Fantasy\FantasyCreateCharacter.xaml;Fantasy\FantasyEditCharacter.xaml;Fantasy\FantasyShowCharacters.xaml;Fantasy\FantasyShowCharacterStats.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
+Character.xaml;CharacterCreationWindow.xaml;DiceRoll.xaml;EditCharacterWindow.xaml;Fantasy\FantasyAbilityWindow.xaml;Fantasy\FantasyAddPower.xaml;Fantasy\FantasyCreateCharacter.xaml;Fantasy\FantasyEditCharacter.xaml;Fantasy\FantasyShowCharacters.xaml;Fantasy\FantasyShowCharacterStats.xaml;FindLover.xaml;MainWindow.xaml;ShowCharacterStats.xaml;Styles.xaml;VoteWindow.xaml;
 
-False
+True
 

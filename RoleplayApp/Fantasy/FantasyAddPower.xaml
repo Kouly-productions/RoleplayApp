@@ -58,10 +58,11 @@
                        FontSize="20"
                        Margin="0,25,0,0"/>
 
-            <Button Height="25"
+            <Button  Height="25"
                      Width="300"
                      FontSize="16"
-                     Content="Upload billede her"/>
+                     Content="Upload billede her"
+                     Click="AddImage_Click"/>
 
             <TextBlock Text="Type force?"
                        TextAlignment="Center"
@@ -82,7 +83,8 @@
                        TextAlignment="Center"
                        FontSize="20"
                        Margin="0,25,0,0"/>
-            <CheckBox  HorizontalAlignment="Center"/>
+            <CheckBox  HorizontalAlignment="Center"
+                       Name="IsAOEBox"/>
 
 
             <TextBlock Text="Skriv noget om denne ability"

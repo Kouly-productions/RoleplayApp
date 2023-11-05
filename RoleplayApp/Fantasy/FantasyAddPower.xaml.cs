@@ -16,41 +16,26 @@ using System.IO;
 
 namespace RoleplayApp.Fantasy
 {
-    /// <summary>
-    /// Interaction logic for FantasyAddPower.xaml
-    /// </summary>
     public partial class FantasyAddPower : Window
     {
-        string filePath;
-        string jsonPath;
+        private readonly string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp");
+        private readonly string jsonPath;
         public string SelectedAbility { get; set; }
-        string fileName = "RoleplayApp";
+        private string fileName = "RoleplayApp";
 
-        CharacterProp character = new CharacterProp();
-        Forces forces = new Forces();
+        private readonly Window parentWindow;
 
-        public FantasyAddPower()
+        public FantasyAddPower(Window parentindow)
         {
             InitializeComponent();
-
-            filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "fantasyAbility.json");
-
-            this.DataContext = character;
+            this.parentWindow = parentWindow;
         }
 
         private bool AreAllFieldsFilled()
         {
-            TextBox[] fields = { };
-
-            foreach (TextBox field in fields)
-            {
-                if (string.IsNullOrEmpty(field.Text))
-                {
-                    return false;
-                }
-            }
-            return true;
+            TextBox[] fields = { WriteName, WriteDescription, WriteAbilityLevelRequirement };
+            return fields.All(field => !string.IsNullOrEmpty(field.Name));
         }
 
         private void Done_Click(object sender, RoutedEventArgs e)
@@ -61,26 +46,81 @@ namespace RoleplayApp.Fantasy
                 return;
             }
 
-            Forces newAbility = new Forces();
-            newAbility.Name = WriteName.Text;
-            newAbility.Description = WriteDescription.Text;
-            newAbility.AbilityLevelRequirement = int.Parse(WriteAbilityLevelRequirement.Text);
-            newAbility.imagePath = fileName;
-            newAbility.abilityType = forces.abilityType;
-            newAbility.IsAOE = forces.IsAOE;
+            if (!int.TryParse(WriteAbilityLevelRequirement.Text, out int abilityLevel))
+            {
+                MessageBox.Show("Level må ikke indeholder bogstaver kun tal");
+                return;
+            }
+            AbilityType selectedType = (AbilityType)Enum.Parse(typeof(AbilityType), (ChooseType.SelectedItem as ComboBoxItem)?.Content.ToString());
+            Forces newAbility = new Forces
+            {
+                Name = WriteName.Text,
+                Description = WriteDescription.Text,
+                AbilityLevelRequirement = abilityLevel,
+                imagePath = fileName,
+                abilityType = selectedType,
+                IsAOE = (bool)IsAOEBox.IsChecked
+            };
 
-            List<CharacterProp> existingAbilities = new List<CharacterProp>();
+            List<Forces> existingAbilities;
+            if (File.Exists(jsonPath))
+            {
+                var jsonData = File.ReadAllText(jsonPath);
+                existingAbilities = JsonConvert.DeserializeObject<List<Forces>>(jsonData) ?? new List<Forces>();
+            }
+            else
+            {
+                existingAbilities = new List<Forces>();
+            }
+
+            existingAbilities.Add(newAbility);
 
             string json = JsonConvert.SerializeObject(existingAbilities, Formatting.Indented);
-
             try
             {
                 File.WriteAllText(jsonPath, json);
+                //parentAbilityWindow.UpdateCharacterList();
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Kunne ikke gmme fil: " + ex.Message);
+            }
+        }
+
+        private void AddImage_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+            Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+                    string destinationDirectory = System.IO.Path.Combine(filePath, "Images");
+                    if (!Directory.Exists(destinationDirectory))
+                    {
+                        Directory.CreateDirectory(destinationDirectory);
+                    }
+                    string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(selectedFilePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(selectedFilePath)}";
+                    string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
+                    File.Copy(selectedFilePath, destinationFilePath, true);
+
+
+                    this.fileName = uniqueFileName;
+
+
+                    // Konstruér den fulde sti dynamisk (ingen ændring her, da det allerede var korrekt)
+                    string fullImagePath = System.IO.Path.Combine(destinationDirectory, fileName);
+                    BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
+                }
+                catch
+                {
+                    MessageBox.Show("Fejl. Kunne ikke læse billede, find et andet");
+                }
             }
         }
     }

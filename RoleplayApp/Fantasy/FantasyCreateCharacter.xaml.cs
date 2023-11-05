@@ -134,8 +134,11 @@ namespace RoleplayApp.Fantasy
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png\")";
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png"
+            };
+
             if (openFileDialog.ShowDialog() == true)
             {
                 string selectedFilePath = openFileDialog.FileName;
@@ -146,7 +149,15 @@ namespace RoleplayApp.Fantasy
                 }
                 string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(selectedFilePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(selectedFilePath)}";
                 string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
+
+                try
+                {
                 File.Copy(selectedFilePath, destinationFilePath, true);
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke kopiere billedet. Vælg et andet billede.");
+                }
 
 
                 // Inde i AddImage_Click
@@ -162,13 +173,14 @@ namespace RoleplayApp.Fantasy
                 // Vis billedet (ingen ændring nødvendig her)
                 try
                 {
+                    // Fortsæt med at oprette BitmapImage-objektet
                     BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
                     ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                     ImageUploadText.Text = "Billede er uploaded";
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Fejl. Kunne ikke læse billede, find et andet");
+                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke læse billede, find et andet");
                 }
             }
         }
@@ -291,6 +303,17 @@ namespace RoleplayApp.Fantasy
                 Power selectedPower = (Power)Enum.Parse(typeof(Power), selectedContent);
                 character.Power = selectedPower;
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            double x = this.Left;
+            double y = this.Top;
+
+            FantasyAddPower fantasyAddPower = new FantasyAddPower(this);
+            fantasyAddPower.Left = x;
+            fantasyAddPower.Top = y;
+            fantasyAddPower.Show();
         }
     }
 }

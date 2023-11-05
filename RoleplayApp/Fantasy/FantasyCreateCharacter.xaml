@@ -400,7 +400,7 @@
                 <Button Height="20"
                         Content="Tilføj kraft"
                         VerticalAlignment="Top"
-                        Margin="0,40,0,0"/>
+                        Margin="0,40,0,0" Click="Button_Click_1"/>
             </Grid>
         </Border>
         <!--Powers END-->

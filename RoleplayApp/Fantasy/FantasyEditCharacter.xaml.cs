@@ -201,9 +201,9 @@ namespace RoleplayApp.Fantasy
                     ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                     ImageUploadText.Text = "Billede er uploaded";
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Fejl. Kunne ikke læse billede, find et andet");
+                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke læse billede, find et andet");
                 }
             }
         }
@@ -396,11 +396,10 @@ namespace RoleplayApp.Fantasy
             double x = this.Left;
             double y = this.Top;
 
-            FantasyAddPower fantasyAddPower = new FantasyAddPower();
+            FantasyAddPower fantasyAddPower = new FantasyAddPower(this);
             fantasyAddPower.Left = x;
             fantasyAddPower.Top = y;
             fantasyAddPower.Show();
-
         }
     }
 }

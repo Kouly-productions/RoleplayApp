@@ -129,6 +129,7 @@ namespace RoleplayApp
         public ObservableCollection<FriendViewModel> Friends { get; set; } = new ObservableCollection<FriendViewModel>();
         public ObservableCollection<EnemyViewModel> Enemies { get; set; } = new ObservableCollection<EnemyViewModel>();
 
+        public List<Forces> Abilities { get; set; } = new List<Forces>();
         public int ModifiersCombined { get; set; }
         public Gender Gender { get; set; }
         public Type Type { get; set; }
