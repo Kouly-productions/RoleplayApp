@@ -126,11 +126,12 @@
                                TextAlignment="Center"
                                FontWeight="Bold"/>
                 </Border>
-                <TextBlock Name="charHistory"
-                           Text="History goes here"
-                           FontSize="20"
-                           TextWrapping="Wrap"
-                           Height="410"/>
+                <ScrollViewer Height="430">
+                    <TextBlock Name="charHistory"
+                               Text="History goes here"
+                               FontSize="20"
+                               TextWrapping="Wrap"/>
+                </ScrollViewer>
             </StackPanel>
         </Border>
         <!--Info END-->
