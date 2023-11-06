@@ -44,8 +44,8 @@ namespace RoleplayApp
         Is,
         Elektricitet,
         Natur,
-        Lys,
-        Mørke
+        Healing,
+        Luft
     }
 
     public class Forces

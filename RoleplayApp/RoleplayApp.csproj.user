@@ -39,6 +39,9 @@
     <Compile Update="Fantasy\FantasyShowCharacterStats.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Fantasy\FantasyThisAbility.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="FindLover.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +81,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Fantasy\FantasyShowCharacterStats.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fantasy\FantasyThisAbility.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FindLover.xaml">

@@ -35,6 +35,7 @@ namespace RoleplayApp
             this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "fantasyCharacters.json");
 
             showCharacterInfo(character);
+            ShowCharacterAbilities();
         }
 
         private void done_Click(object sender, RoutedEventArgs e)
@@ -177,5 +178,11 @@ namespace RoleplayApp
             FantasyShowCharacterStats fantasyShowCharacterStats = new FantasyShowCharacterStats(character, this.parentCharacterWindow);
             fantasyShowCharacterStats.ShowDialog();
         }
+
+        public void ShowCharacterAbilities()
+        {
+            AbilitiesList.ItemsSource = character.Abilities;
+        }
+
     }
 }

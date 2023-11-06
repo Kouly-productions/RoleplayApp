@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+    <Page Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\RoleplayFont.ttf" />
     <None Remove="Resources\Hearth.png" />
   </ItemGroup>
 
@@ -16,12 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\RoleplayFont.ttf" />
     <Resource Include="Resources\Hearth.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Fonts\" />
-    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>

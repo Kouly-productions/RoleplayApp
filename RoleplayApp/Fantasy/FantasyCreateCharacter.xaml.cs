@@ -310,7 +310,7 @@ namespace RoleplayApp.Fantasy
             double x = this.Left;
             double y = this.Top;
 
-            FantasyAddPower fantasyAddPower = new FantasyAddPower(this);
+            FantasyAbilityWindow fantasyAddPower = new FantasyAbilityWindow();
             fantasyAddPower.Left = x;
             fantasyAddPower.Top = y;
             fantasyAddPower.Show();

@@ -132,3 +132,7 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windo
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyAddPower.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyAbilityWindow.g.cs
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyAbilityWindow.baml
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyAbilityWindow.g.cs
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyAbilityWindow.baml
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyThisAbility.g.cs
+C:\Users\efdk\Documents\RoleplayApp\RoleplayApp\obj\Debug\net7.0-windows\Fantasy\FantasyThisAbility.baml

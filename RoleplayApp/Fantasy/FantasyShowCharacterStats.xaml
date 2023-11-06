@@ -79,30 +79,46 @@
                        FontSize="30"/>
         </Border>
         <!--Level END-->
-        
+
         <!--Powers START-->
         <Border Grid.ColumnSpan="3"
-                Grid.RowSpan="2"
-                BorderBrush="Black"
-                BorderThickness="2"
-                Width="300"
-                Height="450"
-                Background="{DynamicResource BackGroundColor}"
+        Grid.RowSpan="2"
+        BorderBrush="Black"
+        BorderThickness="2"
+        Width="300"
+        Height="450"
+        Background="{DynamicResource BackGroundColor}"
+        CornerRadius="10"
+        Margin="0,0,0,200">
+            <StackPanel>
+                <Border Height="40"
                 CornerRadius="10"
-                Margin="0,0,0,200">
-            <Border Height="40"
-                    CornerRadius="10"
-                    BorderBrush="Black"
-                    BorderThickness="1"
-                    VerticalAlignment="Top"
-                    Background="{DynamicResource MainColor}">
-                <TextBlock Text="Krafter"
-                           FontSize="30"
-                           TextAlignment="Center"
-                           FontWeight="Bold"/>
-            </Border>
+                BorderBrush="Black"
+                BorderThickness="1"
+                VerticalAlignment="Top"
+                Background="{DynamicResource MainColor}">
+                    <TextBlock Text="Krafter"
+                       FontSize="30"
+                       TextAlignment="Center"
+                       FontWeight="Bold"/>
+                </Border>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="AbilitiesList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <!-- Her defineres hvordan hver enkelt evne skal vises -->
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" Margin="5" FontSize="16"/>
+                                    <!-- Tilføj flere UI elementer her hvis nødvendigt, f.eks. for at vise evnens niveau eller beskrivelse -->
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
         </Border>
         <!--Powers END-->
+
         <!--Info START-->
         <Border BorderBrush="Black"
                 BorderThickness="2"
