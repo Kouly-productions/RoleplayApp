@@ -152,38 +152,32 @@ namespace RoleplayApp.Fantasy
 
                 try
                 {
-                File.Copy(selectedFilePath, destinationFilePath, true);
+                    File.Copy(selectedFilePath, destinationFilePath, true);
+                    this.fileName = uniqueFileName; // Opdater fileName til det unikke filnavn
+                    character.ImagePath = this.fileName; // Sæt character.ImagePath til det unikke filnavn
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke kopiere billedet. Vælg et andet billede.");
                 }
 
+                // Konstruér den fulde sti dynamisk
+                string fullImagePath = System.IO.Path.Combine(destinationDirectory, character.ImagePath);
 
-                // Inde i AddImage_Click
-                this.fileName = System.IO.Path.GetFileName(selectedFilePath);
-
-
-                // Gem kun filnavnet i JSON (ingen ændring her)
-                character.ImagePath = fileName;
-
-                // Konstruér den fulde sti dynamisk (ingen ændring her, da det allerede var korrekt)
-                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
-
-                // Vis billedet (ingen ændring nødvendig her)
+                // Vis billedet
                 try
                 {
-                    // Fortsæt med at oprette BitmapImage-objektet
                     BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
                     ImageUploadText.Foreground = new SolidColorBrush(Colors.Green);
                     ImageUploadText.Text = "Billede er uploaded";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke læse billede, find et andet");
+                    MessageBox.Show($"Fejl: {ex.ToString()}. Kunne ikke læse billede, find et andet");
                 }
             }
         }
+
 
 
         private void genderMale_Click(object sender, RoutedEventArgs e)

@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ADfAq1Ot69OfOuEBnNgOzUUHKPVyvk22o6ixgxwEbiNfo5GEzXGkW2BtrhR1LBrl7QRs6QfYgC3KSq8AEqP67Q==",
+  "dgSpecHash": "PDVEch6xxG2Lr35NUJj3Z7BB/zfvAvUm7XIIWhVi14P1f/NN1EiDO3Yvpq3O3AiMMSgTTXfFLpKV0WUQiYZc2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\eliko\\Documents\\Roleplay\\RoleplayApp\\RoleplayApp\\RoleplayApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eliko\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\7.0.11\\microsoft.netcore.app.runtime.win-x86.7.0.11.nupkg.sha512",
-    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\7.0.11\\microsoft.windowsdesktop.app.runtime.win-x86.7.0.11.nupkg.sha512",
-    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\7.0.11\\microsoft.aspnetcore.app.runtime.win-x86.7.0.11.nupkg.sha512",
-    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.11\\microsoft.netcore.app.crossgen2.win-x64.7.0.11.nupkg.sha512"
+    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\7.0.13\\microsoft.netcore.app.runtime.win-x86.7.0.13.nupkg.sha512",
+    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\7.0.13\\microsoft.windowsdesktop.app.runtime.win-x86.7.0.13.nupkg.sha512",
+    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\7.0.13\\microsoft.aspnetcore.app.runtime.win-x86.7.0.13.nupkg.sha512",
+    "C:\\Users\\eliko\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.13\\microsoft.netcore.app.crossgen2.win-x64.7.0.13.nupkg.sha512"
   ],
   "logs": []
 }

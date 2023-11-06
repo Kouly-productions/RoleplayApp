@@ -170,8 +170,11 @@ namespace RoleplayApp.Fantasy
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png\")";
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Image Files (*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png"
+            };
+
             if (openFileDialog.ShowDialog() == true)
             {
                 string selectedFilePath = openFileDialog.FileName;
@@ -182,19 +185,22 @@ namespace RoleplayApp.Fantasy
                 }
                 string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(selectedFilePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(selectedFilePath)}";
                 string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
-                File.Copy(selectedFilePath, destinationFilePath, true);
 
-                // Inde i AddImage_Click
-                this.fileName = System.IO.Path.GetFileName(selectedFilePath);
+                try
+                {
+                    File.Copy(selectedFilePath, destinationFilePath, true);
+                    this.fileName = uniqueFileName; // Opdater fileName til det unikke filnavn
+                    character.ImagePath = this.fileName; // Sæt character.ImagePath til det unikke filnavn
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke kopiere billedet. Vælg et andet billede.");
+                }
 
+                // Konstruér den fulde sti dynamisk
+                string fullImagePath = System.IO.Path.Combine(destinationDirectory, character.ImagePath);
 
-                // Gem kun filnavnet i JSON (ingen ændring her)
-                character.ImagePath = fileName;
-
-                // Konstruér den fulde sti dynamisk (ingen ændring her, da det allerede var korrekt)
-                string fullImagePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp\\Images", character.ImagePath);
-
-                // Vis billedet (ingen ændring nødvendig her)
+                // Vis billedet
                 try
                 {
                     BitmapImage image = new BitmapImage(new Uri(fullImagePath, UriKind.Absolute));
@@ -203,7 +209,7 @@ namespace RoleplayApp.Fantasy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke læse billede, find et andet");
+                    MessageBox.Show($"Fejl: {ex.ToString()}. Kunne ikke læse billede, find et andet");
                 }
             }
         }

@@ -81,3 +81,7 @@ C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-win
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyEditCharacter.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyShowCharacters.baml
 C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyShowCharacterStats.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyAbilityWindow.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyThisAbility.g.cs
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyAbilityWindow.baml
+C:\Users\eliko\Documents\Roleplay\RoleplayApp\RoleplayApp\obj\Release\net7.0-windows\Fantasy\FantasyThisAbility.baml
