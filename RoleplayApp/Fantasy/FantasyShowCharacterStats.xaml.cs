@@ -67,9 +67,9 @@ namespace RoleplayApp
 
                     if (File.Exists(fullImagePath))
                     {
-                    Uri imageUri = new Uri(fullImagePath, UriKind.Absolute);
-                    BitmapImage imageBitMap = new BitmapImage(imageUri);
-                    CharImage.Source = imageBitMap;
+                        Uri imageUri = new Uri(fullImagePath, UriKind.Absolute);
+                        BitmapImage imageBitMap = new BitmapImage(imageUri);
+                        CharImage.Source = imageBitMap;
                     }
                     else
                     {
@@ -184,5 +184,20 @@ namespace RoleplayApp
             AbilitiesList.ItemsSource = character.Abilities;
         }
 
+        private void StackPanel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // Finder Border-elementet, der blev klikket på, og dermed den tilsvarende ability
+            var border = sender as Border;
+            if (border != null)
+            {
+                var ability = border.DataContext as Forces;
+                if (ability != null)
+                {
+                    // Åbner vinduet, der viser ability stats
+                    FantasyThisAbility abilityWindow = new FantasyThisAbility(ability, this);
+                    abilityWindow.Show();
+                }
+            }
+        }
     }
 }

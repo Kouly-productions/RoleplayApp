@@ -24,13 +24,15 @@ namespace RoleplayApp.Fantasy
         private List<Forces> loadedAbilities;
         public CharacterProp CurrentCharacter { get; set; }
 
-        public FantasyAbilityWindow()
+        public FantasyAbilityWindow(CharacterProp currentCharacter)
         {
             InitializeComponent();
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPathAbility = System.IO.Path.Combine(filePath, "fantasyAbility.json");
             jsonPathCharacter = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
+
+            CurrentCharacter = currentCharacter;
 
             GetAbilities();
             SortByComboBox_SelectionChanged(SortByComboBox, null);
@@ -305,7 +307,6 @@ namespace RoleplayApp.Fantasy
         {
             //Empty for now
         }
-
         private void AddAbilityToThisCharacter(Forces ability)
         {
             if (CurrentCharacter != null)
@@ -313,12 +314,10 @@ namespace RoleplayApp.Fantasy
                 if (CurrentCharacter.Abilities == null)
                     CurrentCharacter.Abilities = new List<Forces>();
 
-                // Tjek om ability allerede findes
                 if (!CurrentCharacter.Abilities.Any(a => a.Name == ability.Name))
                 {
                     CurrentCharacter.Abilities.Add(ability);
-                    // Debug udskrift eller breakpoint her for at inspicere CurrentCharacter
-                    SaveCharacter();
+                    SaveCharacter(CurrentCharacter);
                 }
                 else
                 {
@@ -329,55 +328,45 @@ namespace RoleplayApp.Fantasy
             {
                 MessageBox.Show("Ingen nuværende karakter valgt.");
             }
-             this.Close();
         }
 
-
-        private List<CharacterProp> LoadCharactersFromJson(string characterJsonPath)
+        private void SaveCharacter(CharacterProp characterToSave)
         {
-            if (File.Exists(characterJsonPath))
+            var allCharacters = LoadCharactersFromJson(jsonPathCharacter);
+            var characterToUpdate = allCharacters.FirstOrDefault(c => c.Name == characterToSave.Name);
+
+            if (characterToUpdate != null)
             {
-                string json = File.ReadAllText(characterJsonPath);
-                return JsonConvert.DeserializeObject<List<CharacterProp>>(json) ?? new List<CharacterProp>();
+                characterToUpdate.Abilities = characterToSave.Abilities;
             }
             else
             {
-                return new List<CharacterProp>();
+                allCharacters.Add(characterToSave);
             }
+
+            string json = JsonConvert.SerializeObject(allCharacters, Formatting.Indented);
+            File.WriteAllText(jsonPathCharacter, json);
         }
 
-
-        private void SaveCharacter()
+        private List<CharacterProp> LoadCharactersFromJson(string jsonPath)
         {
             try
             {
-                // Load the existing characters from the JSON file
-                var allCharacters = LoadCharactersFromJson(jsonPathCharacter); // characterJsonPath skal være stien til din karakterdatafil
+                // Læs JSON-filens indhold
+                string jsonContent = File.ReadAllText(jsonPath);
 
-                // Find the character to update in the loaded list (assuming Name is a unique identifier)
-                var characterToUpdate = allCharacters.FirstOrDefault(c => c.Name == CurrentCharacter.Name);
+                // Deserialiser JSON-strengen til en liste af CharacterProp objekter
+                List<CharacterProp> characters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonContent);
 
-                // Update the character's abilities
-                if (characterToUpdate != null)
-                {
-                    characterToUpdate.Abilities = CurrentCharacter.Abilities;
-                }
-                else
-                {
-                    // If the character is not found, it's a new character, so add it to the list
-                    allCharacters.Add(CurrentCharacter);
-                }
-
-                // Save the updated list of characters back to the JSON file
-                string json = JsonConvert.SerializeObject(allCharacters);
-                File.WriteAllText(jsonPathCharacter, json); // characterJsonPath skal være stien til din karakterdatafil
+                // Hvis filen er tom eller indholdet ikke kunne deserialiseres, returner en ny liste
+                return characters ?? new List<CharacterProp>();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kunne ikke gemme karakter: " + ex.Message);
+                MessageBox.Show("Der opstod en fejl under indlæsningen af karakterer: " + ex.Message);
+                return new List<CharacterProp>();
             }
         }
-
 
     }
 }

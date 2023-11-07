@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoleplayApp.Fantasy"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="FantasyThisAbility" Height="600" Width="400">
 
     <Window.Resources>
@@ -17,78 +18,121 @@
 
     <Window.Background>
         <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
-            <GradientStop Color="LightBlue" Offset="0.0"/>
-            <GradientStop Color="Blue" Offset="1"/>
+            <GradientStop Color="LightBlue" Offset="0.2"/>
+            <GradientStop Color="Yellow" Offset="0.8"/>
         </RadialGradientBrush>
     </Window.Background>
-    
+
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- For top image -->
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <!-- For content below image -->
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <!-- Image Container -->
+        <Border Grid.Row="0"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="10"
+                Margin="5"
+                Height="300"
+                Background="LightBlue">
+            <Image Name="AbilityImage" Stretch="Uniform"/>
+        </Border>
 
-        <StackPanel Grid.ColumnSpan="3"
-                    Grid.RowSpan="3">
-            <StackPanel>
-                <Border Width="190"
-                        Height="195">
-                    <Image Name="AbilityImage"/>
+        <!-- Content Container -->
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <!-- For the description -->
+                </Grid.RowDefinitions>
+
+                <!-- Name and Type Row -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Background="LightBlue"
+                            CornerRadius="5"
+                            Padding="5">
+                        <TextBlock Name="AbilityName"
+                                   Text="Flash Heal"
+                                   FontSize="16"
+                                   TextAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Background="LightBlue"
+                            CornerRadius="5"
+                            Padding="5">
+                        <TextBlock Name="AbilityType"
+                                   Text="Healing"
+                                   FontSize="16"
+                                   TextAlignment="Center"/>
+                    </Border>
+                </Grid>
+
+                <!-- AOE Row -->
+                <Border Grid.Row="1"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Background="LightBlue"
+                        Padding="5"
+                        Margin="0,5,0,0">
+                    <TextBlock Name="IsAOE"
+                               Text="AOE"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextAlignment="Center"/>
                 </Border>
 
-                <TextBlock Name="AbilityName"
-                    FontSize="20"
-                Text="Ability name goes here"
-                TextAlignment="Center"
-                FontFamily="pack://application:,,,/RoleplayApp;component/Fonts/#RoleplayFont"/>
+                <!-- Minimum Level Row -->
+                <Border Grid.Row="2"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Background="LightBlue"
+                        Padding="5"
+                        Margin="0,5,0,0">
+                    <TextBlock Name="MinLevel"
+                               Text="0"
+                               FontSize="25"
+                               Foreground="BlueViolet"
+                               FontWeight="Bold"
+                               TextAlignment="Center"/>
+                </Border>
 
-                <TextBlock Name="AbilityType"
-                           Text="Type here"
-                           TextAlignment="Center"
-                           FontSize="16"
-                           Margin="0,20,0,0"/>
-
-                <TextBlock FontSize="16"
-                           Text="For at bruge denne ability skal du minimum være level"
-                           Margin="0,20,0,0"/>
-                <TextBlock Name="MinLevel"
-                           FontSize="25"
-                           Text="0"
-                           TextAlignment="Center"
-                           Foreground="BlueViolet"
-                           FontWeight="Bold"/>
-
-                <TextBlock Text="Denne Ability"
-                           TextAlignment="Center"
-                           FontSize="16"
-                           Margin="0,20,0,0"/>
-                
-                <TextBlock Name="IsAOE"
-                           Text="AOE"
-                           TextAlignment="Center"
-                           FontSize="16"
-                           FontWeight="Bold"/>
-
-                <Border BorderBrush="Black"
+                <!-- Description Row -->
+                <Border Grid.Row="3"
+                        BorderBrush="Black"
                         BorderThickness="2"
-                        Margin="0,20,0,0">
-                    
-                <TextBlock Name="AbilityDescription"
-                           Height="165"
-                           Text="The description goes here"
-                           FontSize="14"
-                           TextWrapping="Wrap"/>
+                        CornerRadius="5"
+                        Background="LightBlue"
+                        Padding="5"
+                        Margin="0,5,0,0">
+                    <TextBlock Name="AbilityDescription"
+                               Text="The description goes here"
+                               FontSize="14"
+                               TextWrapping="Wrap"/>
                 </Border>
-
-            </StackPanel>
-        </StackPanel>
-        
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

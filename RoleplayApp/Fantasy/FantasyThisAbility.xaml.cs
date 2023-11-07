@@ -22,6 +22,7 @@ namespace RoleplayApp.Fantasy
     {
         private Forces forces;
         private FantasyAbilityWindow parentFantasyWindow;
+        private Window parentWindow;
         private string jsonPath;
 
         public FantasyThisAbility(Forces forces, FantasyAbilityWindow parentWindow)
@@ -30,6 +31,18 @@ namespace RoleplayApp.Fantasy
 
             this.forces = forces;
             this.parentFantasyWindow = parentWindow;
+            this.DataContext = forces;
+            this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "fantasyAbility.json");
+
+            showAbilityInfo(forces);
+        }
+
+        public FantasyThisAbility(Forces forces, Window parentWindow)
+        {
+            InitializeComponent();
+
+            this.forces = forces;
+            this.parentWindow = parentWindow;  // Gemmer referencen til forældrevinduet
             this.DataContext = forces;
             this.jsonPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "fantasyAbility.json");
 

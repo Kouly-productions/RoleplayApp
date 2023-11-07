@@ -62,6 +62,7 @@ namespace RoleplayApp.Fantasy
             WriteMoney.Text = characterToEdit.Money;
             WriteDescription.Text = characterToEdit.Description;
             WriteHistory.Text = characterToEdit.CharacterHistory;
+            AbilitiesList.ItemsSource = characterToEdit.Abilities;
 
             if (characterToEdit.ImagePath != "RoleplayApp")
             {
@@ -402,10 +403,69 @@ namespace RoleplayApp.Fantasy
             double x = this.Left;
             double y = this.Top;
 
-            FantasyAbilityWindow fantasyAddPower = new FantasyAbilityWindow();
+            FantasyAbilityWindow fantasyAddPower = new FantasyAbilityWindow(character);
             fantasyAddPower.Left = x;
             fantasyAddPower.Top = y;
-            fantasyAddPower.Show();
+            fantasyAddPower.ShowDialog();
         }
+
+        private void StackPanel_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // Find StackPanel, som blev klikket på, og dermed den tilsvarende ability
+            var border = sender as Border;
+            if (border != null)
+            {
+                var abilityToRemove = border.DataContext as Forces;
+                if (abilityToRemove != null && character.Abilities.Contains(abilityToRemove))
+                {
+                    character.Abilities.Remove(abilityToRemove);
+                    AbilitiesList.Items.Refresh(); // Opdater UI
+
+                    // Gem den opdaterede karakter til JSON filen
+                    SaveCharacter(character);
+                }
+            }
+        }
+
+        private void SaveCharacter(CharacterProp characterToSave)
+        {
+            var allCharacters = LoadCharactersFromJson(jsonPath);
+            var characterToUpdate = allCharacters.FirstOrDefault(c => c.Name == characterToSave.Name);
+
+            if (characterToUpdate != null)
+            {
+                characterToUpdate.Abilities = characterToSave.Abilities;
+            }
+
+            string json = JsonConvert.SerializeObject(allCharacters, Formatting.Indented);
+            File.WriteAllText(jsonPath, json);
+        }
+
+        private List<CharacterProp> LoadCharactersFromJson(string jsonFilePath)
+        {
+            if (!File.Exists(jsonFilePath))
+            {
+                MessageBox.Show("JSON-filen blev ikke fundet.");
+                return new List<CharacterProp>();
+            }
+
+            try
+            {
+                string jsonContent = File.ReadAllText(jsonFilePath);
+                List<CharacterProp> characters = JsonConvert.DeserializeObject<List<CharacterProp>>(jsonContent) ?? new List<CharacterProp>();
+                return characters;
+            }
+            catch (JsonException jsonEx)
+            {
+                MessageBox.Show("Der opstod en fejl under indlæsningen af JSON-filen: " + jsonEx.Message);
+                return new List<CharacterProp>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Der opstod en fejl: " + ex.Message);
+                return new List<CharacterProp>();
+            }
+        }
+
     }
 }
