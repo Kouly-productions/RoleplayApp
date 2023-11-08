@@ -49,10 +49,10 @@ namespace RoleplayApp.Fantasy
         {
             InitializeComponent();
 
+            this.character = characterToEdit;
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
             this.parentCharacterWindow = parentCharacterWindow;
-            this.character = characterToEdit;
             this.DataContext = character;
 
             WriteName.Text = characterToEdit.Name;

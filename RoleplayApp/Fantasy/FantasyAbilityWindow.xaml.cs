@@ -318,6 +318,7 @@ namespace RoleplayApp.Fantasy
                 {
                     CurrentCharacter.Abilities.Add(ability);
                     SaveCharacter(CurrentCharacter);
+                    this.Close();
                 }
                 else
                 {
