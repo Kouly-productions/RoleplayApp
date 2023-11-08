@@ -112,7 +112,7 @@ namespace RoleplayApp.Fantasy
                                 border.Background = new SolidColorBrush(Colors.SkyBlue);
                                 stackPanel.Children.Add(textBlockRank);
                             }
-                            else if (abilities.abilityType == AbilityType.Elektricitet)
+                            else if (abilities.abilityType == AbilityType.Strøm)
                             {
                                 textBlockRank.Text = "Strøm";
                                 border.Background = new SolidColorBrush(Colors.Beige);
@@ -128,6 +128,18 @@ namespace RoleplayApp.Fantasy
                             {
                                 textBlockRank.Text = "Healing";
                                 border.Background = new SolidColorBrush(Colors.Yellow);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (abilities.abilityType == AbilityType.Arcane)
+                            {
+                                textBlockRank.Text = "Arcane";
+                                border.Background = new SolidColorBrush(Colors.BlueViolet);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (abilities.abilityType == AbilityType.Luft)
+                            {
+                                textBlockRank.Text = "Luft";
+                                border.Background = new SolidColorBrush(Colors.DimGray);
                                 stackPanel.Children.Add(textBlockRank);
                             }
 
@@ -235,7 +247,7 @@ namespace RoleplayApp.Fantasy
                     border.Background = new SolidColorBrush(Colors.SkyBlue);
                     stackPanel.Children.Add(textBlockRank);
                 }
-                else if (abilities.abilityType == AbilityType.Elektricitet)
+                else if (abilities.abilityType == AbilityType.Strøm)
                 {
                     textBlockRank.Text = "Strøm";
                     border.Background = new SolidColorBrush(Colors.Beige);
@@ -251,6 +263,18 @@ namespace RoleplayApp.Fantasy
                 {
                     textBlockRank.Text = "Healing";
                     border.Background = new SolidColorBrush(Colors.Yellow);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (abilities.abilityType == AbilityType.Arcane)
+                {
+                    textBlockRank.Text = "Arcane";
+                    border.Background = new SolidColorBrush(Colors.BlueViolet);
+                    stackPanel.Children.Add(textBlockRank);
+                }
+                else if (abilities.abilityType == AbilityType.Luft)
+                {
+                    textBlockRank.Text = "Luft";
+                    border.Background = new SolidColorBrush(Colors.DimGray);
                     stackPanel.Children.Add(textBlockRank);
                 }
 

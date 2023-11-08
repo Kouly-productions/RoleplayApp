@@ -74,8 +74,9 @@
                 <ComboBoxItem Content="Ild"/>
                 <ComboBoxItem Content="Vand"/>
                 <ComboBoxItem Content="Is"/>
-                <ComboBoxItem Content="Elektricitet"/>
+                <ComboBoxItem Content="Strøm"/>
                 <ComboBoxItem Content="Natur"/>
+                <ComboBoxItem Content="Arcane"/>
                 <ComboBoxItem Content="Healing"/>
             </ComboBox>
 

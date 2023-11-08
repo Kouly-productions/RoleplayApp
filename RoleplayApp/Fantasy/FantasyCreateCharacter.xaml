@@ -205,6 +205,11 @@
                             <ComboBoxItem Content="Menneske"/>
                             <ComboBoxItem Content="Robot"/>
                             <ComboBoxItem Content="Drage"/>
+                            <ComboBoxItem Content="Elemental"/>
+                            <ComboBoxItem Content="MagiskVæsen"/>
+                            <ComboBoxItem Content="Rumvæsen"/>
+                            <ComboBoxItem Content="Goblin"/>
+                            <ComboBoxItem Content="Dyr"/>
                             <ComboBoxItem Content="Ukendt"/>
                         </ComboBox>
                         <TextBox Name="WriteMoney"

@@ -115,10 +115,11 @@
                                     Background="DarkGray">
                                     <!-- TextBlock nu direkte inden for Border, og centreret vertikalt og horisontalt -->
                                     <TextBlock Text="{Binding Name}" 
-                                       FontSize="16"
+                                       FontSize="20"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       TextAlignment="Center"/>
+                                       TextAlignment="Center"
+                                       FontFamily="pack://application:,,,/Fonts/#Breathe Fire III"/>
                                 </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

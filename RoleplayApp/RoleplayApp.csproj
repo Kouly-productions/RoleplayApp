@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Fonts\RoleplayFont.ttf" />
+    <Resource Include="Fonts\RoleplayFont.ttf" />
     <Resource Include="Resources\Hearth.png" />
   </ItemGroup>
 

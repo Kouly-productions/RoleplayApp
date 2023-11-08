@@ -19,7 +19,10 @@ namespace RoleplayApp
         Menneske,
         Robot,
         Drage,
+        Elemental,
         MagiskVæsen,
+        Rumvæsen,
+        Goblin,
         Dyr,
         Ukendt
     }
@@ -42,9 +45,10 @@ namespace RoleplayApp
         Ild,
         Vand,
         Is,
-        Elektricitet,
+        Strøm,
         Natur,
         Healing,
+        Arcane,
         Luft
     }
 
