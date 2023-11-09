@@ -319,6 +319,8 @@ namespace RoleplayApp.Fantasy
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow windwow = new MainWindow();
+            windwow.Show();
             this.Close();
         }
 

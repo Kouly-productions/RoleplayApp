@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RoleplayApp.Fantasy"
         mc:Ignorable="d"
         Background="DarkGray"
-        Title="Character" Height="600" Width="1035">
+        Title="Character" Height="800" Width="1235">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -34,11 +34,33 @@
         </ScrollViewer>
 
 
-        <StackPanel Orientation="Horizontal"
+        <Grid
                  Grid.Row="0"
                  Grid.Column="1"
                  Grid.ColumnSpan="5"
-                 Width="500">
+                 Height="30"
+                 VerticalAlignment="Top"
+                 Width="auto"
+                 Background="Gray">
+
+
+            <TextBlock Name="NumberOfCharacters"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Text="0"/>
+
+            <ComboBox Name="SortByComboBox"
+                  SelectedIndex="0"
+                  Height="25"
+                  Width="200"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Right"
+                  Margin="0,0,150,0" SelectionChanged="SortByComboBox_SelectionChanged">
+                <ComboBoxItem Content="Styrke"/>
+                <ComboBoxItem Content="Level"/>
+            </ComboBox>
 
             <TextBox Name="SearchBox"
                  Height="25"
@@ -46,19 +68,20 @@
                  FontSize="16"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"
+                 Margin="150,0,0,0"
                  TextChanged="SearchBox_TextChanged"/>
 
-            <ComboBox Name="SortByComboBox"
-                  SelectedIndex="0"
-                  Height="25"
-                  Width="200"
-                  VerticalAlignment="Top"
-                  Margin="100,0,0,0" SelectionChanged="SortByComboBox_SelectionChanged">
-                <ComboBoxItem Content="Styrke"/>
-                <ComboBoxItem Content="Level"/>
-            </ComboBox>
-
-        </StackPanel>
+            <TextBlock Text="Lyd?"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       Margin="0,0,30,0"/>
+            <CheckBox Name="PlayAudio"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center"
+                      Margin="0,0,10,0"
+                      IsChecked="True"/>
+        </Grid>
 
         <Button
         x:Name="GoBack"

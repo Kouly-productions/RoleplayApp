@@ -24,6 +24,7 @@ namespace RoleplayApp.Fantasy
         string filePath;
         string jsonPath;
         private List<CharacterProp> loadedCharacters;
+        int numOfChar = default;
 
         public FantasyShowCharacters()
         {
@@ -39,6 +40,7 @@ namespace RoleplayApp.Fantasy
             }
 
             GetCharacters();
+
             SortByComboBox_SelectionChanged(SortByComboBox, null);
         }
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -51,6 +53,13 @@ namespace RoleplayApp.Fantasy
             mainWindow.Top = y;
             this.Close();
             mainWindow.Show();
+        }
+
+        private void showCountOfCharacters()
+        {
+            numOfChar = loadedCharacters.Count;
+
+            NumberOfCharacters.Text = numOfChar.ToString();
         }
 
         private void CreateCharacter_Click(object sender, RoutedEventArgs e)
@@ -197,6 +206,8 @@ namespace RoleplayApp.Fantasy
                             border.Child = stackPanel;
 
                             FantasyCharacterPanel.Children.Add(border);
+
+                            showCountOfCharacters();
                         }
                     }
                     else
