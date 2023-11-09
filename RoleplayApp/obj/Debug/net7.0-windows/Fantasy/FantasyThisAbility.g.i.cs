@@ -101,7 +101,7 @@ namespace RoleplayApp.Fantasy {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RoleplayApp;V1.0.0.0;component/fantasy/fantasythisability.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RoleplayApp;component/fantasy/fantasythisability.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Fantasy\FantasyThisAbility.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

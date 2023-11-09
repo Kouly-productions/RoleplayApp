@@ -57,6 +57,15 @@
                 Click="Button_Click_4"
                 />
 
+        <Button Grid.Column="5"
+                Grid.Row="2"
+                Content="Lav Ability"
+                FontSize="25"
+                FontWeight="Bold"
+                Background="#c7c7c7"
+                Click="Button_Click_5"
+                />
+
         <Button Grid.Column="1"
                 Grid.Row="4"
                 Content="Afstemning"

@@ -84,5 +84,12 @@ namespace RoleplayApp
             fantasy.Show();
             this.Close();
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            FantasyAbilityWindow abilityWindow = new FantasyAbilityWindow(null);
+            abilityWindow.Show();
+            this.Close();
+        }
     }
 }
