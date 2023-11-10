@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace RoleplayApp.Fantasy
 {
@@ -22,7 +23,8 @@ namespace RoleplayApp.Fantasy
     public partial class FantasyShowCharacters : Window
     {
         string filePath;
-        string jsonPath;
+        string jsonCharacterPath;
+        string AudioPath;
         private List<CharacterProp> loadedCharacters;
         int numOfChar = default;
 
@@ -32,11 +34,16 @@ namespace RoleplayApp.Fantasy
 
 
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
-            jsonPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
+            AudioPath = System.IO.Path.Combine(filePath, "Audio");
+            jsonCharacterPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
 
             if (!Directory.Exists(filePath))
             {
                 Directory.CreateDirectory(filePath);
+            }
+            if (!Directory.Exists(AudioPath)) 
+            {
+                Directory.CreateDirectory(AudioPath);
             }
 
             GetCharacters();
@@ -70,11 +77,11 @@ namespace RoleplayApp.Fantasy
 
         public void GetCharacters()
         {
-            if (File.Exists(jsonPath))
+            if (File.Exists(jsonCharacterPath))
             {
                 try
                 {
-                    string json = File.ReadAllText(jsonPath);
+                    string json = File.ReadAllText(jsonCharacterPath);
 
                     this.loadedCharacters = JsonConvert.DeserializeObject<List<CharacterProp>>(json);
 
@@ -223,7 +230,7 @@ namespace RoleplayApp.Fantasy
             else
             {
                 MessageBox.Show("filen findes ikke");
-                System.IO.File.WriteAllText(jsonPath, "[]");
+                System.IO.File.WriteAllText(jsonCharacterPath, "[]");
             }
         }
 

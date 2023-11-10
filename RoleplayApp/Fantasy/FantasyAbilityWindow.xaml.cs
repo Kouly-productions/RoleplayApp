@@ -161,8 +161,8 @@ namespace RoleplayApp.Fantasy
 
                             textBlock.TextAlignment = TextAlignment.Center;
 
-                            border.MouseRightButtonDown += (sender, e) => { ShowAbilityInfo(abilities); };
-                            border.MouseLeftButtonDown += (sender, e) => { AddAbilityToThisCharacter(abilities); };
+                            border.MouseLeftButtonDown += (sender, e) => { ShowAbilityInfo(abilities); };
+                            border.MouseRightButtonDown += (sender, e) => { AddAbilityToThisCharacter(abilities); };
 
                             if (image != null)
                             {
@@ -296,8 +296,8 @@ namespace RoleplayApp.Fantasy
 
                 textBlock.TextAlignment = TextAlignment.Center;
 
-                border.MouseRightButtonDown += (sender, e) => { ShowAbilityInfo(abilities); };
-                border.MouseLeftButtonDown += (sender, e) => { AddAbilityToThisCharacter(abilities); };
+                border.MouseLeftButtonDown += (sender, e) => { ShowAbilityInfo(abilities); };
+                border.MouseRightButtonDown += (sender, e) => { AddAbilityToThisCharacter(abilities); };
 
                 if (image != null)
                 {

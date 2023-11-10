@@ -25,12 +25,12 @@
         </Grid.ColumnDefinitions>
 
         <ScrollViewer Grid.RowSpan="3"
-                      Grid.ColumnSpan="7">
+                      Grid.ColumnSpan="7"
+                      Height="730"
+                      VerticalAlignment="Bottom">
         <WrapPanel
             x:Name="FantasyCharacterPanel"
-            Orientation="Horizontal"
-            Margin="0,25,0,0"
-            />
+            Orientation="Horizontal"/>
         </ScrollViewer>
 
 
