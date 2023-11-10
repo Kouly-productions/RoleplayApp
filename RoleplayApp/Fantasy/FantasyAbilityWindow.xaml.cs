@@ -16,6 +16,13 @@ using System.IO;
 
 namespace RoleplayApp.Fantasy
 {
+    public enum AbilityWindowState
+    {
+        ViewOnly,
+        AssignAbility,
+        EditAbility
+    }
+
     public partial class FantasyAbilityWindow : Window
     {
         string filePath;
@@ -23,6 +30,7 @@ namespace RoleplayApp.Fantasy
         string jsonPathCharacter;
         private List<Forces> loadedAbilities;
         public CharacterProp CurrentCharacter { get; set; }
+        public AbilityWindowState CurrentState { get; set; }
 
         public FantasyAbilityWindow(CharacterProp currentCharacter)
         {
@@ -333,6 +341,7 @@ namespace RoleplayApp.Fantasy
         {
             //Empty for now
         }
+
         private void AddAbilityToThisCharacter(Forces ability)
         {
             if (CurrentCharacter != null)

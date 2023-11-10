@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using RoleplayApp.Fantasy;
+using System.Media;
 
 namespace RoleplayApp
 {
@@ -25,6 +26,7 @@ namespace RoleplayApp
         private CharacterProp character;
         private FantasyShowCharacters parentCharacterWindow;
         private string jsonPath;
+        private MediaPlayer mediaPlayer = new MediaPlayer();
 
         public FantasyShowCharacterStats(CharacterProp character, FantasyShowCharacters parentWindow)
         {
@@ -36,6 +38,34 @@ namespace RoleplayApp
 
             showCharacterInfo(character);
             ShowCharacterAbilities();
+
+            if (!string.IsNullOrEmpty(character.MusicPath))
+            {
+                PlayCharacterSound(character.MusicPath);
+            }
+        }
+
+        private void PlayCharacterSound(string soundFileName)
+        {
+            // Konstruer den fulde sti baseret på den relative sti gemt i MusicPath
+            string audioDirectoryPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RoleplayApp", "Audio");
+            string fullSoundPath = System.IO.Path.Combine(audioDirectoryPath, soundFileName);
+
+            if (File.Exists(fullSoundPath))
+            {
+                mediaPlayer.Open(new Uri(fullSoundPath, UriKind.Absolute));
+                mediaPlayer.Play();
+            }
+            else
+            {
+                MessageBox.Show("Lydfilen blev ikke fundet på den angivne sti: " + fullSoundPath);
+            }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            mediaPlayer.Stop(); // Stopper musikken, når vinduet lukkes
         }
 
         private void done_Click(object sender, RoutedEventArgs e)

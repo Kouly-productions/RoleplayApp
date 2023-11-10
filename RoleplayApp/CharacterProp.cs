@@ -140,5 +140,6 @@ namespace RoleplayApp
         public Power Power { get; set; }
         public int Age { get; set; }
         public string ImagePath { get; set; }
+        public string MusicPath { get; set; }
     }
 }

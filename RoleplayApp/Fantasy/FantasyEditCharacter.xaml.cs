@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -434,12 +435,20 @@ namespace RoleplayApp.Fantasy
 
             if (characterToUpdate != null)
             {
-                characterToUpdate.Abilities = characterToSave.Abilities;
+                // Opdaterer de nødvendige felter på den eksisterende karakter
+                characterToUpdate.MusicPath = characterToSave.MusicPath;
+                // ... opdater andre felter efter behov
+            }
+            else
+            {
+                // Tilføjer en ny karakter, hvis den ikke fandtes i listen
+                allCharacters.Add(characterToSave);
             }
 
             string json = JsonConvert.SerializeObject(allCharacters, Formatting.Indented);
             File.WriteAllText(jsonPath, json);
         }
+
 
         private List<CharacterProp> LoadCharactersFromJson(string jsonFilePath)
         {
@@ -464,6 +473,37 @@ namespace RoleplayApp.Fantasy
             {
                 MessageBox.Show("Der opstod en fejl: " + ex.Message);
                 return new List<CharacterProp>();
+            }
+        }
+
+        private void AddMusic(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Sound files (*.wav;*.mp3)|*.wav;*.mp3"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string sourcePath = openFileDialog.FileName;
+                string destinationDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp\\Audio";
+                if (!Directory.Exists(destinationDirectory))
+                {
+                    Directory.CreateDirectory(destinationDirectory);
+                }
+                string uniqueFileName = $"{System.IO.Path.GetFileNameWithoutExtension(sourcePath)}-{DateTime.Now.Ticks}{System.IO.Path.GetExtension(sourcePath)}";
+                string destinationFilePath = System.IO.Path.Combine(destinationDirectory, uniqueFileName);
+
+                try
+                {
+                    File.Copy(sourcePath, destinationFilePath, true);
+                    character.MusicPath = uniqueFileName; // Gemmer kun filnavnet, som med billeder
+                    SaveCharacter(character); // Gem karakteren med den opdaterede musiksti
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Fejl: {ex.Message}. Kunne ikke kopiere musikfilen. Vælg en anden fil.");
+                }
             }
         }
 

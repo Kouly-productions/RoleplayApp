@@ -493,6 +493,21 @@
             Grid.Row="2"
             VerticalAlignment="Bottom" Click="Done_Click" Grid.ColumnSpan="2" Margin="0,0,180,0"/>
 
+
+        <Button
+            Name="MusicBtn"
+            Content="Add Music"
+            Height="25"
+            Width="200"
+            Grid.Column="9"
+            Grid.Row="2"
+            FontSize="16"
+            VerticalAlignment="Bottom" 
+            Click="AddMusic" 
+            Grid.ColumnSpan="2" 
+            Margin="0,0,180,60"/>
+        
+        
         <Button
         x:Name="GoBack"
         Height="25"
