@@ -29,6 +29,7 @@ namespace RoleplayApp
 
     public enum Power
     {
+        Død,
         MegetSvag,
         Svag,
         Menneske,

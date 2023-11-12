@@ -32,7 +32,6 @@ namespace RoleplayApp.Fantasy
         {
             InitializeComponent();
 
-
             filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\RoleplayApp";
             AudioPath = System.IO.Path.Combine(filePath, "Audio");
             jsonCharacterPath = System.IO.Path.Combine(filePath, "fantasyCharacters.json");
@@ -127,7 +126,13 @@ namespace RoleplayApp.Fantasy
                             textBlockRank.TextAlignment = TextAlignment.Center;
                             textBlockRank.FontWeight = FontWeights.Bold;
 
-                            if (characters.Power == Power.MegetSvag)
+                            if (characters.Power == Power.Død)
+                            {
+                                textBlockRank.Text = "Død";
+                                border.Background = new SolidColorBrush(Colors.DarkGray);
+                                stackPanel.Children.Add(textBlockRank);
+                            }
+                            else if (characters.Power == Power.MegetSvag)
                             {
                                 textBlockRank.Text = "Meget Svag";
                                 border.Background = new SolidColorBrush(Colors.DarkGray);
@@ -394,9 +399,9 @@ namespace RoleplayApp.Fantasy
             fantasyEditCharacterStats.ShowDialog();
         }
 
-        private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SortBy()
         {
-            if (loadedCharacters == null)
+            if (loadedCharacters == null || SortByComboBox.SelectedItem == null)
             {
                 return;
             }
@@ -417,6 +422,11 @@ namespace RoleplayApp.Fantasy
                     break;
             }
             UpdateCharacterPanel(sortedCharacters);
+        }
+
+        private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SortBy();
         }
     }
 }

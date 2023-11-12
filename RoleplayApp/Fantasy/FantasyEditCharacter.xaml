@@ -473,6 +473,7 @@
                   Width="300"
                   SelectionChanged="Power_SelectionChanged"
                   Margin="0,230,0,0">
+            <ComboBoxItem Content="Død"/>
             <ComboBoxItem Content="MegetSvag"/>
             <ComboBoxItem Content="Svag"/>
             <ComboBoxItem Content="Menneske"/>

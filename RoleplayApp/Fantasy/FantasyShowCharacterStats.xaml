@@ -18,8 +18,8 @@
 
     <Window.Background>
         <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="1.5" RadiusY="1.5">
-            <GradientStop Color="LightBlue" Offset="0.0"/>
-            <GradientStop Color="Blue" Offset="1"/>
+            <GradientStop Color="Gray" Offset="0.0"/>
+            <GradientStop Color="Black" Offset="1"/>
         </RadialGradientBrush>
     </Window.Background>
 
@@ -102,7 +102,7 @@
                        TextAlignment="Center"
                        FontWeight="Bold"/>
                 </Border>
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer Height="410">
                     <ItemsControl Name="AbilitiesList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>

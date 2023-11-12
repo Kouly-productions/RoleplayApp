@@ -15,6 +15,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Shapes;
 using static RoleplayApp.CharacterProp;
 
@@ -31,6 +32,8 @@ namespace RoleplayApp.Fantasy
         string oldLover;
         public string SelectedLover { get; set; }
         string fileName;
+        public delegate void DoneClickedHandler();
+        public event DoneClickedHandler OnDoneClicked;
 
         CharacterProp character = new CharacterProp();
 

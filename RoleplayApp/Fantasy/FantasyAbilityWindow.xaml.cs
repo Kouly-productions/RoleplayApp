@@ -31,6 +31,7 @@ namespace RoleplayApp.Fantasy
         private List<Forces> loadedAbilities;
         public CharacterProp CurrentCharacter { get; set; }
         public AbilityWindowState CurrentState { get; set; }
+        public int numOfAbility;
 
         public FantasyAbilityWindow(CharacterProp currentCharacter)
         {
@@ -182,6 +183,8 @@ namespace RoleplayApp.Fantasy
                             border.Child = stackPanel;
 
                             FantasyAbilityPanel.Children.Add(border);
+
+                            showCountOfAbilities();
                         }
                     }
                     else
@@ -316,6 +319,8 @@ namespace RoleplayApp.Fantasy
                 border.Child = stackPanel;
 
                 FantasyAbilityPanel.Children.Add(border);
+
+                showCountOfAbilities();
             }
         }
 
@@ -323,6 +328,13 @@ namespace RoleplayApp.Fantasy
         {
             FantasyThisAbility showAbilityStats = new FantasyThisAbility(ability, this);
             showAbilityStats.ShowDialog();
+        }
+
+        private void showCountOfAbilities()
+        {
+            numOfAbility = loadedAbilities.Count;
+
+            NumberOfAbilties.Text = numOfAbility.ToString();
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -334,7 +346,11 @@ namespace RoleplayApp.Fantasy
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //Empty for now
+            string query = (sender as TextBox).Text.ToLower();
+
+            var filteredAbilities = loadedAbilities.Where(c => c.Name.ToLower().Contains(query)).ToList();
+
+            UpdateAbilityPanel(filteredAbilities);
         }
 
         private void SortByComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
